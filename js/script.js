@@ -1,0 +1,419 @@
+(function () {
+  var valores = [
+    { titulo: 'Calidad ante todo', desc: 'Carne fresca y de primera, seleccionada con el mismo criterio desde el primer día.' },
+    { titulo: 'Oficio y tradición', desc: 'El corte se hace a mano, con la técnica y el conocimiento de un carnicero de oficio.' },
+    { titulo: 'Cercanía', desc: 'Un negocio de barrio que conoce a sus clientes y responde cada pedido en persona.' },
+    { titulo: 'Confianza', desc: 'Trayectoria construida desde 2020, respaldo en cada compra.' },
+  ];
+
+  var badges = [
+    { titulo: 'Desde 2020', sub: 'Trayectoria' },
+    { titulo: 'Categoría V', sub: 'Carne nacional' },
+    { titulo: '100%', sub: 'Producto nacional' },
+    { titulo: 'Directo', sub: 'Pedidos por WhatsApp' },
+  ];
+
+  var catalog = {
+    vaca: {
+      label: 'Carnicería',
+      eyebrow: 'Categoría V · Carne nacional en vara',
+      title: 'Carnicería',
+      description: 'Carne vacuna nacional, clasificación Categoría V. Del asado familiar al corte fino, seleccionada pieza por pieza.',
+      cuts: [
+        { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true },
+        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios.' },
+        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.' },
+        { nombre: 'Punta Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.' },
+        { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.' },
+        { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.' },
+        { nombre: 'Malaya', desc: 'Corte delgado y sabroso, rápido en la parrilla.' },
+        { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.' },
+      ],
+    },
+    cerdo: {
+      label: 'Charcutería',
+      eyebrow: 'Carne nacional fresca',
+      title: 'Charcutería',
+      description: 'Cerdo nacional fresco, del costillar ahumado al filete magro para el día a día.',
+      cuts: [
+        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true },
+        { nombre: 'Pernil', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.' },
+        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.' },
+        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.' },
+        { nombre: 'Filete de Cerdo', desc: 'Magro y suave, perfecto para saltados.' },
+        { nombre: 'Pulpa', desc: 'Versátil para asar, guisar o moler.' },
+      ],
+    },
+    pollo: {
+      label: 'Pollería',
+      eyebrow: 'Fresco, nunca congelado',
+      title: 'Pollería',
+      description: 'Pollo nacional fresco, entero o por presas, listo para el horno, la olla o la parrilla.',
+      cuts: [
+        { nombre: 'Pollo Entero', desc: 'Fresco, nacional, ideal para el horno.', destacado: true },
+        { nombre: 'Pechuga', desc: 'Sin piel ni hueso, la opción más magra.' },
+        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.' },
+        { nombre: 'Alitas', desc: 'Ideales para freír, hornear o ahumar.' },
+        { nombre: 'Muslos', desc: 'Tiernos y con sabor, listos para guisar.' },
+      ],
+    },
+  };
+
+  var recomendados = [
+    { nombre: 'Lomo Vetado', categoria: 'Vaca', motivo: 'El corte más marmoleado de la casa: jugoso al punto en la parrilla y el que más repiten nuestros clientes.', img: null },
+    { nombre: 'Costillar de Cerdo', categoria: 'Cerdo', motivo: 'Ahumado lento y con hueso, el favorito para los asados de fin de semana.', img: 'Images/costillar-cerdo.jpeg' },
+    { nombre: 'Punta Picana', categoria: 'Vaca', motivo: 'Sabor intenso y textura tierna, ideal para juntas familiares grandes.', img: null },
+    { nombre: 'Pollo Entero', categoria: 'Pollo', motivo: 'Siempre fresco y nacional, nunca congelado: rinde parejo en el horno.', img: 'Images/pollo-al-horno.jpeg' },
+  ];
+
+  var recetas = [
+    { titulo: 'Asado a la parrilla clásico', corte: 'Lomo Vetado', tiempo: '40 min', dificultad: 'Fácil', desc: 'El asado de siempre: sal gruesa, brasas parejas y el punto justo de cocción.', img: 'Images/asado.jpeg' },
+    { titulo: 'Costillar de cerdo ahumado', corte: 'Costillar de Cerdo', tiempo: '3 h', dificultad: 'Media', desc: 'Cocción lenta y humo suave hasta que la carne se separa del hueso.', img: 'Images/costillar-cerdo.jpeg' },
+    { titulo: 'Pollo al horno con hierbas', corte: 'Pollo Entero', tiempo: '1 h 15 min', dificultad: 'Fácil', desc: 'Piel dorada y crocante, carne jugosa por dentro.', img: 'Images/pollo-al-horno.jpeg' },
+    { titulo: 'Churrasco a la plancha', corte: 'Malaya', tiempo: '15 min', dificultad: 'Fácil', desc: 'Ideal para el día a día: rápido, sabroso y rendidor.', img: null },
+  ];
+
+  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'recomendaciones', 'recetas', 'nosotros', 'contacto'];
+  var state = { page: 'inicio' };
+
+  function placeholder(label) {
+    return '<div style="height:170px;position:relative;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px);display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-family:monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;text-align:center;padding:10px">FOTO — ' + label + '</div>';
+  }
+
+  function cutCard(cut) {
+    return '' +
+      '<div style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:#2E2E2E">' +
+        placeholder(cut.nombre) +
+        '<div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + cut.nombre + '</h3>' +
+            (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px;white-space:nowrap">Favorito</span>' : '') +
+          '</div>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0;flex:1">' + cut.desc + '</p>' +
+          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function recomendadoRow(r) {
+    var media = r.img
+      ? '<div style="height:150px;border-radius:3px;overflow:hidden"><img src="' + r.img + '" alt="' + r.nombre + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
+      : '<div style="height:150px;border-radius:3px;overflow:hidden;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>';
+    return '' +
+      '<div class="rec-row" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid #4A3B33">' +
+        media +
+        '<div style="display:flex;flex-direction:column;gap:8px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">' + r.categoria + '</span>' +
+          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:24px;margin:0;color:#FAF7F4">' + r.nombre + '</h3>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.6;color:#E2E8F0;margin:0">' + r.motivo + '</p>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function recetaCard(r) {
+    var media = r.img
+      ? '<div style="overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
+      : '<div style="background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px);display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-family:monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;text-align:center;padding:10px">FOTO — ' + r.titulo.toUpperCase() + '</div>';
+    return '' +
+      '<div class="rec-row" style="display:grid;grid-template-columns:200px 1fr;gap:24px;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;background:#2E2E2E">' +
+        media +
+        '<div style="padding:22px 22px 22px 0;display:flex;flex-direction:column;gap:10px;justify-content:center">' +
+          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + r.titulo + '</h3>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0">' + r.desc + '</p>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.corte + '</span>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.tiempo + '</span>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.dificultad + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function pageInicio() {
+    var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/charcuteria.jpeg' };
+    var catNames = { vaca: 'Carnicería', pollo: 'Pollería', cerdo: 'Charcutería' };
+    var catDesc = {
+      vaca: 'Categoría V, cortes premium para la parrilla y la olla.',
+      pollo: 'Pollo nacional fresco, entero o por presas.',
+      cerdo: 'Costillar, pernil y chuletas frescas todos los días.'
+    };
+    var catHtml = ['vaca', 'pollo', 'cerdo'].map(function (key) {
+      return '' +
+        '<div onclick="navigate(\'' + key + '\')" style="cursor:pointer;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
+          '<div style="height:200px;overflow:hidden"><img src="' + catImgs[key] + '" alt="' + catNames[key] + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div style="padding:22px;display:flex;flex-direction:column;gap:8px;background-color:#450000">' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FFFFFF">' + catNames[key] + '</h3>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0">' + catDesc[key] + '</p>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:4px">Ver cortes →</span>' +
+          '</div>' +
+        '</div>';
+    }).join('');
+
+    var valoresChecks = valores.map(function (v) {
+      return '<div style="display:flex;align-items:baseline;gap:8px"><span style="color:#D1A66A;font-weight:700;font-size:14px">✓</span><span style="font-family:\'Inter\',sans-serif;font-size:13.5px;font-weight:600;color:#FFFFFF">' + v.titulo + '</span></div>';
+    }).join('');
+
+    var badgesHtml = badges.map(function (b) {
+      return '<div style="display:flex;flex-direction:column;gap:4px;padding:8px"><span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:17px;color:#D1A66A">' + b.titulo + '</span><span style="font-family:\'Inter\',sans-serif;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF">' + b.sub + '</span></div>';
+    }).join('');
+
+    var recetasHome = recetas.slice(0, 3).map(function (r) {
+      var media = r.img
+        ? '<div style="height:160px;border-radius:5px;overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
+        : '<div style="height:160px;border-radius:5px;overflow:hidden;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>';
+      return '<div style="display:flex;flex-direction:column;gap:10px">' + media +
+        '<h4 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:17px;margin:0;color:#E2E8F0">' + r.titulo + '</h4>' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12.5px;color:#D1A66A">' + r.corte + ' · ' + r.tiempo + '</span></div>';
+    }).join('');
+
+    return '' +
+    '<div data-screen-label="Inicio">' +
+      '<div style="position:relative;width:100%;min-height:88vh;background-image:url(\'Images/ribeye-strip-loin.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%)"></div>' +
+        '<div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px;display:flex;flex-direction:column;align-items:center;gap:22px">' +
+          '<img src="Images/LogoPrincipal.png" alt="Carnes Marty" class="hero-logo" style="width:240px;height:240px;border-radius:50%;object-fit:cover;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#D1A66A;font-weight:600;background:rgba(28,28,28,0.6);padding:10px 18px;border-radius:10px">Desde 2020 · Linderos, Buin</span>' +
+          '<h1 class="hero-title" style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(38px,6vw,72px);line-height:1.08;color:#FAF7F4;margin:0">Para los que entienden de carne.</h1>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:17px;line-height:1.6;color:#E2E8F0;max-width:560px;margin:0">Carne nacional, fresca y de Categoría V. Cortes premium seleccionados uno por uno, con el oficio carnicero de siempre.</p>' +
+          '<div class="hero-cta-group" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px">' +
+            '<span class="hero-btn" onclick="navigate(\'recomendaciones\')" style="cursor:pointer;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#450000;border:1px solid #450000">Ver cortes premium</span>' +
+            '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="hero-btn" style="text-decoration:none;cursor:pointer;border:1px solid #D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#D1A66A">Pedir por WhatsApp</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="background-color:#101010">' +
+        '<div class="section-pad two-col-rev" style="max-width:1280px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
+          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/ribeye-strip-loin.jpeg" alt="Cortes frescos Carnes Marty" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div style="display:flex;flex-direction:column;gap:18px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#d1a66a;font-weight:600">Sobre Carnes Marty</span>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:32px;margin:0;color:#FFFFFF">Cortes frescos y premium, todos los días</h2>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0">Desde 2020 seleccionamos carne nacional pieza por pieza, con el oficio de siempre y el trato cercano de un negocio de barrio.</p>' +
+            '<div class="valores-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px">' + valoresChecks + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="padding:32px 32px;background-color:#450000">' +
+        '<div class="grid-4" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center">' + badgesHtml + '</div>' +
+      '</div>' +
+
+      '<div style="padding:80px 32px;background-color:#101010">' +
+        '<div style="max-width:1280px;margin:0 auto">' +
+          '<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto">' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FFFFFF">Nuestros cortes</h2>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:13px;letter-spacing:0.05em;color:#D1A66A;font-weight:600">carne nacional en vara</span>' +
+          '</div>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.7;color:#E2E8F0;max-width:640px;margin:0 auto 36px;text-align:center">La carne en vara es carne nacional chilena que se recibe entera, sin trocear, y se corta en el local a medida que se necesita. Así garantizamos frescura real y un control de calidad artesanal en cada pieza, desde la res completa hasta el corte que te llevas a casa.</p>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + catHtml + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="position:relative;padding:100px 32px;background-image:url(\'Images/ribeye-strip-loin.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.65)"></div>' +
+        '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
+          '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:0;color:#FAF7F4">Carne fresca, todos los días</h2>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.6;color:#E2E8F0;margin:0">Escríbenos por WhatsApp y coordinamos tu pedido de cortes frescos y premium.</p>' +
+          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;background:#D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Pedir por WhatsApp</a>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="padding:80px 32px;display:flex;justify-content:center;background-color:#101010">' +
+        '<div class="two-col" style="max-width:1280px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
+          '<div style="display:flex;flex-direction:column;gap:16px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:32px;margin:0;color:#FFFFFF">Los cortes que más pedimos a diario</h2>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">Una guía honesta de nuestros favoritos, elegidos por lo que realmente se cocina bien en casa.</p>' +
+            '<span onclick="navigate(\'recomendaciones\')" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
+          '</div>' +
+          '<div style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="Los cortes que más pedimos" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="position:relative;width:100%;min-height:420px;background-image:url(\'Images/resenas-bg.jpeg\');background-size:cover;background-position:left center">' +
+        '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.72)"></div>' +
+        '<div style="position:relative;z-index:2;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;padding:56px 32px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:14px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A;margin-bottom:10px">Lo que dicen nuestros clientes en Google</span>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;width:100%">' +
+            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
+              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
+              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente carnicería. Compro con mucha confianza ya que nunca he tenido problemas con sus productos. El personal que atiende es muy amable. El lugar limpio, impecable !"</p>' +
+              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Angelica Duran</span>' +
+            '</div>' +
+            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
+              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
+              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente experiencia. Todos los productos 100% frescos. Gran variedad y buena atención de barrio, familiar."</p>' +
+              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Michael Corthorn</span>' +
+            '</div>' +
+            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
+              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
+              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente carne, muy buena atención."</p>' +
+              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Renato Cornejo</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="padding:80px 32px;background-color:#101010">' +
+        '<div style="max-width:1280px;margin:0 auto">' +
+          '<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px">' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FAF7F4">Recetas con nuestros cortes</h2>' +
+            '<span onclick="navigate(\'recetas\')" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
+          '</div>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + recetasHome + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function pageCategoria(key) {
+    var c = catalog[key];
+    return '' +
+    '<div data-screen-label="' + c.label + '">' +
+      '<div style="background:#1C1C1C;padding:110px 32px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">' + c.eyebrow + '</span>' +
+        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">' + c.title + '</h1>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">' + c.description + '</p>' +
+      '</div>' +
+      '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:#1C1C1C">' +
+        c.cuts.map(cutCard).join('') +
+      '</div>' +
+    '</div>';
+  }
+
+  function pageRecomendaciones() {
+    return '' +
+    '<div data-screen-label="Recomendaciones">' +
+      '<div style="background:#1C1C1C;padding:110px 32px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
+        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">Recomendaciones</h1>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">Los cortes que elegimos nosotros mismos, por calidad, sabor y lo bien que rinden en la parrilla o en la olla.</p>' +
+      '</div>' +
+      '<div style="max-width:1000px;margin:0 auto;padding:64px 32px;display:flex;flex-direction:column;gap:0;background:#1C1C1C">' +
+        recomendados.map(recomendadoRow).join('') +
+      '</div>' +
+    '</div>';
+  }
+
+  function pageRecetas() {
+    return '' +
+    '<div data-screen-label="Recetas">' +
+      '<div style="background:#1C1C1C;padding:110px 32px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">De nuestra cocina a la tuya</span>' +
+        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">Recetas</h1>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">Ideas simples para sacarle el máximo partido a cada corte.</p>' +
+      '</div>' +
+      '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;background:#1C1C1C">' +
+        recetas.map(recetaCard).join('') +
+      '</div>' +
+    '</div>';
+  }
+
+  function pageNosotros() {
+    var valoresHtml = valores.map(function (v, i) {
+      return '<div style="display:flex;flex-direction:column;gap:10px">' +
+        '<span style="font-family:\'Playfair Display\',serif;font-weight:700;font-size:15px;color:#D1A66A">0' + (i + 1) + '</span>' +
+        '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + v.titulo + '</h3>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.6;color:#E2E8F0;margin:0">' + v.desc + '</p>' +
+      '</div>';
+    }).join('');
+    return '' +
+    '<div data-screen-label="Nosotros">' +
+      '<div class="two-col" style="max-width:1280px;margin:0 auto;padding:110px 32px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;background:#1C1C1C">' +
+        '<div style="display:flex;flex-direction:column;gap:18px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Nuestra historia</span>' +
+          '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(32px,4.5vw,46px);margin:0;color:#FAF7F4">Oficio carnicero desde 2020</h1>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Carnes Marty nació en Linderos, comuna de Buin, con un objetivo simple: ser el punto de venta de confianza para quienes buscan carne fresca y de alta calidad. Desde entonces trabajamos con carne nacional en vara y clasificación Categoría V, con un trato cercano y una selección de producto cuidada al detalle.</p>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Hoy seguimos siendo un negocio de barrio, atento a cada pedido a través de Instagram y WhatsApp, donde cada cliente es tratado como parte de la familia.</p>' +
+        '</div>' +
+        '<div style="background:#1C1C1C;border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:center">' +
+          '<img src="Images/LogoPrincipal.png" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
+        '</div>' +
+      '</div>' +
+      '<div style="background:#1C1C1C;padding:72px 32px">' +
+        '<div class="grid-4" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">' + valoresHtml + '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function pageContacto() {
+    return '' +
+    '<div data-screen-label="Contacto">' +
+      '<div style="background:#1C1C1C;padding:110px 32px 90px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Hablemos</span>' +
+        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">Contacto</h1>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Pedidos, consultas de disponibilidad y cortes especiales — te respondemos directo.</p>' +
+      '</div>' +
+      '<div class="grid-3" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#1C1C1C">' +
+        '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">WhatsApp</span>' +
+          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Pedidos y consultas</span>' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">+56 9 1234 5678</span>' +
+        '</a>' +
+        '<a href="https://instagram.com/carnes_marty" target="_blank" rel="noopener" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Instagram</span>' +
+          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">@carnes_marty</span>' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Novedades y promociones</span>' +
+        '</a>' +
+        '<div style="border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Ubicación</span>' +
+          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Linderos, Buin</span>' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Región Metropolitana, Chile</span>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderPage() {
+    var html;
+    if (state.page === 'inicio') html = pageInicio();
+    else if (catalog[state.page]) html = pageCategoria(state.page);
+    else if (state.page === 'recomendaciones') html = pageRecomendaciones();
+    else if (state.page === 'recetas') html = pageRecetas();
+    else if (state.page === 'nosotros') html = pageNosotros();
+    else if (state.page === 'contacto') html = pageContacto();
+    else html = pageInicio();
+    document.getElementById('page-content').innerHTML = html;
+    updateNavActive();
+  }
+
+  function updateNavActive() {
+    var isCategoria = !!catalog[state.page];
+    document.querySelectorAll('.nav-link').forEach(function (el) {
+      var p = el.getAttribute('data-page');
+      var group = el.getAttribute('data-page-group');
+      var active = (p && p === state.page) || (group === 'categoria' && isCategoria);
+      el.classList.toggle('active', !!active);
+    });
+  }
+
+  window.navigate = function (page) {
+    if (validPages.indexOf(page) === -1) page = 'inicio';
+    state.page = page;
+    if (window.location.hash.replace('#', '') !== page) {
+      window.location.hash = page;
+    }
+    window.scrollTo(0, 0);
+    renderPage();
+  };
+
+  window.toggleMobile = function () {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  };
+
+  function fromHash() {
+    var p = (window.location.hash || '').replace('#', '');
+    return validPages.indexOf(p) !== -1 ? p : 'inicio';
+  }
+
+  window.addEventListener('hashchange', function () {
+    state.page = fromHash();
+    window.scrollTo(0, 0);
+    renderPage();
+  });
+
+  document.getElementById('footer-year').textContent = '© ' + new Date().getFullYear() + ' Carnes Marty · Carnicería';
+
+  state.page = fromHash();
+  renderPage();
+})();

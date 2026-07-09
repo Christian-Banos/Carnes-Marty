@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/christianbanospadilla/Documents/Projects/carnesMarti/.claude)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "Bash(grep -n \"^<script>$\\\\|^</script>$\" /Users/christianbanospadilla/Documents/Projects/carnesMarti/index.html)",
+      "Bash(cp js/script.js /tmp/script.js.bak)",
+      "Bash(sed -i '' 's/color:#C2A497/color:#E2E8F0/g; s/color:#855F4F/color:#D1A66A/g' js/script.js)",
+      "Read(//tmp/**)",
+      "Bash(rm /tmp/script.js.bak)"
+    ]
+  }
+}
