@@ -6,6 +6,13 @@
     { titulo: 'Confianza', desc: 'Trayectoria construida desde 2020, respaldo en cada compra.' },
   ];
 
+  var proceso = [
+    { titulo: 'Carne en vara', categoria: 'Selección', desc: 'Recibimos la carne nacional Categoría V entera, sin trocear, directo del proveedor. Así garantizamos frescura real desde el origen.', progreso: 25, icon: 'package' },
+    { titulo: 'Corte artesanal', categoria: 'Oficio', desc: 'Cada pieza se corta a mano en el local, a medida que se necesita, con la técnica de un carnicero de oficio.', progreso: 50, icon: 'scissors' },
+    { titulo: 'Control de calidad', categoria: 'Calidad', desc: 'Revisamos frescura, color y textura de cada corte antes de exhibirlo, con el mismo criterio desde el primer día.', progreso: 75, icon: 'check' },
+    { titulo: 'Pedido y entrega', categoria: 'Cercanía', desc: 'Nos escribes por WhatsApp o pasas por el local: te entregamos el corte fresco, listo para tu mesa.', progreso: 100, icon: 'send' }
+  ];
+
   var badges = [
     { titulo: 'Desde 2020', sub: 'Trayectoria' },
     { titulo: 'Categoría V', sub: 'Carne nacional' },
@@ -82,7 +89,7 @@
 
   function cutCard(cut) {
     return '' +
-      '<div style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:#2E2E2E">' +
+      '<div class="cut-card" style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:#2E2E2E">' +
         placeholder(cut.nombre) +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">' +
           '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">' +
@@ -90,7 +97,7 @@
             (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px;white-space:nowrap">Favorito</span>' : '') +
           '</div>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0;flex:1">' + cut.desc + '</p>' +
-          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
+          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
         '</div>' +
       '</div>';
   }
@@ -100,7 +107,7 @@
       ? '<div style="height:150px;border-radius:3px;overflow:hidden"><img src="' + r.img + '" alt="' + r.nombre + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
       : '<div style="height:150px;border-radius:3px;overflow:hidden;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>';
     return '' +
-      '<div class="rec-row" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid #4A3B33">' +
+      '<div class="rec-row hover-card" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid #4A3B33;border-radius:4px">' +
         media +
         '<div style="display:flex;flex-direction:column;gap:8px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">' + r.categoria + '</span>' +
@@ -115,7 +122,7 @@
       ? '<div style="overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
       : '<div style="background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px);display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-family:monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;text-align:center;padding:10px">FOTO — ' + r.titulo.toUpperCase() + '</div>';
     return '' +
-      '<div class="rec-row" style="display:grid;grid-template-columns:200px 1fr;gap:24px;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;background:#2E2E2E">' +
+      '<div class="rec-row hover-card" style="display:grid;grid-template-columns:200px 1fr;gap:24px;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;background:#2E2E2E">' +
         media +
         '<div style="padding:22px 22px 22px 0;display:flex;flex-direction:column;gap:10px;justify-content:center">' +
           '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + r.titulo + '</h3>' +
@@ -139,12 +146,12 @@
     };
     var catHtml = ['vaca', 'pollo', 'cerdo'].map(function (key) {
       return '' +
-        '<div onclick="navigate(\'' + key + '\')" style="cursor:pointer;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
-          '<div style="height:200px;overflow:hidden"><img src="' + catImgs[key] + '" alt="' + catNames[key] + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+        '<div onclick="navigate(\'' + key + '\')" class="cat-card" style="cursor:pointer;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
+          '<div class="cat-card-img" style="height:200px;overflow:hidden"><img src="' + catImgs[key] + '" alt="' + catNames[key] + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
           '<div style="padding:22px;display:flex;flex-direction:column;gap:8px;background-color:#450000">' +
             '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FFFFFF">' + catNames[key] + '</h3>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0">' + catDesc[key] + '</p>' +
-            '<span style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:4px">Ver cortes →</span>' +
+            '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:4px">Ver cortes →</span>' +
           '</div>' +
         '</div>';
     }).join('');
@@ -214,7 +221,7 @@
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
           '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:0;color:#FAF7F4">Carne fresca, todos los días</h2>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.6;color:#E2E8F0;margin:0">Escríbenos por WhatsApp y coordinamos tu pedido de cortes frescos y premium.</p>' +
-          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;background:#D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Pedir por WhatsApp</a>' +
+          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;background:#D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Pedir por WhatsApp</a>' +
         '</div>' +
       '</div>' +
 
@@ -224,7 +231,7 @@
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:32px;margin:0;color:#FFFFFF">Los cortes que más pedimos a diario</h2>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">Una guía honesta de nuestros favoritos, elegidos por lo que realmente se cocina bien en casa.</p>' +
-            '<span onclick="navigate(\'recomendaciones\')" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
+            '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
           '</div>' +
           '<div style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="Los cortes que más pedimos" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
@@ -258,7 +265,7 @@
         '<div style="max-width:1280px;margin:0 auto">' +
           '<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px">' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FAF7F4">Recetas con nuestros cortes</h2>' +
-            '<span onclick="navigate(\'recetas\')" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
+            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
           '</div>' +
           '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + recetasHome + '</div>' +
         '</div>' +
@@ -309,6 +316,48 @@
     '</div>';
   }
 
+  function timelineIcon(name) {
+    var icons = {
+      package: '<path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
+      scissors: '<path d="M6 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/>',
+      check: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>',
+      send: '<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>'
+    };
+    return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (icons[name] || '') + '</svg>';
+  }
+
+  function timelineItem(step, i) {
+    return '' +
+      '<div class="timeline-item" style="transition-delay:' + (i * 0.12) + 's">' +
+        '<div class="timeline-avatar">' + timelineIcon(step.icon) + '</div>' +
+        '<div class="timeline-card">' +
+          '<div class="timeline-card-head">' +
+            '<h3 class="timeline-title">' + step.titulo + '</h3>' +
+            '<span class="timeline-badge">' + step.categoria + '</span>' +
+          '</div>' +
+          '<p class="timeline-desc">' + step.desc + '</p>' +
+          '<div class="timeline-progress"><div class="timeline-progress-fill" style="--progress:' + step.progreso + '%"></div></div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function timelineSection() {
+    return '' +
+      '<div style="background:#101010;padding:80px 32px">' +
+        '<div style="max-width:900px;margin:0 auto">' +
+          '<div style="text-align:center;margin-bottom:48px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Cómo trabajamos</span>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,3.5vw,36px);margin:10px 0 0;color:#FAF7F4">De la vara a tu mesa</h2>' +
+          '</div>' +
+          '<div class="timeline-wrap">' +
+            '<div class="timeline-rail"></div>' +
+            '<div class="timeline-rail-fill"></div>' +
+            '<div class="timeline-items">' + proceso.map(timelineItem).join('') + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
   function pageNosotros() {
     var valoresHtml = valores.map(function (v, i) {
       return '<div style="display:flex;flex-direction:column;gap:10px">' +
@@ -330,6 +379,7 @@
           '<img src="Images/logoCarnesMarti_white.jpg" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
         '</div>' +
       '</div>' +
+      timelineSection() +
       '<div style="background:#1C1C1C;padding:72px 32px">' +
         '<div class="grid-4" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">' + valoresHtml + '</div>' +
       '</div>' +
@@ -345,17 +395,17 @@
         '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Pedidos, consultas de disponibilidad y cortes especiales — te respondemos directo.</p>' +
       '</div>' +
       '<div class="grid-3" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#1C1C1C">' +
-        '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+        '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">WhatsApp</span>' +
           '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Pedidos y consultas</span>' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">+56 9 1234 5678</span>' +
         '</a>' +
-        '<a href="https://instagram.com/carnes_marty" target="_blank" rel="noopener" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+        '<a href="https://instagram.com/carnes_marty" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Instagram</span>' +
           '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">@carnes_marty</span>' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Novedades y promociones</span>' +
         '</a>' +
-        '<div style="border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+        '<div class="contact-card" style="border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Ubicación</span>' +
           '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Linderos, Buin</span>' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Región Metropolitana, Chile</span>' +
@@ -364,17 +414,73 @@
     '</div>';
   }
 
-  function renderPage() {
-    var html;
-    if (state.page === 'inicio') html = pageInicio();
-    else if (catalog[state.page]) html = pageCategoria(state.page);
-    else if (state.page === 'recomendaciones') html = pageRecomendaciones();
-    else if (state.page === 'recetas') html = pageRecetas();
-    else if (state.page === 'nosotros') html = pageNosotros();
-    else if (state.page === 'contacto') html = pageContacto();
-    else html = pageInicio();
-    document.getElementById('page-content').innerHTML = html;
-    updateNavActive();
+  function buildPageHtml() {
+    if (state.page === 'inicio') return pageInicio();
+    if (catalog[state.page]) return pageCategoria(state.page);
+    if (state.page === 'recomendaciones') return pageRecomendaciones();
+    if (state.page === 'recetas') return pageRecetas();
+    if (state.page === 'nosotros') return pageNosotros();
+    if (state.page === 'contacto') return pageContacto();
+    return pageInicio();
+  }
+
+  function setupReveal() {
+    var targets = document.querySelectorAll('#page-content [data-screen-label] > *');
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('reveal', 'in-view'); });
+      document.querySelectorAll('.timeline-wrap, .timeline-item').forEach(function (el) { el.classList.add('in-view'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      if (i === 0) {
+        requestAnimationFrame(function () { el.classList.add('in-view'); });
+      } else {
+        observer.observe(el);
+      }
+    });
+
+    var timelineTargets = document.querySelectorAll('.timeline-wrap, .timeline-item');
+    if (timelineTargets.length) {
+      var timelineObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            timelineObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+      timelineTargets.forEach(function (el) { timelineObserver.observe(el); });
+    }
+  }
+
+  function renderPage(animate) {
+    var content = document.getElementById('page-content');
+    function swap() {
+      content.innerHTML = buildPageHtml();
+      updateNavActive();
+      setupReveal();
+    }
+    if (animate && content.innerHTML.trim() !== '') {
+      content.classList.add('page-fading');
+      window.setTimeout(function () {
+        window.scrollTo(0, 0);
+        swap();
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { content.classList.remove('page-fading'); });
+        });
+      }, 260);
+    } else {
+      swap();
+    }
   }
 
   function updateNavActive() {
@@ -389,12 +495,12 @@
 
   window.navigate = function (page) {
     if (validPages.indexOf(page) === -1) page = 'inicio';
+    if (state.page === page) return;
     state.page = page;
     if (window.location.hash.replace('#', '') !== page) {
       window.location.hash = page;
     }
-    window.scrollTo(0, 0);
-    renderPage();
+    renderPage(true);
   };
 
   window.toggleMobile = function () {
@@ -424,9 +530,10 @@
   }
 
   window.addEventListener('hashchange', function () {
-    state.page = fromHash();
-    window.scrollTo(0, 0);
-    renderPage();
+    var p = fromHash();
+    if (p === state.page) return;
+    state.page = p;
+    renderPage(true);
   });
 
   document.getElementById('footer-year').textContent = '© ' + new Date().getFullYear() + ' Carnes Marty · Carnicería';
@@ -439,5 +546,5 @@
   updateHeaderScrolled();
 
   state.page = fromHash();
-  renderPage();
+  renderPage(false);
 })();
