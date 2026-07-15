@@ -368,15 +368,22 @@
     }).join('');
     return '' +
     '<div data-screen-label="Nosotros">' +
-      '<div class="two-col" style="max-width:1280px;margin:0 auto;padding:110px 32px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;background:#1C1C1C">' +
-        '<div style="display:flex;flex-direction:column;gap:18px">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Nuestra historia</span>' +
-          '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(32px,4.5vw,46px);margin:0;color:#FAF7F4">Oficio carnicero desde 2020</h1>' +
-          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Carnes Marty nació en Linderos, comuna de Buin, con un objetivo simple: ser el punto de venta de confianza para quienes buscan carne fresca y de alta calidad. Desde entonces trabajamos con carne nacional en vara y clasificación Categoría V, con un trato cercano y una selección de producto cuidada al detalle.</p>' +
-          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Hoy seguimos siendo un negocio de barrio, atento a cada pedido a través de Instagram y WhatsApp, donde cada cliente es tratado como parte de la familia.</p>' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_nosotros.png\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
+        '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:64px 32px;max-width:720px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:20px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Nuestra historia</span>' +
+          '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(32px,4.5vw,50px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">Oficio carnicero desde 2020</h1>' +
         '</div>' +
+      '</div>' +
+      '<div class="two-col" style="max-width:1280px;margin:0 auto;padding:72px 32px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;background:#1C1C1C">' +
+        '<div style="display:flex;flex-direction:column;gap:18px; text-align:justify">' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Carnes Marty nació en Linderos, comuna de Buin, con un objetivo claro: convertirse en la carnicería de confianza para quienes buscan carne fresca, de calidad y un servicio cercano. Desde nuestros inicios trabajamos exclusivamente con carne nacional en vara, de clasificación Categoría V, seleccionando cuidadosamente cada pieza para garantizar un producto que cumpla con los más altos estándares.</p>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Con el paso de los años, la confianza de nuestros clientes nos ha permitido crecer y consolidarnos como una de las carnicerías de referencia de la zona. Ese reconocimiento es el resultado de un compromiso que mantenemos intacto desde el primer día: ofrecer productos frescos, una atención personalizada y la tranquilidad de saber que cada compra está respaldada por calidad y dedicación.</p>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Seguimos siendo un negocio de barrio, donde el trato cercano y la honestidad son parte de nuestra esencia. Atendemos cada pedido con la misma dedicación, ya sea en nuestra tienda o a través de Instagram y WhatsApp, porque creemos que cada cliente merece un servicio personalizado y una experiencia de compra excepcional.</p>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">En Carnes Marty no solo vendemos carne; compartimos la pasión por ofrecer el mejor producto para que cada comida en familia, cada asado y cada celebración tenga la calidad que se merece.</p>' +
+          '</div>' +
         '<div style="background:#1C1C1C;border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:center">' +
-          '<img src="Images/logoCarnesMarti_white.jpg" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
+          '<img src="Images/Logo_merchan.png" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
         '</div>' +
       '</div>' +
       timelineSection() +

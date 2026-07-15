@@ -172,11 +172,11 @@ button { font: inherit; }
 }
 .timeline-item:hover .timeline-avatar { transform: scale(1.08); border-color: var(--gold); }
 .timeline-card {
-  flex: 1; min-width: 0; background: rgba(46,46,46,0.6); backdrop-filter: blur(4px);
-  border: 1px solid var(--border); border-radius: 6px; padding: 20px 22px;
-  transition: transform .3s cubic-bezier(.16,.8,.24,1), box-shadow .3s ease, border-color .3s ease;
+  flex: 1; min-width: 0; background: rgba(69,0,0,0.82); backdrop-filter: blur(4px);
+  border: 1px solid var(--border-soft); border-radius: 6px; padding: 20px 22px;
+  transition: transform .3s cubic-bezier(.16,.8,.24,1), box-shadow .3s ease, border-color .3s ease, background-color .3s ease;
 }
-.timeline-item:hover .timeline-card { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,0.35); border-color: rgba(209,166,106,0.4); }
+.timeline-item:hover .timeline-card { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,0.4); border-color: rgba(209,166,106,0.4); background: rgba(69,0,0,0.92); }
 .timeline-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
 .timeline-title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 19px; margin: 0; color: var(--heading); }
 .timeline-badge { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); background: rgba(209,166,106,0.12); border: 1px solid rgba(209,166,106,0.3); padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
