@@ -171,7 +171,7 @@
       '<div style="position:relative;width:100%;min-height:88vh;background-image:url(\'Images/ribeye-strip-loin.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%)"></div>' +
         '<div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px;display:flex;flex-direction:column;align-items:center;gap:22px">' +
-          '<img src="Images/LogoPrincipal.png" alt="Carnes Marty" class="hero-logo" style="width:240px;height:240px;border-radius:50%;object-fit:cover;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
+          '<img src="Images/logoCarnesMarti_white.png" alt="Carnes Marty" class="hero-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#D1A66A;font-weight:600;background:rgba(28,28,28,0.6);padding:10px 18px;border-radius:10px">Desde 2020 · Linderos, Buin</span>' +
           '<h1 class="hero-title" style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(38px,6vw,72px);line-height:1.08;color:#FAF7F4;margin:0">Para los que entienden de carne.</h1>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:17px;line-height:1.6;color:#E2E8F0;max-width:560px;margin:0">Carne nacional, fresca y de Categoría V. Cortes premium seleccionados uno por uno, con el oficio carnicero de siempre.</p>' +
@@ -327,7 +327,7 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">Hoy seguimos siendo un negocio de barrio, atento a cada pedido a través de Instagram y WhatsApp, donde cada cliente es tratado como parte de la familia.</p>' +
         '</div>' +
         '<div style="background:#1C1C1C;border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:center">' +
-          '<img src="Images/LogoPrincipal.png" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
+          '<img src="Images/logoCarnesMarti_white.jpg" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
         '</div>' +
       '</div>' +
       '<div style="background:#1C1C1C;padding:72px 32px">' +
@@ -398,7 +398,24 @@
   };
 
   window.toggleMobile = function () {
-    document.getElementById('mobile-menu').classList.toggle('open');
+    var menu = document.getElementById('mobile-menu');
+    var willOpen = !menu.classList.contains('open');
+    menu.classList.toggle('open');
+    if (willOpen) menu.scrollTop = 0;
+    closeMobileProducts();
+  };
+
+  function closeMobileProducts() {
+    document.getElementById('mobile-products-list').style.display = 'none';
+    document.getElementById('mobile-products-arrow').style.transform = 'rotate(0deg)';
+  }
+
+  window.toggleMobileProducts = function () {
+    var list = document.getElementById('mobile-products-list');
+    var arrow = document.getElementById('mobile-products-arrow');
+    var open = list.style.display === 'flex';
+    list.style.display = open ? 'none' : 'flex';
+    arrow.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
   };
 
   function fromHash() {
@@ -413,6 +430,13 @@
   });
 
   document.getElementById('footer-year').textContent = '© ' + new Date().getFullYear() + ' Carnes Marty · Carnicería';
+
+  var header = document.getElementById('site-header');
+  function updateHeaderScrolled() {
+    header.classList.toggle('scrolled', window.scrollY > 24);
+  }
+  window.addEventListener('scroll', updateHeaderScrolled, { passive: true });
+  updateHeaderScrolled();
 
   state.page = fromHash();
   renderPage();

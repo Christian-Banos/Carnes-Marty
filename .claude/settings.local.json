@@ -7,7 +7,15 @@
       "Bash(cp js/script.js /tmp/script.js.bak)",
       "Bash(sed -i '' 's/color:#C2A497/color:#E2E8F0/g; s/color:#855F4F/color:#D1A66A/g' js/script.js)",
       "Read(//tmp/**)",
-      "Bash(rm /tmp/script.js.bak)"
+      "Bash(rm /tmp/script.js.bak)",
+      "Bash(vercel --version)",
+      "Bash(npm --version)",
+      "Bash(npx vercel *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/css/style.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/js/script.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/Images/LogoPrincipal.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/Manual_de_Marca_Carnes_Marty.pdf)"
     ]
   }
 }

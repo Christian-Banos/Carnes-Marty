@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div style="width:100%;min-height:100vh;background:#1C1C1C;color:#C2A497;overflow-x:hidden">
+<div style="width:100%;min-height:100vh;background:#1C1C1C;color:#C2A497">
 
   <!-- UTILITY BAR -->
   <div class="util-bar-item-hide" style="background:#1C1C1C">
@@ -44,11 +44,14 @@
   </div>
 
   <!-- NAV -->
-  <div style="position:sticky;top:0;z-index:50;background-color:#450000;border-bottom:1px solid #3B1F16">
-    <div class="nav-bar" style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;height:120px">
+  <div id="site-header" class="site-header">
+    <div class="nav-bar" style="max-width:1280px;margin:0 auto;padding:11px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;height:130px">
       <div class="nav-brand" onclick="navigate('inicio')">
-        <img src="Images/LogoPrincipal.png" alt="Carnes Marty" class="nav-logo">
-        <span class="nav-brand-name">Carnes Marty</span>
+        <img src="Images/LogoPrincipal-transparente.png" alt="Carnes Marty" class="nav-logo">
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <span class="nav-brand-name">Carnes Marty</span>
+          <span class="nav-brand-sub">Carnicería de calidad</span>
+        </div>
       </div>
 
       <div class="nav-links-desktop" style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-left:8px;flex:1">
@@ -88,10 +91,15 @@
     <div style="display:flex;flex-direction:column;gap:4px">
       <span onclick="navigate('inicio');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">Inicio</span>
       <span onclick="navigate('nosotros');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">Nosotros</span>
-      <span style="font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#855F4F;padding:16px 0 6px">Productos</span>
-      <span onclick="navigate('vaca');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px">Carnicería</span>
-      <span onclick="navigate('pollo');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px">Pollería</span>
-      <span onclick="navigate('cerdo');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px;margin-bottom:14px;display:block;border-bottom:1px solid #3B1F16">Charcutería</span>
+      <div onclick="toggleMobileProducts()" style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">
+        Productos
+        <span id="mobile-products-arrow" style="font-family:'Inter',sans-serif;font-size:16px;color:#D1A66A;transition:transform .2s ease">▾</span>
+      </div>
+      <div id="mobile-products-list" style="display:none;flex-direction:column;overflow:hidden">
+        <span onclick="navigate('vaca');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px">Carnicería</span>
+        <span onclick="navigate('pollo');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px">Pollería</span>
+        <span onclick="navigate('cerdo');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:19px;color:#C2A497;padding:10px 0 10px 12px">Charcutería</span>
+      </div>
       <span onclick="navigate('recomendaciones');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">Recomendaciones</span>
       <span onclick="navigate('recetas');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">Recetas</span>
       <span onclick="navigate('contacto');toggleMobile()" style="cursor:pointer;font-family:'Playfair Display',serif;font-size:22px;color:#FAF7F4;padding:14px 0;border-bottom:1px solid #3B1F16">Contacto</span>
