@@ -397,10 +397,13 @@
   function pageContacto() {
     return '' +
     '<div data-screen-label="Contacto">' +
-      '<div style="background:#1C1C1C;padding:110px 32px 90px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
-        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Hablemos</span>' +
-        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">Contacto</h1>' +
-        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Pedidos, consultas de disponibilidad y cortes especiales — te respondemos directo.</p>' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_contacto.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
+        '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:64px 32px;max-width:720px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Hablemos</span>' +
+          '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">Contacto</h1>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Pedidos, consultas y cortes especiales. Cuéntanos qué necesitas y nos encargamos del resto.</p>' +
+        '</div>' +
       '</div>' +
       '<div class="grid-3" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#1C1C1C">' +
         '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
