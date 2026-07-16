@@ -97,7 +97,7 @@
             (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px;white-space:nowrap">Favorito</span>' : '') +
           '</div>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0;flex:1">' + cut.desc + '</p>' +
-          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
+          '<a href="https://wa.me/56940691425" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
         '</div>' +
       '</div>';
   }
@@ -185,7 +185,7 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:17px;line-height:1.6;color:#E2E8F0;max-width:560px;margin:0">Carne nacional, fresca y de Categoría V. Cortes premium seleccionados uno por uno, con el oficio carnicero de siempre.</p>' +
           '<div class="hero-cta-group" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px">' +
             '<span class="hero-btn" onclick="navigate(\'recomendaciones\')" style="cursor:pointer;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#450000;border:1px solid #450000">Ver cortes premium</span>' +
-            '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="hero-btn" style="text-decoration:none;cursor:pointer;border:1px solid #D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#D1A66A">Pedir por WhatsApp</a>' +
+            '<a href="https://wa.me/56940691425?text=¡Hola, Carnes Marty! 👋🏼 Quiero realizar un pedido:%0A%0AProductos (indica gramos, kilos o unidades):%0A• Ej: 500g de pechuga de pollo fileteada%0A• Ej: 1kg de carne picada de ternera%0A• Ej: 4 hamburguesas de buey%0A%0AMi pedido:%0A•%0A•%0A•%0A%0AMis datos:%0A• Nombre:%0A• Día y hora de recogida: %0A%0AQuedo a la espera de que me confirméis disponibilidad y el total. ¡Gracias!" target="_blank" rel="noopener" class="hero-btn" style="text-decoration:none;cursor:pointer;border:1px solid #5E7619;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#28741A">Pedir por WhatsApp</a>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -222,7 +222,7 @@
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
           '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:0;color:#FAF7F4">Carne fresca, todos los días</h2>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.6;color:#E2E8F0;margin:0">Escríbenos por WhatsApp y coordinamos tu pedido de cortes frescos y premium.</p>' +
-          '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;background:#D1A66A;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Pedir por WhatsApp</a>' +
+          '<a href="https://wa.me/56940691425?text=¡Hola, Carnes Marty! 🥩 Quiero realizar un pedido:%0A%0AProductos (indica gramos, kilos o unidades):%0A• Ej: 500g de pechuga de pollo fileteada%0A• Ej: 1kg de carne picada de ternera%0A• Ej: 4 hamburguesas de buey%0A%0AMi pedido:%0A•%0A•%0A•%0A%0AMis datos:%0A• Nombre:%0A• Día y hora de recogida: %0A%0AQuedo a la espera de que me confirméis disponibilidad y el total. ¡Gracias!" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;background:#28741A;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Pedir por WhatsApp</a>' +
         '</div>' +
       '</div>' +
 
@@ -406,10 +406,10 @@
         '</div>' +
       '</div>' +
       '<div class="grid-3" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#1C1C1C">' +
-        '<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
+        '<a href="https://wa.me/56940691425" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">WhatsApp</span>' +
           '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Pedidos y consultas</span>' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">+56 9 1234 5678</span>' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">+56 9 4069 1425</span>' +
         '</a>' +
         '<a href="https://instagram.com/carnes_marty" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Instagram</span>' +
