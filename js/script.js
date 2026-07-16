@@ -175,8 +175,9 @@
 
     return '' +
     '<div data-screen-label="Inicio">' +
-      '<div style="position:relative;width:100%;min-height:88vh;background-image:url(\'Images/ribeye-strip-loin.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
-        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%)"></div>' +
+      '<div style="position:relative;width:100%;min-height:88vh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
+        '<video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><source src="video/ribeye_animated.mp4" type="video/mp4"></video>' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%);z-index:1"></div>' +
         '<div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px;display:flex;flex-direction:column;align-items:center;gap:22px">' +
           '<img src="Images/logoCarnesMarti_white.png" alt="Carnes Marty" class="hero-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#D1A66A;font-weight:600;background:rgba(28,28,28,0.6);padding:10px 18px;border-radius:10px">Desde 2020 · Linderos, Buin</span>' +
