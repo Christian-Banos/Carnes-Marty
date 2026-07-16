@@ -476,6 +476,10 @@
       content.innerHTML = buildPageHtml();
       updateNavActive();
       setupReveal();
+      var heroVideo = content.querySelector('video');
+      if (heroVideo) {
+        heroVideo.play().catch(function () {});
+      }
     }
     if (animate && content.innerHTML.trim() !== '') {
       content.classList.add('page-fading');
