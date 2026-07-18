@@ -196,6 +196,26 @@ button { font: inherit; }
   .timeline-progress-fill { width: var(--progress); }
 }
 
+/* ---------- Google reviews carousel (infinite, never stops) ---------- */
+.reviews-carousel {
+  width: 100%;
+  max-width: 1100px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.reviews-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: reviews-scroll 34s linear infinite;
+}
+.review-card { flex: 0 0 320px; }
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 14px)); }
+}
+
 @media (max-width: 940px) {
   .nav-links-desktop { display: none !important; }
   .nav-burger { display: flex !important; }
@@ -222,11 +242,12 @@ button { font: inherit; }
   .section-pad { padding-left: 20px !important; padding-right: 20px !important; }
   .valores-grid { grid-template-columns: 1fr !important; }
   .nav-bar { height: 68px !important; padding-left: 16px !important; padding-right: 16px !important; }
-  .nav-logo { width: 57px; height: 57px; padding: 4px; }
+  .nav-logo { width: 50px; height: 50px; padding: 4px; }
   .nav-brand-name { font-size: 25px !important; }
   .hero-logo { width: 155px !important; height: 155px !important; }
   .hero-cta-group { flex-direction: column !important; align-items: stretch !important; }
   .hero-btn { width: 100%; }
+  .review-card { flex-basis: 260px; }
 }
 @media (max-height: 480px) and (orientation: landscape) {
   .hero-logo { width: 90px !important; height: 90px !important; margin-bottom: 0 !important; }

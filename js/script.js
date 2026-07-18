@@ -13,6 +13,14 @@
     { titulo: 'Pedido y entrega', categoria: 'Cercanía', desc: 'Nos escribes por WhatsApp o pasas por el local: te entregamos el corte fresco, listo para tu mesa.', progreso: 100, icon: 'send' }
   ];
 
+  var resenas = [
+    { texto: 'Excelente carnicería. Compro con mucha confianza ya que nunca he tenido problemas con sus productos. El personal que atiende es muy amable. El lugar limpio, impecable !', autor: 'Angelica Duran' },
+    { texto: 'Excelente experiencia. Todos los productos 100% frescos. Gran variedad y buena atención de barrio, familiar.', autor: 'Michael Corthorn' },
+    { texto: 'Excelente carne, muy buena atención.', autor: 'Renato Cornejo' },
+    { texto: 'Full recomendable!🔥', autor: 'Jose Tomas Oyarce Gutierrez' },
+    { texto: 'Muy buena atención', autor: 'Catalina Reyes' }
+  ];
+
   var badges = [
     { titulo: 'Desde 2020', sub: 'Trayectoria' },
     { titulo: 'Categoría V', sub: 'Carne nacional' },
@@ -136,6 +144,17 @@
       '</div>';
   }
 
+  var googleIconSvg = '<svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.9 32.9 29.4 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.2 26.8 36 24 36c-5.3 0-9.8-3.4-11.4-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.3 5.3C39.5 36.6 44 30.9 44 24c0-1.3-.1-2.7-.4-3.5z"></path></svg>';
+
+  function resenaCard(r, hidden) {
+    return '' +
+      '<div class="review-card"' + (hidden ? ' aria-hidden="true"' : '') + ' style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
+        '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"' + r.texto + '"</p>' +
+        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">' + r.autor + '</span>' +
+      '</div>';
+  }
+
   function pageInicio() {
     var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/charcuteria.jpeg' };
     var catNames = { vaca: 'Carnicería', pollo: 'Pollería', cerdo: 'Charcutería' };
@@ -240,23 +259,12 @@
 
       '<div style="position:relative;width:100%;min-height:420px;background-image:url(\'Images/resenas-bg.jpeg\');background-size:cover;background-position:left center">' +
         '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.72)"></div>' +
-        '<div style="position:relative;z-index:2;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;padding:56px 32px">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:14px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A;margin-bottom:10px">Lo que dicen nuestros clientes en Google</span>' +
-          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;width:100%">' +
-            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
-              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
-              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente carnicería. Compro con mucha confianza ya que nunca he tenido problemas con sus productos. El personal que atiende es muy amable. El lugar limpio, impecable !"</p>' +
-              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Angelica Duran</span>' +
-            '</div>' +
-            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
-              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
-              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente experiencia. Todos los productos 100% frescos. Gran variedad y buena atención de barrio, familiar."</p>' +
-              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Michael Corthorn</span>' +
-            '</div>' +
-            '<div style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
-              '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
-              '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"Excelente carne, muy buena atención."</p>' +
-              '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">Renato Cornejo</span>' +
+        '<div style="position:relative;z-index:2;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;padding:56px 0">' +
+          '<span style="display:inline-flex;align-items:center;gap:10px;font-family:\'Inter\',sans-serif;font-size:14px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A;margin-bottom:10px;padding:0 32px">'+ 'Lo que dicen nuestros clientes en Google ' + googleIconSvg + '</span>' +
+          '<div class="reviews-carousel">' +
+            '<div class="reviews-track">' +
+              resenas.map(function (r) { return resenaCard(r, false); }).join('') +
+              resenas.map(function (r) { return resenaCard(r, true); }).join('') +
             '</div>' +
           '</div>' +
         '</div>' +
