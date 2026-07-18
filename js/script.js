@@ -230,11 +230,11 @@
         '<div class="two-col" style="max-width:1280px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
           '<div style="display:flex;flex-direction:column;gap:16px">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
-            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:32px;margin:0;color:#FFFFFF">Los cortes que más pedimos a diario</h2>' +
-            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">Una guía honesta de nuestros favoritos, elegidos por lo que realmente se cocina bien en casa.</p>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:32px;margin:0;color:#FFFFFF">¿No sabes qué elegir?</h2>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">En Carnes Marty nos encargamos de encontrar el corte perfecto para ti.</p>' +
             '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
           '</div>' +
-          '<div style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="Los cortes que más pedimos" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
       '</div>' +
 
