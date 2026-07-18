@@ -126,19 +126,22 @@
   }
 
   function recetaCard(r) {
-    var media = r.img
-      ? '<div style="overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
-      : '<div style="background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px);display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-family:monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;text-align:center;padding:10px">FOTO — ' + r.titulo.toUpperCase() + '</div>';
+    var bg = r.img
+      ? 'background-image:url(\'' + r.img + '\');background-size:cover;background-position:center'
+      : 'background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)';
     return '' +
-      '<div class="rec-row hover-card" style="display:grid;grid-template-columns:200px 1fr;gap:24px;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;background:#2E2E2E">' +
-        media +
-        '<div style="padding:22px 22px 22px 0;display:flex;flex-direction:column;gap:10px;justify-content:center">' +
-          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + r.titulo + '</h3>' +
-          '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0">' + r.desc + '</p>' +
-          '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">' +
-            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.corte + '</span>' +
-            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.tiempo + '</span>' +
-            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#E2E8F0;background:#1C1C1C;padding:5px 10px;border-radius:2px">' + r.dificultad + '</span>' +
+      '<div class="receta-card hover-card" tabindex="0" style="position:relative;height:340px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
+        '<div class="receta-card-bg" style="position:absolute;inset:0;' + bg + '"></div>' +
+        '<div class="receta-card-mask"></div>' +
+        '<div class="receta-card-panel">' +
+          '<div class="receta-card-glass">' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;margin:0;color:#FAF7F4">' + r.titulo + '</h3>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:0.04em;color:#D1A66A">' + r.corte + '</span>' +
+            '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:2px">' +
+              '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">' + r.tiempo + '</span>' +
+              '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">' + r.dificultad + '</span>' +
+            '</div>' +
+            '<p class="receta-card-desc">' + r.desc + '</p>' +
           '</div>' +
         '</div>' +
       '</div>';

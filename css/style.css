@@ -145,6 +145,47 @@ button { font: inherit; }
 .cat-card:hover .cat-card-img img, .cut-card:hover .cut-card-img { transform: scale(1.06); }
 .cat-card img { transition: transform .5s ease; }
 
+/* ---------- Recipe cards (full-bleed photo + reveal-on-hover glass panel) ---------- */
+.receta-card-bg { transition: transform .6s cubic-bezier(.16,.8,.24,1); }
+.receta-card:hover .receta-card-bg, .receta-card:focus-within .receta-card-bg { transform: scale(1.08); }
+.receta-card-mask {
+  position: absolute; inset: 0;
+  background: rgba(10,9,8,0.5);
+  transition: background-color .35s ease;
+}
+.receta-card:hover .receta-card-mask, .receta-card:focus-within .receta-card-mask { background: rgba(10,9,8,0.72); }
+.receta-card-panel {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px; text-align: center;
+}
+.receta-card-glass {
+  display: flex; flex-direction: column; gap: 8px; align-items: center;
+  max-width: 92%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  padding: 20px 22px;
+  transition: background-color .35s ease, border-color .35s ease, transform .35s cubic-bezier(.16,.8,.24,1);
+}
+.receta-card:hover .receta-card-glass, .receta-card:focus-within .receta-card-glass {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(209,166,106,0.5);
+}
+.receta-card-desc {
+  font-family: 'Inter', sans-serif; font-size: 13.5px; line-height: 1.55; color: #FAF7F4; margin: 0;
+  max-height: 0; opacity: 0; transform: translateY(8px); overflow: hidden;
+  transition: max-height .5s cubic-bezier(.16,.8,.24,1), opacity .4s ease .05s, transform .4s ease .05s, margin-top .4s ease;
+}
+.receta-card:hover .receta-card-desc, .receta-card:focus-within .receta-card-desc {
+  max-height: 200px; opacity: 1; transform: translateY(0); margin-top: 4px;
+}
+.receta-card:focus-within { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+  .receta-card-bg, .receta-card-mask, .receta-card-glass, .receta-card-desc { transition: none; }
+}
+
 /* ---------- Footer nav links ---------- */
 .footer-link { transition: color .22s ease, padding-left .22s ease; }
 .footer-link:hover { color: var(--gold) !important; padding-left: 4px; }
