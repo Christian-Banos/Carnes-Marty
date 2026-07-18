@@ -314,10 +314,13 @@
   function pageRecetas() {
     return '' +
     '<div data-screen-label="Recetas">' +
-      '<div style="background:#1C1C1C;padding:110px 32px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
-        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">De nuestra cocina a la tuya</span>' +
-        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">Recetas</h1>' +
-        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">Ideas simples para sacarle el máximo partido a cada corte.</p>' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_recetas.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
+        '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:64px 32px;max-width:720px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">De nuestra cocina a la tuya</span>' +
+          '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">Recetas</h1>' +
+          '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Ideas simples para sacarle el máximo partido a cada corte.</p>' +
+        '</div>' +
       '</div>' +
       '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;background:#1C1C1C">' +
         recetas.map(recetaCard).join('') +
