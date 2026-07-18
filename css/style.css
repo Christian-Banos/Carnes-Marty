@@ -233,6 +233,8 @@ button { font: inherit; }
   .visitanos-grid { grid-template-columns: 1fr !important; }
   .visitanos-map { order: 2 !important; }
   .visitanos-info { order: 1 !important; align-items: center; text-align: center; }
+  .carnicero-photo { height: auto !important; }
+  .carnicero-photo img { height: auto !important; object-fit: contain !important; }
 }
 @media (max-width: 620px) {
   .grid-4 { grid-template-columns: 1fr !important; }

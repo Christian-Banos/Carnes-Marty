@@ -211,7 +211,7 @@
 
       '<div style="background-color:#101010">' +
         '<div class="section-pad two-col-rev" style="max-width:1280px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
-          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/ribeye-strip-loin.jpeg" alt="Cortes frescos Carnes Marty" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/David_primerPlano.png" alt="Cortes frescos Carnes Marty" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px"></div>' +
           '<div style="display:flex;flex-direction:column;gap:18px">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#d1a66a;font-weight:600">Sobre Carnes Marty</span>' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:32px;margin:0;color:#FFFFFF">Cortes frescos y premium, todos los días</h2>' +
@@ -236,7 +236,7 @@
         '</div>' +
       '</div>' +
 
-      '<div style="position:relative;padding:100px 32px;background-image:url(\'Images/ribeye-strip-loin.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div style="position:relative;padding:100px 32px;background-image:url(\'Images/cortes_frescos.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.65)"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
           '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:0;color:#FAF7F4">Carne fresca, todos los días</h2>' +
@@ -253,7 +253,7 @@
             '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">En Carnes Marty nos encargamos de encontrar el corte perfecto para ti.</p>' +
             '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
           '</div>' +
-          '<div style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
       '</div>' +
 
