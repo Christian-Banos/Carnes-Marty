@@ -167,7 +167,7 @@
       termino: 'Medio rosado',
       metodos: ['sarten', 'parrilla'],
       descripcion: [
-        'El Flat Iron nace de la paleta del vacuno, retirando el tendón central que suele endurecer ese corte. El resultado es una pieza plana y alargada — de ahí su nombre, "plancha de hierro" — que sorprende por su ternura: se considera el segundo corte más suave del vacuno, después del filete.',
+        'El Flat Iron nace de la paleta del vacuno, retirando el tendón central que suele endurecer ese corte. El resultado es una pieza plana y alargada, de ahí su nombre, "plancha de hierro", que sorprende por su ternura: se considera el segundo corte más suave del vacuno, después del filete.',
         'Tiene más sabor que un filete por su ubicación muscular, pero conserva una textura fina y pareja. Ideal para quienes buscan intensidad sin sacrificar terneza.'
       ],
       tip: 'Cocina a fuego alto en sartén o parrilla, 3–4 minutos por lado. Corta siempre en contra de la fibra para maximizar la ternura.',
@@ -220,7 +220,7 @@
         '<div style="position:absolute;inset:' + ringInset + 'px;border-radius:50%;border:1px solid #D1A66A;opacity:0.6"></div>' +
         '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:' + (big ? 4 : 2) + 'px;text-align:center;padding:' + padInset + 'px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:' + (big ? 9 : 7) + 'px;letter-spacing:0.22em;text-transform:uppercase;color:#D1A66A">Carnes Marty</span>' +
-          '<span style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:' + (big ? 16 : 12) + 'px;color:#FAF7F4;line-height:1.15">' + nombre + '</span>' +
+          '<span style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:' + (big ? 16 : 10) + 'px;line-height:1.15;color:#FAF7F4">' + nombre + '</span>' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:' + (big ? 9 : 7) + 'px;letter-spacing:0.3em;text-transform:uppercase;color:#D1A66A;margin-top:2px">★ Premium ★</span>' +
         '</div>' +
       '</div>';
@@ -231,7 +231,7 @@
       '<div onclick="navigate(\'' + p.slug + '\')" class="receta-card hover-card" tabindex="0" style="cursor:pointer;position:relative;height:440px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
         '<div class="receta-card-bg" style="position:absolute;inset:0;background-image:url(\'' + p.img + '\');background-size:cover;background-position:center"></div>' +
         '<div class="receta-card-mask"></div>' +
-        '<div style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.55))">' + premiumStamp(p.nombre, 78) + '</div>' +
+        '<div style="position:absolute;left:20%;bottom:16px;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.55))">' + premiumStamp(p.nombre, 100) + '</div>' +
         '<div class="receta-card-panel">' +
           '<div class="receta-card-glass">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Corte Premium</span>' +
@@ -260,25 +260,27 @@
     }).join('');
     var metodosHtml = p.metodos.map(function (m) { return metodoIcon(m, true); }).join('');
     var descHtml = p.descripcion.map(function (par) {
-      return '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">' + par + '</p>';
+      return '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0;text-align:justify">' + par + '</p>';
     }).join('');
     return '' +
     '<div data-screen-label="' + p.nombre + '">' +
-      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:420px;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#2E2E2E 14px,#2E2E2E 28px);overflow:hidden">' +
-        '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.6) 55%, rgba(10,9,8,0.8) 100%)"></div>' +
-        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:420px;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 32px;flex-wrap:wrap">' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:460px;background-image:url(\'' + p.img + '\');background-size:cover;background-position:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.88) 0%, rgba(10,9,8,0.55) 48%, rgba(10,9,8,0.25) 100%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:460px;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 32px;flex-wrap:wrap">' +
           '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:520px">' +
             '<span onclick="navigate(\'' + p.categoriaPage + '\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</span>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Corte premium · ' + p.categoriaLabel + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
+            '<span style="display:inline-flex;align-items:center;font-family:\'Inter\',sans-serif;font-size:12.5px;color:#FAF7F4;background:rgba(0,0,0,0.4);border:1px solid rgba(209,166,106,0.45);padding:6px 14px;border-radius:20px">' + p.origen + '</span>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
           '</div>' +
           premiumStamp(p.nombre) +
         '</div>' +
       '</div>' +
-      '<div class="premium-body" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;background:#1C1C1C">' +
+      '<div style="background:#141414">' +
+      '<div class="premium-body" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start">' +
         '<div style="background:#F3E9D2;color:#2b1a10;border-radius:6px;padding:24px 22px;transform:rotate(-1.5deg);box-shadow:0 20px 34px rgba(0,0,0,0.4);position:relative">' +
-          '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#1C1C1C;border:3px solid #B99A63"></div>' +
+          '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#141414;border:3px solid #B99A63"></div>' +
           '<span style="display:inline-block;font-family:\'Inter\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#450000;border:1.5px solid #450000;padding:3px 8px;border-radius:2px;transform:rotate(-4deg);margin-bottom:12px">Premium</span>' +
           '<h3 style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:20px;margin:0 0 14px;color:#2b1a10">' + p.nombre + '</h3>' +
           specsHtml +
@@ -286,12 +288,14 @@
         '</div>' +
         '<div style="display:flex;flex-direction:column;gap:18px">' +
           descHtml +
-          '<div style="background:#2E2E2E;border-left:3px solid #D1A66A;border-radius:0 4px 4px 0;padding:16px 18px;display:flex;flex-direction:column;gap:4px">' +
-            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Tip de la casa</span>' +
-            '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.6;color:#FAF7F4;margin:0">' + p.tip + '</p>' +
+          '<div style="position:relative;background:#141414;border:1px dashed rgba(209,166,106,0.4);border-radius:2px;padding:22px 22px 20px 54px;overflow:hidden">' +
+            '<span style="position:absolute;top:2px;left:14px;font-family:\'Playfair Display\',serif;font-weight:700;font-size:50px;line-height:1;color:rgba(209,166,106,0.3)">❝</span>' +
+            '<span style="display:block;font-family:\'Inter\',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D1A66A;margin-bottom:8px">Tip de la casa</span>' +
+            '<p style="font-family:\'Playfair Display\',serif;font-style:italic;font-size:16px;line-height:1.6;color:#FAF7F4;margin:0">' + p.tip + '</p>' +
           '</div>' +
           '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;align-self:flex-start;background:#28741A;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Consultar disponibilidad por WhatsApp</a>' +
         '</div>' +
+      '</div>' +
       '</div>' +
     '</div>';
   }
@@ -728,7 +732,7 @@
     if (animate && content.innerHTML.trim() !== '') {
       content.classList.add('page-fading');
       window.setTimeout(function () {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
         swap();
         requestAnimationFrame(function () {
           requestAnimationFrame(function () { content.classList.remove('page-fading'); });
