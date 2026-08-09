@@ -276,6 +276,10 @@ button { font: inherit; }
   .visitanos-info { order: 1 !important; align-items: center; text-align: center; }
   .carnicero-photo { height: auto !important; }
   .carnicero-photo img { height: auto !important; object-fit: contain !important; }
+  .cat-banner { min-height: 320px !important; }
+  .cat-banner-inner { min-height: 320px !important; justify-content: center !important; }
+  .cat-banner-text { align-items: center !important; text-align: center !important; max-width: 100% !important; }
+  .premium-body { grid-template-columns: 1fr !important; }
 }
 @media (max-width: 620px) {
   .grid-4 { grid-template-columns: 1fr !important; }
@@ -291,6 +295,8 @@ button { font: inherit; }
   .hero-cta-group { flex-direction: column !important; align-items: stretch !important; }
   .hero-btn { width: 100%; }
   .review-card { flex-basis: 260px; }
+  .cat-banner { min-height: 260px !important; }
+  .cat-banner-inner { min-height: 260px !important; }
 }
 @media (max-height: 480px) and (orientation: landscape) {
   .hero-logo { width: 90px !important; height: 90px !important; margin-bottom: 0 !important; }

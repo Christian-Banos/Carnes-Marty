@@ -33,99 +33,144 @@
       label: 'Vacuno',
       eyebrow: 'Categoría V · Carne nacional en vara',
       title: 'Vacuno',
+      bannerImg: 'Images/banner-seccion-vacuno.png',
       description: 'Carne vacuna nacional, clasificación Categoría V. Del asado familiar al corte fino, seleccionada pieza por pieza.',
       cuts: [
-        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios, ideal para ocasiones especiales.' },
-        { nombre: 'Lomo Liso', desc: 'Corte magro y parejo, perfecto para bistecs y filetes a la plancha.' },
-        { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true },
-        { nombre: 'Asiento', desc: 'Tierno y con buen sabor, ideal para bistecs y saltados.' },
-        { nombre: 'Punta de Ganso', desc: 'Corte alargado y sabroso, excelente a la parrilla o al horno.' },
-        { nombre: 'Punta de Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.' },
-        { nombre: 'Punta de Paleta', desc: 'Corte rendidor y tierno, bueno para asar o estofar.' },
-        { nombre: 'Pollo Ganso', desc: 'Corte magro de paleta, ideal para saltados y guisos rápidos.' },
-        { nombre: 'Posta Negra', desc: 'Magra y compacta, perfecta para el horno o el cuchillo.' },
-        { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.' },
-        { nombre: 'Posta de Paleta', desc: 'Corte magro y económico, ideal para guisos y cazuelas.' },
-        { nombre: 'Sobrecostilla', desc: 'Con hueso y buen marmoleo, ideal para cocciones lentas.' },
-        { nombre: 'Huachalomo', desc: 'Corte jugoso y sabroso, clásico para el asado a la olla.' },
-        { nombre: 'Asado Carnicero', desc: 'Corte tradicional con hueso, sabroso para el asado a la olla.' },
-        { nombre: 'Tapabarriga', desc: 'Corte fibroso y sabroso, ideal para moler o guisar.' },
-        { nombre: 'Choclillo', desc: 'Tierno y magro, perfecto para bistecs finos.' },
-        { nombre: 'Tapapecho', desc: 'Corte con buen sabor, ideal para asados a la olla y caldos.' },
-        { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.' },
-        { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.' },
-        { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.' },
-        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.' },
-        { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.' },
-        { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.' },
-        { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.' },
-        { nombre: 'Arrachera', desc: 'Corte marinado clásico de la parrilla, sabroso y jugoso.' },
-        { nombre: 'Flat Iron', desc: 'Corte tierno de paleta, ideal para la plancha o parrilla.' },
-        { nombre: 'Molida Especial', desc: 'Carne molida magra y fresca, ideal para hamburguesas y salsas.' },
-        { nombre: 'Molida Corriente', desc: 'Carne molida rendidora para el día a día.' },
-        { nombre: 'Costilla Colada', desc: 'Costillar con buen marmoleo, ideal para asar a fuego lento.' },
-        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.' },
-        { nombre: 'Aletilla', desc: 'Corte económico y sabroso, ideal para moler o guisar.' },
-        { nombre: 'Osobuco', desc: 'Con hueso y tuétano, perfecto para cazuelas y guisos de olla.' },
-        { nombre: 'Hueso Carnudo', desc: 'Hueso con carne, ideal para caldos y cazuelas con sabor.' },
+        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios, ideal para ocasiones especiales.', metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Lomo Liso', desc: 'Corte magro y parejo, perfecto para bistecs y filetes a la plancha.', metodos: ['sarten', 'parrilla'] },
+        { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true, metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Asiento', desc: 'Tierno y con buen sabor, ideal para bistecs y saltados.', metodos: ['sarten'] },
+        { nombre: 'Punta de Ganso', desc: 'Corte alargado y sabroso, excelente a la parrilla o al horno.', metodos: ['parrilla', 'cacerola'] },
+        { nombre: 'Punta de Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.', metodos: ['parrilla'] },
+        { nombre: 'Punta de Paleta', desc: 'Corte rendidor y tierno, bueno para asar o estofar.', metodos: ['parrilla', 'cacerola'] },
+        { nombre: 'Pollo Ganso', desc: 'Corte magro de paleta, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Posta Negra', desc: 'Magra y compacta, perfecta para el horno o el cuchillo.', metodos: ['cacerola'] },
+        { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.', metodos: ['cacerola'] },
+        { nombre: 'Posta de Paleta', desc: 'Corte magro y económico, ideal para guisos y cazuelas.', metodos: ['cacerola'] },
+        { nombre: 'Sobrecostilla', desc: 'Con hueso y buen marmoleo, ideal para cocciones lentas.', metodos: ['cacerola', 'parrilla'] },
+        { nombre: 'Huachalomo', desc: 'Corte jugoso y sabroso, clásico para el asado a la olla.', metodos: ['cacerola', 'parrilla'] },
+        { nombre: 'Asado Carnicero', desc: 'Corte tradicional con hueso, sabroso para el asado a la olla.', metodos: ['cacerola'] },
+        { nombre: 'Tapabarriga', desc: 'Corte fibroso y sabroso, ideal para moler o guisar.', metodos: ['cacerola', 'sarten'] },
+        { nombre: 'Choclillo', desc: 'Tierno y magro, perfecto para bistecs finos.', metodos: ['sarten', 'parrilla'] },
+        { nombre: 'Tapapecho', desc: 'Corte con buen sabor, ideal para asados a la olla y caldos.', metodos: ['cacerola'] },
+        { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.', metodos: ['cacerola'] },
+        { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.', metodos: ['cacerola'] },
+        { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.', metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.', metodos: ['parrilla'] },
+        { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.', metodos: ['cacerola', 'sarten'] },
+        { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.', metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.', metodos: ['parrilla'] },
+        { nombre: 'Arrachera', desc: 'Corte marinado clásico de la parrilla, sabroso y jugoso.', metodos: ['parrilla'] },
+        { nombre: 'Flat Iron', desc: 'Corte tierno de paleta, ideal para la plancha o parrilla.', metodos: ['sarten', 'parrilla'] },
+        { nombre: 'Molida Especial', desc: 'Carne molida magra y fresca, ideal para hamburguesas y salsas.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Molida Corriente', desc: 'Carne molida rendidora para el día a día.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Costilla Colada', desc: 'Costillar con buen marmoleo, ideal para asar a fuego lento.', metodos: ['parrilla', 'cacerola'] },
+        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.', metodos: ['parrilla'] },
+        { nombre: 'Aletilla', desc: 'Corte económico y sabroso, ideal para moler o guisar.', metodos: ['cacerola'] },
+        { nombre: 'Osobuco', desc: 'Con hueso y tuétano, perfecto para cazuelas y guisos de olla.', metodos: ['cacerola'] },
+        { nombre: 'Hueso Carnudo', desc: 'Hueso con carne, ideal para caldos y cazuelas con sabor.', metodos: ['cacerola'] },
       ],
     },
     cerdo: {
       label: 'Cerdo',
       eyebrow: 'Carne nacional fresca',
       title: 'Cerdo',
+      bannerImg: 'Images/banner-seccion-cerdo.png',
       description: 'Cerdo nacional fresco, del costillar ahumado a los embutidos caseros.',
       cuts: [
-        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true },
-        { nombre: 'Costillar a la Chilena', desc: 'Costillar cortado al estilo tradicional, listo para la olla o el horno.' },
-        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.' },
-        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.' },
-        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.' },
-        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.' },
-        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.' },
-        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.' },
-        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.' },
-        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.' },
-        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.' },
-        { nombre: 'Arrollado Hueso', desc: 'Corte enrollado con hueso, ideal para el horno.' },
-        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.' },
-        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.' },
-        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.' },
+        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true, metodos: ['parrilla'] },
+        { nombre: 'Costillar a la Chilena', desc: 'Costillar cortado al estilo tradicional, listo para la olla o el horno.', metodos: ['cacerola'] },
+        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.', metodos: ['sarten', 'parrilla'] },
+        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.', metodos: ['parrilla'] },
+        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.', metodos: ['parrilla', 'cacerola', 'sarten'] },
+        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.', metodos: ['cacerola'] },
+        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.', metodos: ['cacerola'] },
+        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.', metodos: ['cacerola'] },
+        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.', metodos: ['parrilla'] },
+        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.', metodos: ['cacerola'] },
+        { nombre: 'Arrollado Hueso', desc: 'Corte enrollado con hueso, ideal para el horno.', metodos: ['cacerola'] },
+        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.', metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.', metodos: ['parrilla', 'sarten'] },
       ],
     },
     pollo: {
       label: 'Pollo',
       eyebrow: 'Fresco, nunca congelado',
       title: 'Pollo',
+      bannerImg: 'Images/banner-seccion-pollo.png',
       description: 'Pollo nacional fresco, entero o por presas, listo para el horno, la olla o la parrilla.',
       cuts: [
-        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.', destacado: true },
-        { nombre: 'Pechuga Entera', desc: 'Con hueso y piel, ideal para el horno.' },
-        { nombre: 'Pechuga Deshuesada', desc: 'Sin piel ni hueso, la opción más magra.' },
-        { nombre: 'Trutro Ala', desc: 'Tierno y jugoso, ideal para freír o guisar.' },
-        { nombre: 'Ala Entera', desc: 'Ideales para freír, hornear o ahumar.' },
-        { nombre: 'Contre de Pollo', desc: 'Corte jugoso de la parte alta del muslo, ideal para guisos.' },
-        { nombre: 'Corazón de Pollo', desc: 'Sabroso y firme, clásico para anticuchos.' },
-        { nombre: 'Panita de Pollo', desc: 'Tierna y suave, ideal para saltados y guisos rápidos.' },
-        { nombre: 'Patas de Pollo', desc: 'Clásicas para dar sabor y cuerpo a caldos.' },
+        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.', destacado: true, metodos: ['parrilla', 'cacerola'] },
+        { nombre: 'Pechuga Entera', desc: 'Con hueso y piel, ideal para el horno.', metodos: ['cacerola'] },
+        { nombre: 'Pechuga Deshuesada', desc: 'Sin piel ni hueso, la opción más magra.', metodos: ['sarten', 'parrilla'] },
+        { nombre: 'Trutro Ala', desc: 'Tierno y jugoso, ideal para freír o guisar.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Ala Entera', desc: 'Ideales para freír, hornear o ahumar.', metodos: ['sarten', 'cacerola', 'parrilla'] },
+        { nombre: 'Contre de Pollo', desc: 'Corte jugoso de la parte alta del muslo, ideal para guisos.', metodos: ['cacerola'] },
+        { nombre: 'Corazón de Pollo', desc: 'Sabroso y firme, clásico para anticuchos.', metodos: ['parrilla'] },
+        { nombre: 'Panita de Pollo', desc: 'Tierna y suave, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'] },
+        { nombre: 'Patas de Pollo', desc: 'Clásicas para dar sabor y cuerpo a caldos.', metodos: ['cacerola'] },
       ],
     },
     subproductos: {
       label: 'Sub Productos',
       eyebrow: 'Menudencias y cortes tradicionales',
       title: 'Sub Productos',
+      bannerImg: 'Images/banner-seccion-subproductos.png',
       description: 'Menudencias y cortes tradicionales para las recetas de siempre.',
       cuts: [
-        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.' },
-        { nombre: 'Guata Surtida', desc: 'Selección de guatas variadas, ideal para preparaciones tradicionales.' },
-        { nombre: 'Chanchullo', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.' },
-        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.' },
-        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.' },
-        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.' },
-        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.' },
-        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true },
-        { nombre: 'Chanchas', desc: 'Menudencia tradicional, ideal para preparaciones caseras a la olla.' },
+        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.', metodos: ['cacerola'] },
+        { nombre: 'Guata Surtida', desc: 'Selección de guatas variadas, ideal para preparaciones tradicionales.', metodos: ['cacerola'] },
+        { nombre: 'Chanchullo', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.', metodos: ['cacerola'] },
+        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.', metodos: ['sarten'] },
+        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.', metodos: ['parrilla', 'cacerola'] },
+        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.', metodos: ['cacerola'] },
+        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.', metodos: ['cacerola', 'sarten'] },
+        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true, metodos: ['parrilla'] },
+        { nombre: 'Chanchas', desc: 'Menudencia tradicional, ideal para preparaciones caseras a la olla.', metodos: ['cacerola'] },
       ],
+    },
+  };
+
+  var premiumCuts = {
+    tomahawk: {
+      slug: 'tomahawk',
+      nombre: 'Tomahawk',
+      categoriaPage: 'vaca',
+      categoriaLabel: 'Vacuno',
+      img: 'Images/Tomahawk_sin_texto.png',
+      tagline: 'Costillar con el hueso largo intacto: la pieza que se sirve para compartir en la mesa.',
+      peso: '1,2 – 1,5 kg',
+      porciones: '2 – 3 personas',
+      origen: 'Costillar de vacuno (rib), con el hueso largo "frenchado" a mano',
+      textura: 'Muy marmoleado, jugoso y de sabor intenso',
+      termino: 'Medio – medio rosado',
+      metodos: ['parrilla'],
+      descripcion: [
+        'El Tomahawk es un corte de costillar que conserva el hueso largo completo, limpio de carne en su extremo mediante una técnica llamada "frenchado". Esa forma, que recuerda a un hacha de guerra, le da su nombre.',
+        'En esencia es un ribeye con hueso: el mismo marmoleado fino y la misma jugosidad, con el sabor extra que aporta cocinar la carne pegada al hueso. Por su tamaño, es una pieza pensada para compartir.'
+      ],
+      tip: 'Sella 2–3 minutos por lado a fuego fuerte y termina la cocción a fuego indirecto hasta el punto deseado. Deja reposar 8–10 minutos antes de cortar.',
+    },
+    flatiron: {
+      slug: 'flatiron',
+      nombre: 'Flat Iron Steak',
+      categoriaPage: 'vaca',
+      categoriaLabel: 'Vacuno',
+      img: 'Images/flat_iron_steak_sin_texto.png',
+      tagline: 'De la paleta del vacuno, pero con una ternura que sorprende.',
+      peso: '250 – 350 g por porción',
+      porciones: '1 persona',
+      origen: 'Paleta de vacuno (top blade), sin el tendón central',
+      textura: 'Fibra fina y pareja, muy tierno para ser un corte de paleta',
+      termino: 'Medio rosado',
+      metodos: ['sarten', 'parrilla'],
+      descripcion: [
+        'El Flat Iron nace de la paleta del vacuno, retirando el tendón central que suele endurecer ese corte. El resultado es una pieza plana y alargada — de ahí su nombre, "plancha de hierro" — que sorprende por su ternura: se considera el segundo corte más suave del vacuno, después del filete.',
+        'Tiene más sabor que un filete por su ubicación muscular, pero conserva una textura fina y pareja. Ideal para quienes buscan intensidad sin sacrificar terneza.'
+      ],
+      tip: 'Cocina a fuego alto en sartén o parrilla, 3–4 minutos por lado. Corta siempre en contra de la fibra para maximizar la ternura.',
     },
   };
 
@@ -143,25 +188,129 @@
     { titulo: 'Churrasco a la plancha', corte: 'Malaya', tiempo: '15 min', dificultad: 'Fácil', desc: 'Ideal para el día a día: rápido, sabroso y rendidor.', img: null },
   ];
 
-  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto'];
+  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto', 'tomahawk', 'flatiron'];
   var state = { page: 'inicio' };
 
-  function placeholder(label) {
-    return '<div style="height:170px;position:relative;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px);display:flex;align-items:center;justify-content:center;color:#E2E8F0;font-family:monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;text-align:center;padding:10px">FOTO — ' + label + '</div>';
+  var metodoInfo = {
+    parrilla: { label: 'Parrilla', emoji: '🔥' },
+    sarten: { label: 'Sartén', emoji: '🍳' },
+    cacerola: { label: 'Cacerola', emoji: '🍲' },
+  };
+
+  function metodoIcon(name, light) {
+    var info = metodoInfo[name];
+    if (!info) return '';
+    var content = info.svg
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + info.svg + '</svg>'
+      : info.emoji;
+    var bg = light ? 'rgba(69,0,0,0.08)' : 'rgba(255,255,255,0.12)';
+    var border = light ? 'rgba(69,0,0,0.25)' : 'rgba(255,255,255,0.18)';
+    var color = light ? '#450000' : '#D1A66A';
+    return '<span title="' + info.label + '" style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:' + bg + ';border:1px solid ' + border + ';color:' + color + ';font-size:16px;line-height:1">' + content + '</span>';
+  }
+
+  function premiumStamp(nombre, size) {
+    size = size || 180;
+    var big = size >= 150;
+    var ringInset = Math.round(size * 0.045);
+    var padInset = Math.round(size * 0.12);
+    return '' +
+      '<div style="position:relative;width:' + size + 'px;height:' + size + 'px;flex-shrink:0;transform:rotate(-6deg)">' +
+        '<div style="position:absolute;inset:0;border-radius:50%;border:' + (big ? 3 : 2) + 'px solid #D1A66A"></div>' +
+        '<div style="position:absolute;inset:' + ringInset + 'px;border-radius:50%;border:1px solid #D1A66A;opacity:0.6"></div>' +
+        '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:' + (big ? 4 : 2) + 'px;text-align:center;padding:' + padInset + 'px">' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:' + (big ? 9 : 7) + 'px;letter-spacing:0.22em;text-transform:uppercase;color:#D1A66A">Carnes Marty</span>' +
+          '<span style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:' + (big ? 16 : 12) + 'px;color:#FAF7F4;line-height:1.15">' + nombre + '</span>' +
+          '<span style="font-family:\'Inter\',sans-serif;font-size:' + (big ? 9 : 7) + 'px;letter-spacing:0.3em;text-transform:uppercase;color:#D1A66A;margin-top:2px">★ Premium ★</span>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function premiumTeaserCard(p) {
+    return '' +
+      '<div onclick="navigate(\'' + p.slug + '\')" class="receta-card hover-card" tabindex="0" style="cursor:pointer;position:relative;height:440px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
+        '<div class="receta-card-bg" style="position:absolute;inset:0;background-image:url(\'' + p.img + '\');background-size:cover;background-position:center"></div>' +
+        '<div class="receta-card-mask"></div>' +
+        '<div style="position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.55))">' + premiumStamp(p.nombre, 78) + '</div>' +
+        '<div class="receta-card-panel">' +
+          '<div class="receta-card-glass">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Corte Premium</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:26px;margin:0;color:#FAF7F4">' + p.nombre + '</h3>' +
+            '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver corte →</span>' +
+            '<p class="receta-card-desc">' + p.tagline + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function pagePremiumDetail(slug) {
+    var p = premiumCuts[slug];
+    var waText = encodeURIComponent('¡Hola! 👋  Quería consultar por el corte premium ' + p.nombre + ' que vi en su página.\n\n¿Me podrían contar el precio y si tienen disponibilidad?\n\n¡Muchas gracias! 😊');
+    var specs = [
+      ['Peso', p.peso],
+      ['Porciones', p.porciones],
+      ['Origen', p.origen],
+      ['Textura', p.textura],
+      ['Término recomendado', p.termino],
+    ];
+    var specsHtml = specs.map(function (s) {
+      return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(43,26,16,0.25);font-family:\'Inter\',sans-serif;font-size:12.5px">' +
+        '<span style="font-weight:600;color:#6b4326">' + s[0] + '</span><span style="text-align:right;color:#2b1a10">' + s[1] + '</span>' +
+      '</div>';
+    }).join('');
+    var metodosHtml = p.metodos.map(function (m) { return metodoIcon(m, true); }).join('');
+    var descHtml = p.descripcion.map(function (par) {
+      return '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">' + par + '</p>';
+    }).join('');
+    return '' +
+    '<div data-screen-label="' + p.nombre + '">' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:420px;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#2E2E2E 14px,#2E2E2E 28px);overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.6) 55%, rgba(10,9,8,0.8) 100%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:420px;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 32px;flex-wrap:wrap">' +
+          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:520px">' +
+            '<span onclick="navigate(\'' + p.categoriaPage + '\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</span>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Corte premium · ' + p.categoriaLabel + '</span>' +
+            '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
+          '</div>' +
+          premiumStamp(p.nombre) +
+        '</div>' +
+      '</div>' +
+      '<div class="premium-body" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;background:#1C1C1C">' +
+        '<div style="background:#F3E9D2;color:#2b1a10;border-radius:6px;padding:24px 22px;transform:rotate(-1.5deg);box-shadow:0 20px 34px rgba(0,0,0,0.4);position:relative">' +
+          '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#1C1C1C;border:3px solid #B99A63"></div>' +
+          '<span style="display:inline-block;font-family:\'Inter\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#450000;border:1.5px solid #450000;padding:3px 8px;border-radius:2px;transform:rotate(-4deg);margin-bottom:12px">Premium</span>' +
+          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:20px;margin:0 0 14px;color:#2b1a10">' + p.nombre + '</h3>' +
+          specsHtml +
+          '<div style="border-top:1px dashed #B99A63;margin:14px 0 0;padding-top:14px;display:flex;gap:8px;justify-content:flex-start">' + metodosHtml + '</div>' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;gap:18px">' +
+          descHtml +
+          '<div style="background:#2E2E2E;border-left:3px solid #D1A66A;border-radius:0 4px 4px 0;padding:16px 18px;display:flex;flex-direction:column;gap:4px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Tip de la casa</span>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.6;color:#FAF7F4;margin:0">' + p.tip + '</p>' +
+          '</div>' +
+          '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;align-self:flex-start;background:#28741A;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Consultar disponibilidad por WhatsApp</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
   }
 
   function cutCard(cut) {
     var waText = encodeURIComponent('¡Hola! 👋  Quería consultar por el producto ' + cut.nombre + ' que vi en su página.\n\n¿Me podrían contar el precio y si tienen disponibilidad?\n\n¡Muchas gracias! 😊');
+    var metodosHtml = (cut.metodos || []).map(metodoIcon).join('');
     return '' +
-      '<div class="cut-card" style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:rgba(69,0,0,0.55);backdrop-filter:blur(6px)">' +
-        placeholder(cut.nombre) +
-        '<div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">' +
-          '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">' +
-            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:19px;margin:0;color:#FAF7F4">' + cut.nombre + '</h3>' +
-            (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px;white-space:nowrap">Favorito</span>' : '') +
+      '<div class="receta-card cut-card hover-card" tabindex="0" style="position:relative;height:400px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
+        '<div class="receta-card-bg" style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>' +
+        '<div class="receta-card-mask"></div>' +
+        '<div class="receta-card-panel">' +
+          '<div class="receta-card-glass" style="gap:10px">' +
+            (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px">Favorito</span>' : '') +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;margin:0;color:#FAF7F4">' + cut.nombre + '</h3>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#FAF7F4;margin:0">' + cut.desc + '</p>' +
+            '<div style="display:flex;gap:8px;justify-content:center;margin-top:2px">' + metodosHtml + '</div>' +
+            '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:4px">Consultar disponibilidad →</a>' +
           '</div>' +
-          '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0;flex:1">' + cut.desc + '</p>' +
-          '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
         '</div>' +
       '</div>';
   }
@@ -242,6 +391,8 @@
       return '<div style="display:flex;flex-direction:column;gap:4px;padding:8px"><span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:17px;color:#D1A66A">' + b.titulo + '</span><span style="font-family:\'Inter\',sans-serif;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF">' + b.sub + '</span></div>';
     }).join('');
 
+    var premiumHtml = Object.keys(premiumCuts).map(function (key) { return premiumTeaserCard(premiumCuts[key]); }).join('');
+
     var recetasHome = recetas.slice(0, 3).map(function (r) {
       var media = r.img
         ? '<div style="height:160px;border-radius:5px;overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
@@ -295,6 +446,17 @@
         '</div>' +
       '</div>' +
 
+      '<div style="padding:80px 32px;background-color:#101010">' +
+        '<div style="max-width:1000px;margin:0 auto">' +
+          '<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:36px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Selección limitada</span>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FFFFFF">Cortes Premium</h2>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:6px 0 0">Piezas especiales con ficha propia: origen, textura y la mejor forma de cocinarlas.</p>' +
+          '</div>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">' + premiumHtml + '</div>' +
+        '</div>' +
+      '</div>' +
+
       '<div style="position:relative;padding:100px 32px;background-image:url(\'Images/cortes_frescos.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.65)"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
@@ -345,10 +507,15 @@
     var c = catalog[key];
     return '' +
     '<div data-screen-label="' + c.label + '">' +
-      '<div style="background:#1C1C1C;padding:110px 32px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">' +
-        '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">' + c.eyebrow + '</span>' +
-        '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4">' + c.title + '</h1>' +
-        '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">' + c.description + '</p>' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:420px;background-image:url(\'' + c.bannerImg + '\');background-size:cover;background-position:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.68) 42%, rgba(10,9,8,0.2) 100%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:420px;display:flex;align-items:center;padding:64px 32px">' +
+          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:16px;max-width:520px">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">' + c.eyebrow + '</span>' +
+            '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + c.title + '</h1>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + c.description + '</p>' +
+          '</div>' +
+        '</div>' +
       '</div>' +
       '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:#1C1C1C">' +
         c.cuts.map(cutCard).join('') +
@@ -501,6 +668,7 @@
   function buildPageHtml() {
     if (state.page === 'inicio') return pageInicio();
     if (catalog[state.page]) return pageCategoria(state.page);
+    if (premiumCuts[state.page]) return pagePremiumDetail(state.page);
     if (state.page === 'recomendaciones') return pageRecomendaciones();
     if (state.page === 'recetas') return pageRecetas();
     if (state.page === 'nosotros') return pageNosotros();
@@ -522,7 +690,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
     targets.forEach(function (el, i) {
       el.classList.add('reveal');
       if (i === 0) {
