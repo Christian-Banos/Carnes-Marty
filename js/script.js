@@ -30,46 +30,101 @@
 
   var catalog = {
     vaca: {
-      label: 'Carnicería',
+      label: 'Vacuno',
       eyebrow: 'Categoría V · Carne nacional en vara',
-      title: 'Carnicería',
+      title: 'Vacuno',
       description: 'Carne vacuna nacional, clasificación Categoría V. Del asado familiar al corte fino, seleccionada pieza por pieza.',
       cuts: [
+        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios, ideal para ocasiones especiales.' },
+        { nombre: 'Lomo Liso', desc: 'Corte magro y parejo, perfecto para bistecs y filetes a la plancha.' },
         { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true },
-        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios.' },
-        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.' },
-        { nombre: 'Punta Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.' },
+        { nombre: 'Asiento', desc: 'Tierno y con buen sabor, ideal para bistecs y saltados.' },
+        { nombre: 'Punta de Ganso', desc: 'Corte alargado y sabroso, excelente a la parrilla o al horno.' },
+        { nombre: 'Punta de Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.' },
+        { nombre: 'Punta de Paleta', desc: 'Corte rendidor y tierno, bueno para asar o estofar.' },
+        { nombre: 'Pollo Ganso', desc: 'Corte magro de paleta, ideal para saltados y guisos rápidos.' },
+        { nombre: 'Posta Negra', desc: 'Magra y compacta, perfecta para el horno o el cuchillo.' },
         { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.' },
+        { nombre: 'Posta de Paleta', desc: 'Corte magro y económico, ideal para guisos y cazuelas.' },
+        { nombre: 'Sobrecostilla', desc: 'Con hueso y buen marmoleo, ideal para cocciones lentas.' },
+        { nombre: 'Huachalomo', desc: 'Corte jugoso y sabroso, clásico para el asado a la olla.' },
+        { nombre: 'Asado Carnicero', desc: 'Corte tradicional con hueso, sabroso para el asado a la olla.' },
+        { nombre: 'Tapabarriga', desc: 'Corte fibroso y sabroso, ideal para moler o guisar.' },
+        { nombre: 'Choclillo', desc: 'Tierno y magro, perfecto para bistecs finos.' },
+        { nombre: 'Tapapecho', desc: 'Corte con buen sabor, ideal para asados a la olla y caldos.' },
         { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.' },
-        { nombre: 'Malaya', desc: 'Corte delgado y sabroso, rápido en la parrilla.' },
+        { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.' },
         { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.' },
+        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.' },
+        { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.' },
+        { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.' },
+        { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.' },
+        { nombre: 'Arrachera', desc: 'Corte marinado clásico de la parrilla, sabroso y jugoso.' },
+        { nombre: 'Flat Iron', desc: 'Corte tierno de paleta, ideal para la plancha o parrilla.' },
+        { nombre: 'Molida Especial', desc: 'Carne molida magra y fresca, ideal para hamburguesas y salsas.' },
+        { nombre: 'Molida Corriente', desc: 'Carne molida rendidora para el día a día.' },
+        { nombre: 'Costilla Colada', desc: 'Costillar con buen marmoleo, ideal para asar a fuego lento.' },
+        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.' },
+        { nombre: 'Aletilla', desc: 'Corte económico y sabroso, ideal para moler o guisar.' },
+        { nombre: 'Osobuco', desc: 'Con hueso y tuétano, perfecto para cazuelas y guisos de olla.' },
+        { nombre: 'Hueso Carnudo', desc: 'Hueso con carne, ideal para caldos y cazuelas con sabor.' },
       ],
     },
     cerdo: {
-      label: 'Charcutería',
+      label: 'Cerdo',
       eyebrow: 'Carne nacional fresca',
-      title: 'Charcutería',
-      description: 'Cerdo nacional fresco, del costillar ahumado al filete magro para el día a día.',
+      title: 'Cerdo',
+      description: 'Cerdo nacional fresco, del costillar ahumado a los embutidos caseros.',
       cuts: [
         { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true },
-        { nombre: 'Pernil', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.' },
+        { nombre: 'Costillar a la Chilena', desc: 'Costillar cortado al estilo tradicional, listo para la olla o el horno.' },
         { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.' },
+        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.' },
+        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.' },
+        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.' },
+        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.' },
+        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.' },
+        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.' },
         { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.' },
-        { nombre: 'Filete de Cerdo', desc: 'Magro y suave, perfecto para saltados.' },
-        { nombre: 'Pulpa', desc: 'Versátil para asar, guisar o moler.' },
+        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.' },
+        { nombre: 'Arrollado Hueso', desc: 'Corte enrollado con hueso, ideal para el horno.' },
+        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.' },
+        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.' },
+        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.' },
       ],
     },
     pollo: {
-      label: 'Pollería',
+      label: 'Pollo',
       eyebrow: 'Fresco, nunca congelado',
-      title: 'Pollería',
+      title: 'Pollo',
       description: 'Pollo nacional fresco, entero o por presas, listo para el horno, la olla o la parrilla.',
       cuts: [
-        { nombre: 'Pollo Entero', desc: 'Fresco, nacional, ideal para el horno.', destacado: true },
-        { nombre: 'Pechuga', desc: 'Sin piel ni hueso, la opción más magra.' },
-        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.' },
-        { nombre: 'Alitas', desc: 'Ideales para freír, hornear o ahumar.' },
-        { nombre: 'Muslos', desc: 'Tiernos y con sabor, listos para guisar.' },
+        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.', destacado: true },
+        { nombre: 'Pechuga Entera', desc: 'Con hueso y piel, ideal para el horno.' },
+        { nombre: 'Pechuga Deshuesada', desc: 'Sin piel ni hueso, la opción más magra.' },
+        { nombre: 'Trutro Ala', desc: 'Tierno y jugoso, ideal para freír o guisar.' },
+        { nombre: 'Ala Entera', desc: 'Ideales para freír, hornear o ahumar.' },
+        { nombre: 'Contre de Pollo', desc: 'Corte jugoso de la parte alta del muslo, ideal para guisos.' },
+        { nombre: 'Corazón de Pollo', desc: 'Sabroso y firme, clásico para anticuchos.' },
+        { nombre: 'Panita de Pollo', desc: 'Tierna y suave, ideal para saltados y guisos rápidos.' },
+        { nombre: 'Patas de Pollo', desc: 'Clásicas para dar sabor y cuerpo a caldos.' },
+      ],
+    },
+    subproductos: {
+      label: 'Sub Productos',
+      eyebrow: 'Menudencias y cortes tradicionales',
+      title: 'Sub Productos',
+      description: 'Menudencias y cortes tradicionales para las recetas de siempre.',
+      cuts: [
+        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.' },
+        { nombre: 'Guata Surtida', desc: 'Selección de guatas variadas, ideal para preparaciones tradicionales.' },
+        { nombre: 'Chanchullo', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.' },
+        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.' },
+        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.' },
+        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.' },
+        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.' },
+        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true },
+        { nombre: 'Chanchas', desc: 'Menudencia tradicional, ideal para preparaciones caseras a la olla.' },
       ],
     },
   };
@@ -88,7 +143,7 @@
     { titulo: 'Churrasco a la plancha', corte: 'Malaya', tiempo: '15 min', dificultad: 'Fácil', desc: 'Ideal para el día a día: rápido, sabroso y rendidor.', img: null },
   ];
 
-  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'recomendaciones', 'recetas', 'nosotros', 'contacto'];
+  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto'];
   var state = { page: 'inicio' };
 
   function placeholder(label) {
@@ -96,8 +151,9 @@
   }
 
   function cutCard(cut) {
+    var waText = encodeURIComponent('¡Hola! 👋  Quería consultar por el producto ' + cut.nombre + ' que vi en su página.\n\n¿Me podrían contar el precio y si tienen disponibilidad?\n\n¡Muchas gracias! 😊');
     return '' +
-      '<div class="cut-card" style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:#2E2E2E">' +
+      '<div class="cut-card" style="border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background:rgba(69,0,0,0.55);backdrop-filter:blur(6px)">' +
         placeholder(cut.nombre) +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:8px;flex:1">' +
           '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">' +
@@ -105,7 +161,7 @@
             (cut.destacado ? '<span style="font-family:\'Inter\',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#855F4F;color:#FAF7F4;padding:4px 8px;border-radius:2px;white-space:nowrap">Favorito</span>' : '') +
           '</div>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0;flex:1">' + cut.desc + '</p>' +
-          '<a href="https://wa.me/56940691425" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
+          '<a href="https://wa.me/56940691425?text=' + waText + '" target="_blank" rel="noopener" class="link-arrow" style="text-decoration:none;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:6px">Consultar disponibilidad →</a>' +
         '</div>' +
       '</div>';
   }
@@ -160,7 +216,7 @@
 
   function pageInicio() {
     var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/charcuteria.jpeg' };
-    var catNames = { vaca: 'Carnicería', pollo: 'Pollería', cerdo: 'Charcutería' };
+    var catNames = { vaca: 'Vacuno', pollo: 'Pollo', cerdo: 'Cerdo' };
     var catDesc = {
       vaca: 'Categoría V, cortes premium para la parrilla y la olla.',
       pollo: 'Pollo nacional fresco, entero o por presas.',

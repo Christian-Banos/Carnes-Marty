@@ -15,7 +15,10 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/css/style.css)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/js/script.js)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/Images/LogoPrincipal.png)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/Manual_de_Marca_Carnes_Marty.pdf)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://carnes-marty.vercel.app/Manual_de_Marca_Carnes_Marty.pdf)",
+      "Read(//Users/christianbanospadilla/.claude/skills/**)",
+      "Read(//Users/christianbanospadilla/.claude/**)",
+      "Bash(npm ls *)"
     ]
   }
 }
