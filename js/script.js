@@ -174,11 +174,105 @@
     },
   };
 
-  var recomendados = [
-    { nombre: 'Lomo Vetado', categoria: 'Vaca', motivo: 'El corte más marmoleado de la casa: jugoso al punto en la parrilla y el que más repiten nuestros clientes.', img: null },
-    { nombre: 'Costillar de Cerdo', categoria: 'Cerdo', motivo: 'Ahumado lento y con hueso, el favorito para los asados de fin de semana.', img: 'Images/costillar-cerdo.jpeg' },
-    { nombre: 'Punta Picana', categoria: 'Vaca', motivo: 'Sabor intenso y textura tierna, ideal para juntas familiares grandes.', img: null },
-    { nombre: 'Pollo Entero', categoria: 'Pollo', motivo: 'Siempre fresco y nacional, nunca congelado: rinde parejo en el horno.', img: 'Images/pollo-al-horno.jpeg' },
+  var recomendadoCuts = {
+    'entrana': {
+      slug: 'entrana', nombre: 'Entraña', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: null,
+      tagline: 'Fina, fibrosa y directa a las brasas: el corte que nunca falta en la parrilla.',
+      peso: '400 – 600 g', porciones: '2 – 3 personas', origen: 'Diafragma del vacuno, el corte más fino y fibroso de la parrilla', textura: 'Fibra larga y marcada, muy jugosa cuando se cocina rápido a fuego fuerte', termino: 'Término medio', metodos: ['parrilla'],
+      descripcion: [
+        'La entraña es el músculo del diafragma del vacuno, un corte delgado y de fibra larga que absorbe muy bien la sal gruesa y se cocina en minutos. Es uno de los clásicos infaltables de cualquier parrilla chilena.',
+        'Su grosor parejo permite un sellado rápido por ambos lados, logrando un exterior dorado y un interior jugoso sin perder tiempo frente a las brasas. Por su sabor intenso, no necesita mucho más que sal.'
+      ],
+      tip: 'Cocínala a fuego fuerte apenas 2-3 minutos por lado: su grosor fino hace que se pase de cocción muy rápido. Córtala siempre en contra de la fibra.',
+    },
+    'lomo-vetado': {
+      slug: 'lomo-vetado', nombre: 'Lomo Vetado', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: null,
+      tagline: 'El corte más marmoleado de la casa, jugoso al punto en cada asado.',
+      peso: '300 – 400 g por porción', porciones: '1 persona', origen: 'Zona dorsal del vacuno (ribeye), con buen marmoleo intramuscular', textura: 'Muy marmoleada y jugosa, con un anillo de grasa característico', termino: 'Término medio', metodos: ['parrilla', 'sarten'],
+      descripcion: [
+        'El Lomo Vetado es el ribeye chileno: un corte con marmoleo parejo que se derrite durante la cocción, aportando jugosidad y sabor. Es, por lejos, el corte que más repiten nuestros clientes.',
+        'Su grasa intramuscular lo hace muy indulgente con errores de cocción, por lo que es una excelente puerta de entrada para quienes recién se animan con la parrilla.'
+      ],
+      tip: 'Sella a fuego fuerte 2-3 minutos por lado y termina a fuego medio hasta el punto deseado. Deja reposar 5 minutos antes de cortar.',
+    },
+    'arrachera': {
+      slug: 'arrachera', nombre: 'Arrachera', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: null,
+      tagline: 'Marinada y de fibra larga, ideal para compartir en grupos grandes.',
+      peso: '500 g – 1 kg', porciones: '3 – 4 personas', origen: 'Corte marinado de la parrilla, de fibra larga y sabor intenso', textura: 'Fibrosa y jugosa, potenciada por el marinado', termino: 'Término medio', metodos: ['parrilla'],
+      descripcion: [
+        'La arrachera es un corte de fibra larga que se sirve marinado, una técnica que ablanda la carne y le suma sabor antes de llegar a las brasas. Es uno de los cortes más populares para juntas y parrillas de fin de semana.',
+        'Se cocina rápido y rinde harto, por lo que es ideal para grupos grandes. Su jugosidad depende en gran parte del corte en contra de la fibra al servir.'
+      ],
+      tip: 'Corta siempre en diagonal y en contra de la fibra: es la diferencia entre una arrachera tierna y una dura de masticar.',
+    },
+    'asado-de-tira': {
+      slug: 'asado-de-tira', nombre: 'Asado de Tira', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: null,
+      tagline: 'El costillar cortado transversal, la imagen misma del asado chileno.',
+      peso: '1 – 1,5 kg', porciones: '4 – 5 personas', origen: 'Costillar de vacuno cortado transversalmente, con hueso', textura: 'Con hueso y buen marmoleo, se ablanda con calor sostenido', termino: 'Término medio a bien cocido', metodos: ['parrilla'],
+      descripcion: [
+        'El Asado de Tira es el corte más tradicional del asado chileno: costillar cortado transversalmente, dejando el hueso a la vista en cada trozo. Es la imagen misma del domingo en familia.',
+        'El hueso aporta sabor durante toda la cocción, y su grasa entreverada mantiene la carne jugosa incluso con cocciones más largas a fuego medio.'
+      ],
+      tip: 'Dale más tiempo a fuego medio que a fuego fuerte: el hueso y la grasa necesitan calor sostenido para ablandarse bien.',
+    },
+    'filete': {
+      slug: 'filete', nombre: 'Filete', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: null,
+      tagline: 'El corte más tierno del vacuno, sin grasa ni nervios.',
+      peso: '200 – 250 g por porción', porciones: '1 persona', origen: 'Lomo interno del vacuno, sin grasa ni nervios', textura: 'Extremadamente tierna, con sabor suave', termino: 'Término medio - medio rosado', metodos: ['parrilla', 'sarten'],
+      descripcion: [
+        'El filete es el corte más tierno del vacuno: un músculo que casi no trabaja, por lo que prácticamente no tiene grasa ni nervios. Es la elección clásica para ocasiones especiales.',
+        'Su sabor es más suave que otros cortes marmoleados, lo que lo hace ideal para acompañar con salsas o mantequillas compuestas que realcen su textura sedosa.'
+      ],
+      tip: 'Al ser tan magro, cocínalo a fuego medio-alto y no lo dejes pasar de término medio para que no pierda jugosidad.',
+    },
+    'entrecot': {
+      slug: 'entrecot', nombre: 'Entrecot', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: null,
+      tagline: 'Con hueso, jugoso y marmoleado: una experiencia más elaborada en la mesa.',
+      peso: '350 – 450 g (con hueso)', porciones: '1 – 2 personas', origen: 'Costilla de vacuno con hueso, corte marmoleado', textura: 'Jugosa y marmoleada, con el sabor extra del hueso', termino: 'Término medio', metodos: ['parrilla', 'sarten'],
+      descripcion: [
+        'El Entrecot conserva el hueso durante la cocción, lo que potencia su sabor y ayuda a mantener la jugosidad de la carne. Es un corte marmoleado, pensado para quienes buscan una experiencia más elaborada.',
+        'Por su grosor, admite bien tanto la parrilla como la sartén, siempre que se le dé tiempo para que el calor llegue parejo hasta el hueso.'
+      ],
+      tip: 'Sella primero los bordes apoyando el hueso sobre la parrilla o sartén, luego cocina de plano por ambos lados hasta el punto deseado.',
+    },
+    'molida-especial': {
+      slug: 'molida-especial', nombre: 'Molida Especial', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: null,
+      tagline: 'Molida fresca a diario, ideal para hamburguesas y salsas con cuerpo.',
+      peso: '500 g / 1 kg', porciones: 'Rinde 4-6 hamburguesas de 125 g', origen: 'Molida magra y fresca, seleccionada especialmente para el día a día', textura: 'Fina y pareja, con el punto justo de grasa para no secarse', termino: 'Bien cocida', metodos: ['sarten', 'cacerola'],
+      descripcion: [
+        'La Molida Especial se muele fresca cada día, con una proporción de grasa pensada para hamburguesas jugosas y salsas con buen cuerpo. Es la base perfecta para el día a día en la cocina.',
+        'A diferencia de la molida corriente, tiene un poco más de cuidado en la selección de la carne base, lo que se nota en el sabor final del plato.'
+      ],
+      tip: 'No la manipules demasiado al formar las hamburguesas: mientras menos se trabaje, más jugosa queda la carne al cocinarla.',
+    },
+    'posta-rosada': {
+      slug: 'posta-rosada', nombre: 'Posta Rosada', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: null,
+      tagline: 'Magra y económica, perfecta para el horno de todos los días.',
+      peso: '1 kg', porciones: '4 – 6 personas', origen: 'Corte magro de la posta, versátil para distintas preparaciones', textura: 'Magra y compacta, se ablanda bien con cocción lenta', termino: 'Bien cocida', metodos: ['cacerola'],
+      descripcion: [
+        'La Posta Rosada es un corte magro y accesible, perfecto para el consumo diario. Rinde muy bien en preparaciones al horno o en cocciones lentas donde tiene tiempo de ablandarse.',
+        'Al tener poca grasa, es una buena opción para quienes buscan comer más liviano sin sacrificar sabor, siempre que se cocine con algo de líquido o salsa.'
+      ],
+      tip: 'Por ser un corte magro, cocínala con algo de líquido (caldo, salsa o vino) para que no se seque durante la cocción.',
+    },
+    'osobuco': {
+      slug: 'osobuco', nombre: 'Osobuco', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: null,
+      tagline: 'Con hueso y tuétano, la base ideal para cazuelas y guisos de olla.',
+      peso: '4 trozos (aprox. 1,2 kg)', porciones: '4 personas', origen: 'Corte transversal de la pierna, con hueso y tuétano', textura: 'Firme en crudo, se vuelve muy tierna con cocción lenta', termino: 'Cocción lenta hasta que se separe del hueso', metodos: ['cacerola'],
+      descripcion: [
+        'El Osobuco es un corte con hueso y tuétano, ideal para cazuelas y guisos de olla. El hueso aporta un sabor profundo al caldo mientras la carne se ablanda lentamente.',
+        'Es uno de los cortes favoritos para recetas de olla, como la cazuela de vacuno, gracias a la untuosidad que le entrega el tuétano al caldo durante la cocción.'
+      ],
+      tip: 'Cocínalo siempre a fuego bajo y con tapa: la cocción lenta es la que logra que la carne se separe sola del hueso.',
+    },
+  };
+
+  function getRecomendado(slug) { return premiumCuts[slug] || recomendadoCuts[slug]; }
+
+  var recomendadoSecciones = [
+    { titulo: 'Cortes estrella para parrilla', desc: 'Los cortes más vistosos y de mayor rotación en los asados: los que captan la atención de inmediato.', items: ['tomahawk', 'entrana', 'lomo-vetado', 'arrachera', 'asado-de-tira'] },
+    { titulo: 'Cortes premium para ocasiones especiales', desc: 'Para quienes buscan algo más refinado: mejor presentación y una experiencia distinta en la mesa.', items: ['filete', 'entrecot', 'flatiron'] },
+    { titulo: 'Opciones para el día a día', desc: 'Cortes accesibles y de uso frecuente, infaltables en la cocina de todos los días.', items: ['molida-especial', 'posta-rosada', 'osobuco'] },
   ];
 
   var recetas = [
@@ -242,7 +336,7 @@
   var recetasBySlug = {};
   recetas.forEach(function (r) { recetasBySlug[r.slug] = r; });
 
-  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto', 'tomahawk', 'flatiron', 'asado-parrilla', 'costillar-ahumado', 'pollo-horno', 'churrasco-plancha', 'chorrillana', 'empanadas-de-pino', 'anticuchos', 'carne-al-jugo', 'cazuela-de-vacuno', 'pollo-arvejado', 'pastel-de-choclo', 'carbonada', 'plateada-al-horno', 'asado-tradicional'];
+  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto', 'tomahawk', 'flatiron', 'asado-parrilla', 'costillar-ahumado', 'pollo-horno', 'churrasco-plancha', 'chorrillana', 'empanadas-de-pino', 'anticuchos', 'carne-al-jugo', 'cazuela-de-vacuno', 'pollo-arvejado', 'pastel-de-choclo', 'carbonada', 'plateada-al-horno', 'asado-tradicional', 'entrana', 'lomo-vetado', 'arrachera', 'asado-de-tira', 'filete', 'entrecot', 'molida-especial', 'posta-rosada', 'osobuco'];
   var state = { page: 'inicio' };
 
   var metodoInfo = {
@@ -316,29 +410,34 @@
     var descHtml = p.descripcion.map(function (par) {
       return '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0;text-align:justify">' + par + '</p>';
     }).join('');
+    var mediaHtml = '<div style="position:relative;border-radius:6px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.35);height:100%;min-height:320px">' +
+      '<img src="' + p.img + '" alt="' + p.nombre + '" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block">' +
+      '<div style="position:absolute;bottom:14px;right:14px;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.55))">' + premiumStamp(p.nombre, 110) + '</div>' +
+    '</div>';
     return '' +
     '<div data-screen-label="' + p.nombre + '">' +
-      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:460px;background-image:url(\'' + p.img + '\');background-size:cover;background-position:center;overflow:hidden">' +
-        '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.88) 0%, rgba(10,9,8,0.55) 48%, rgba(10,9,8,0.25) 100%)"></div>' +
-        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:460px;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 32px;flex-wrap:wrap">' +
-          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:520px">' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:280px;background-image:url(\'' + p.img + '\');background-size:cover;background-position:center;overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%, rgba(69,0,0,0.55), #141414 72%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:280px;display:flex;align-items:center;padding:64px 32px">' +
+          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:640px">' +
             '<span onclick="navigate(\'' + p.categoriaPage + '\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</span>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Corte premium · ' + p.categoriaLabel + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
-            '<span style="display:inline-flex;align-items:center;font-family:\'Inter\',sans-serif;font-size:12.5px;color:#FAF7F4;background:rgba(0,0,0,0.4);border:1px solid rgba(209,166,106,0.45);padding:6px 14px;border-radius:20px">' + p.origen + '</span>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
           '</div>' +
-          premiumStamp(p.nombre) +
         '</div>' +
       '</div>' +
       '<div style="background:#141414">' +
-      '<div class="premium-body" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start">' +
-        '<div style="background:#F3E9D2;color:#2b1a10;border-radius:6px;padding:24px 22px;transform:rotate(-1.5deg);box-shadow:0 20px 34px rgba(0,0,0,0.4);position:relative">' +
-          '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#141414;border:3px solid #B99A63"></div>' +
-          '<span style="display:inline-block;font-family:\'Inter\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#450000;border:1.5px solid #450000;padding:3px 8px;border-radius:2px;transform:rotate(-4deg);margin-bottom:12px">Premium</span>' +
-          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:20px;margin:0 0 14px;color:#2b1a10">' + p.nombre + '</h3>' +
-          specsHtml +
-          '<div style="border-top:1px dashed #B99A63;margin:14px 0 0;padding-top:14px;display:flex;gap:8px;justify-content:flex-start">' + metodosHtml + '</div>' +
+      '<div style="max-width:1000px;margin:0 auto;padding:64px 32px;display:flex;flex-direction:column;gap:40px">' +
+        '<div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch">' +
+          mediaHtml +
+          '<div style="background:#F3E9D2;color:#2b1a10;border-radius:6px;padding:24px 22px;max-width:360px;width:100%;margin:0 auto;transform:rotate(-1.5deg);box-shadow:0 20px 34px rgba(0,0,0,0.4);position:relative;align-self:center">' +
+            '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#141414;border:3px solid #B99A63"></div>' +
+            '<span style="display:inline-block;font-family:\'Inter\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#450000;border:1.5px solid #450000;padding:3px 8px;border-radius:2px;transform:rotate(-4deg);margin-bottom:12px">Premium</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:20px;margin:0 0 14px;color:#2b1a10">' + p.nombre + '</h3>' +
+            specsHtml +
+            '<div style="border-top:1px dashed #B99A63;margin:14px 0 0;padding-top:14px;display:flex;gap:8px;justify-content:flex-start">' + metodosHtml + '</div>' +
+          '</div>' +
         '</div>' +
         '<div style="display:flex;flex-direction:column;gap:18px">' +
           descHtml +
@@ -373,19 +472,109 @@
       '</div>';
   }
 
-  function recomendadoRow(r) {
-    var media = r.img
-      ? '<div style="height:150px;border-radius:3px;overflow:hidden"><img src="' + r.img + '" alt="' + r.nombre + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
-      : '<div style="height:150px;border-radius:3px;overflow:hidden;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>';
+  var seccionLabels = {
+    parrilla: 'Estrella de la parrilla',
+    premium: 'Corte premium',
+    diaria: 'Uso diario',
+  };
+
+  function recomendadoCard(slug) {
+    var item = getRecomendado(slug);
+    var bg = item.img
+      ? 'background-image:url(\'' + item.img + '\');background-size:cover;background-position:center'
+      : 'background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)';
+    var label = seccionLabels[item.seccion] || 'Corte premium';
     return '' +
-      '<div class="rec-row hover-card" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-bottom:1px solid #4A3B33;border-radius:4px">' +
-        media +
-        '<div style="display:flex;flex-direction:column;gap:8px">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">' + r.categoria + '</span>' +
-          '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:24px;margin:0;color:#FAF7F4">' + r.nombre + '</h3>' +
-          '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.6;color:#E2E8F0;margin:0">' + r.motivo + '</p>' +
+      '<div onclick="navigate(\'' + slug + '\')" class="receta-card hover-card" tabindex="0" style="cursor:pointer;position:relative;height:340px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
+        '<div class="receta-card-bg" style="position:absolute;inset:0;' + bg + '"></div>' +
+        '<div class="receta-card-mask"></div>' +
+        '<div class="receta-card-panel">' +
+          '<div class="receta-card-glass">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">' + label + '</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FAF7F4">' + item.nombre + '</h3>' +
+            '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver corte →</span>' +
+            '<p class="receta-card-desc">' + item.tagline + '</p>' +
+          '</div>' +
         '</div>' +
       '</div>';
+  }
+
+  function recomendadoSeccionBlock(seccion, bg) {
+    return '' +
+      '<div style="padding:72px 32px;background-color:' + bg + '">' +
+        '<div style="max-width:1280px;margin:0 auto">' +
+          '<div style="max-width:640px;margin:0 auto 40px;text-align:center;display:flex;flex-direction:column;gap:10px">' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(24px,3vw,32px);margin:0;color:#FAF7F4">' + seccion.titulo + '</h2>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.6;color:#E2E8F0;margin:0">' + seccion.desc + '</p>' +
+          '</div>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + seccion.items.map(recomendadoCard).join('') + '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function pageRecomendadoDetail(slug) {
+    var p = recomendadoCuts[slug];
+    var waText = encodeURIComponent('¡Hola! 👋  Quería consultar por el corte ' + p.nombre + ' que vi en su página.\n\n¿Me podrían contar el precio y si tienen disponibilidad?\n\n¡Muchas gracias! 😊');
+    var label = seccionLabels[p.seccion] || 'Recomendado';
+    var specs = [
+      ['Peso', p.peso],
+      ['Porciones', p.porciones],
+      ['Origen', p.origen],
+      ['Textura', p.textura],
+      ['Término recomendado', p.termino],
+    ];
+    var specsHtml = specs.map(function (s) {
+      return '<div style="display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed rgba(43,26,16,0.25);font-family:\'Inter\',sans-serif;font-size:12.5px">' +
+        '<span style="font-weight:600;color:#6b4326">' + s[0] + '</span><span style="text-align:right;color:#2b1a10">' + s[1] + '</span>' +
+      '</div>';
+    }).join('');
+    var metodosHtml = p.metodos.map(function (m) { return metodoIcon(m, true); }).join('');
+    var descHtml = p.descripcion.map(function (par) {
+      return '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0;text-align:justify">' + par + '</p>';
+    }).join('');
+    var mediaHtml = p.img
+      ? '<div style="border-radius:6px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.35);height:100%;min-height:320px"><img src="' + p.img + '" alt="' + p.nombre + '" style="width:100%;height:100%;min-height:320px;object-fit:cover;display:block"></div>'
+      : '<div style="border-radius:6px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.35);width:100%;height:100%;min-height:320px;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#2E2E2E 14px,#2E2E2E 28px)"></div>';
+    var heroBg = p.img
+      ? 'background-image:url(\'' + p.img + '\');background-size:cover;background-position:center'
+      : 'background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#2E2E2E 14px,#2E2E2E 28px)';
+    return '' +
+    '<div data-screen-label="' + p.nombre + '">' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:280px;' + heroBg + ';overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%, rgba(69,0,0,0.55), #141414 72%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:280px;display:flex;align-items:center;padding:64px 32px">' +
+          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px;max-width:640px">' +
+            '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recomendaciones</span>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">' + label + ' · ' + p.categoriaLabel + '</span>' +
+            '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(30px,4.5vw,48px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="background:#141414">' +
+      '<div style="max-width:1000px;margin:0 auto;padding:64px 32px;display:flex;flex-direction:column;gap:40px">' +
+        '<div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch">' +
+          mediaHtml +
+          '<div style="background:#F3E9D2;color:#2b1a10;border-radius:6px;padding:24px 22px;max-width:360px;width:100%;margin:0 auto;transform:rotate(-1.5deg);box-shadow:0 20px 34px rgba(0,0,0,0.4);position:relative;align-self:center">' +
+            '<div style="position:absolute;top:-9px;left:24px;width:18px;height:18px;border-radius:50%;background:#141414;border:3px solid #B99A63"></div>' +
+            '<span style="display:inline-block;font-family:\'Inter\',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#450000;border:1.5px solid #450000;padding:3px 8px;border-radius:2px;transform:rotate(-4deg);margin-bottom:12px">' + label + '</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:700;font-style:italic;font-size:20px;margin:0 0 14px;color:#2b1a10">' + p.nombre + '</h3>' +
+            specsHtml +
+            '<div style="border-top:1px dashed #B99A63;margin:14px 0 0;padding-top:14px;display:flex;gap:8px;justify-content:flex-start">' + metodosHtml + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;gap:18px">' +
+          descHtml +
+          '<div style="position:relative;background:#141414;border:1px dashed rgba(209,166,106,0.4);border-radius:2px;padding:22px 22px 20px 54px;overflow:hidden">' +
+            '<span style="position:absolute;top:2px;left:14px;font-family:\'Playfair Display\',serif;font-weight:700;font-size:50px;line-height:1;color:rgba(209,166,106,0.3)">❝</span>' +
+            '<span style="display:block;font-family:\'Inter\',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#D1A66A;margin-bottom:8px">Tip de la casa</span>' +
+            '<p style="font-family:\'Playfair Display\',serif;font-style:italic;font-size:16px;line-height:1.6;color:#FAF7F4;margin:0">' + p.tip + '</p>' +
+          '</div>' +
+          '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;align-self:flex-start;background:#28741A;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Consultar disponibilidad por WhatsApp</a>' +
+        '</div>' +
+      '</div>' +
+      '</div>' +
+    '</div>';
   }
 
   function recetaCard(r) {
@@ -611,9 +800,9 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:620px;margin:0">Los cortes que elegimos nosotros mismos, por calidad, sabor y lo bien que rinden en la parrilla o en la olla.</p>' +
         '</div>' +
       '</div>' +
-      '<div style="max-width:1000px;margin:0 auto;padding:64px 32px;display:flex;flex-direction:column;gap:0;background:#1C1C1C">' +
-        recomendados.map(recomendadoRow).join('') +
-      '</div>' +
+      recomendadoSeccionBlock(recomendadoSecciones[0], '#1C1C1C') +
+      recomendadoSeccionBlock(recomendadoSecciones[1], '#141414') +
+      recomendadoSeccionBlock(recomendadoSecciones[2], '#1C1C1C') +
     '</div>';
   }
 
@@ -851,6 +1040,7 @@
     if (state.page === 'inicio') return pageInicio();
     if (catalog[state.page]) return pageCategoria(state.page);
     if (premiumCuts[state.page]) return pagePremiumDetail(state.page);
+    if (recomendadoCuts[state.page]) return pageRecomendadoDetail(state.page);
     if (recetasBySlug[state.page]) return pageRecetaDetail(state.page);
     if (state.page === 'recomendaciones') return pageRecomendaciones();
     if (state.page === 'recetas') return pageRecetas();
