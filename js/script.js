@@ -182,13 +182,67 @@
   ];
 
   var recetas = [
-    { titulo: 'Asado a la parrilla clásico', corte: 'Lomo Vetado', tiempo: '40 min', dificultad: 'Fácil', desc: 'El asado de siempre: sal gruesa, brasas parejas y el punto justo de cocción.', img: 'Images/asado.jpeg' },
-    { titulo: 'Costillar de cerdo ahumado', corte: 'Costillar de Cerdo', tiempo: '3 h', dificultad: 'Media', desc: 'Cocción lenta y humo suave hasta que la carne se separa del hueso.', img: 'Images/costillar-cerdo.jpeg' },
-    { titulo: 'Pollo al horno con hierbas', corte: 'Pollo Entero', tiempo: '1 h 15 min', dificultad: 'Fácil', desc: 'Piel dorada y crocante, carne jugosa por dentro.', img: 'Images/pollo-al-horno.jpeg' },
-    { titulo: 'Churrasco a la plancha', corte: 'Malaya', tiempo: '15 min', dificultad: 'Fácil', desc: 'Ideal para el día a día: rápido, sabroso y rendidor.', img: null },
+    { slug: 'asado-parrilla', titulo: 'Asado a la parrilla clásico', corte: 'Lomo Vetado', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4-6 personas', desc: 'El asado de siempre: sal gruesa, brasas parejas y el punto justo de cocción.', img: 'Images/asado-a-la-parrilla-clasico.jpg',
+      ingredientes: ['1 kg de Lomo Vetado', 'Sal gruesa a gusto', 'Pimienta negra recién molida', 'Carbón o leña para la parrilla'],
+      pasos: ['Retira la carne del refrigerador 30 minutos antes de cocinar para que llegue a temperatura ambiente.', 'Prepara las brasas hasta que estén parejas, con un calor medio-alto.', 'Sazona el Lomo Vetado con sal gruesa por ambos lados.', 'Cocina sobre la parrilla 6-8 minutos por lado para un término medio, sin pinchar la carne.', 'Retira, sazona con pimienta y deja reposar 5 minutos antes de cortar.'],
+      tips: ['Deja reposar la carne unos minutos antes de cortarla para conservar los jugos.', 'La sal gruesa se disuelve más lento y forma una costra pareja y sabrosa.', 'Evita pinchar la carne mientras se cocina, así no pierde jugosidad.'] },
+    { slug: 'costillar-ahumado', titulo: 'Costillar de cerdo ahumado', corte: 'Costillar de Cerdo', categoria: 'cerdo', destacada: true, tiempo: '3 h', dificultad: 'Media', porciones: '4-5 personas', desc: 'Cocción lenta y humo suave hasta que la carne se separa del hueso.', img: 'Images/costillar-cerdo.jpeg',
+      ingredientes: ['1,5 kg de Costillar de Cerdo', 'Sal, pimienta y ajo en polvo', 'Aserrín o astillas para ahumar (opcional)', 'Salsa barbecue a gusto'],
+      pasos: ['Retira la membrana del reverso del costillar y sazona generosamente por ambos lados.', 'Prende el ahumador o la parrilla con calor indirecto a fuego bajo (110-120°C).', 'Cocina el costillar 2,5-3 horas a fuego indirecto, agregando humo los primeros 90 minutos.', 'En la última media hora, pincela con salsa barbecue cada 10 minutos.', 'Retira cuando la carne se separe fácilmente del hueso y deja reposar 10 minutos antes de cortar.'],
+      tips: ['Retira siempre la membrana del reverso para que el humo penetre mejor.', 'Si notas que se seca antes de tiempo, envuélvelo en papel aluminio.', 'Acompaña con una ensalada fresca para equilibrar lo ahumado.'] },
+    { slug: 'pollo-horno', titulo: 'Pollo al horno con hierbas', corte: 'Pollo Entero', categoria: 'pollo', tiempo: '1 h 15 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'Piel dorada y crocante, carne jugosa por dentro.', img: 'Images/pollo-al-horno.jpeg',
+      ingredientes: ['1 Pollo Entero', '3 dientes de ajo', 'Romero y tomillo fresco', 'Jugo de 1 limón', 'Aceite de oliva, sal y pimienta'],
+      pasos: ['Precalienta el horno a 200°C.', 'Frota el pollo con aceite de oliva, ajo picado, hierbas, jugo de limón, sal y pimienta, por dentro y por fuera.', 'Coloca el pollo en una fuente para horno con la pechuga hacia arriba.', 'Hornea entre 1 hora y 1 hora 15 minutos, bañando con sus jugos cada 20 minutos, hasta que la piel esté dorada.', 'Deja reposar 10 minutos antes de trinchar.'],
+      tips: ['Bañar el pollo con sus propios jugos cada 20 minutos asegura una piel dorada y pareja.', 'Si la piel se dora muy rápido, cúbrela con papel aluminio el resto de la cocción.', 'Verifica el punto pinchando el muslo: el jugo debe salir claro.'] },
+    { slug: 'churrasco-plancha', titulo: 'Churrasco italiano', corte: 'Lomo, Posta o Asiento', categoria: 'vaca', tiempo: '15 min', dificultad: 'Fácil', porciones: '2 personas', desc: 'El sándwich chileno de siempre: carne jugosa a la plancha con tomate, palta y una capa generosa de mayonesa.', img: 'Images/churrasco.jpg',
+      ingredientes: ['250 g de carne de res en láminas finas (Lomo, Posta o Asiento)', '2 panes frica o similares de miga blanda', '1 tomate grande y maduro', '1 palta mediana', '4 cucharadas de mayonesa', '1 cucharada de aceite vegetal', 'Sal y pimienta al gusto'],
+      pasos: ['Lava el tomate y córtalo en rodajas de aproximadamente medio centímetro. Reserva.', 'Pela la palta, retira el hueso y aplasta la pulpa con un tenedor hasta obtener una pasta rústica. Añade sal a gusto y mezcla.', 'Calienta una sartén amplia o plancha a fuego medio-alto. Unta con el aceite y coloca las láminas de carne. Cocina 2-3 minutos por lado, o hasta que tengan bordes dorados y el centro aún jugoso. Salpimienta durante la cocción.', 'Abre los panes y, si lo prefieres, tuesta ligeramente la parte interna sobre la sartén para que absorban mejor los jugos.', 'Monta el sándwich colocando la carne recién hecha sobre la base del pan.', 'Encima de la carne, distribuye las rodajas de tomate y, sobre ellas, la palta triturada.', 'Finaliza con una capa generosa de mayonesa, dejándola caer ligeramente por los lados para lograr el aspecto tradicional.', 'Cierra con la tapa del pan y sirve de inmediato para que la carne conserve su jugosidad.'],
+      tips: ['Corta la carne en láminas bien finas para que se cocine parejo y rápido.', 'Tostar el pan sobre la plancha ayuda a que absorba mejor los jugos de la carne.', 'Sírvelo de inmediato: recién armado es cuando el pan y la carne están en su punto.'] },
+    { slug: 'chorrillana', titulo: 'Chorrillana chilena', corte: 'Posta Negra', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El clásico de Valparaíso para compartir: carne, papas fritas, cebolla y huevo revuelto en una sola fuente.', img: 'Images/chorillana.jpg',
+      ingredientes: ['300 g de Posta Negra cortada en tiras', '1 cebolla mediana en pluma', '½ kilo de papas cortadas en bastones', '3 huevos', '1 cucharada de salsa de tomates (opcional)', 'Sal, pimienta, merkén y aceite'],
+      pasos: ['Calienta aceite a 180°C y fríe las papas en bastones hasta que doren, unos 10 minutos.', 'Corta la Posta Negra en tiras perpendiculares a la fibra y sazona con sal, pimienta y merkén.', 'En un sartén con aceite bien caliente, cocina las tiras de carne sin encimarlas, 3 minutos por lado, y resérvalas.', 'En el mismo sartén saltea la cebolla en pluma, agrega la salsa de tomates y cocina 5 minutos.', 'Baja el fuego, añade los huevos y revuelve hasta el punto que prefieras.', 'Sirve sobre una cama de papas fritas, corona con la cebolla y el huevo revuelto, y termina con la carne encima.'],
+      tips: ['Escurre bien las papas sobre papel absorbente antes de armar para que no se humedezcan.', 'Corta la carne en contra de la fibra para que quede más tierna al freír.', 'Sírvela recién armada y bien caliente, directo al centro de la mesa para compartir.'] },
+    { slug: 'empanadas-de-pino', titulo: 'Empanadas de pino', corte: 'Molida Especial', categoria: 'vaca', destacada: true, tiempo: '2 h 15 min', dificultad: 'Media', porciones: '12 empanadas grandes', desc: 'La empanada de siempre, con pino jugoso de carne, cebolla, aceituna, pasas y huevo duro.', img: 'Images/empanada-de-pino.jpg',
+      ingredientes: ['1 kilo de Molida Especial', '3 cebollas grandes picadas en cubos chicos', '1 taza de caldo de vacuno', '2 cucharadas de ají de color o merkén', '½ cucharadita de comino', '2 cucharadas de harina', 'Sal y pimienta a gusto', 'Aceitunas negras, pasas y huevo duro para rellenar', 'Masa de empanadas (harina, manteca, huevo, leche y agua) o discos ya preparados'],
+      pasos: ['Sofríe la carne molida en aceite caliente hasta dorar, unos 8 minutos, y agrega el ají, sal, pimienta y comino.', 'Incorpora el caldo y cocina 30 minutos a fuego bajo.', 'Agrega la cebolla picada y cocina 30 minutos más, hasta que esté blanda.', 'Añade la harina, revuelve, ajusta la sazón y deja enfriar el pino en el refrigerador, idealmente de un día para otro.', 'Estira la masa, corta los discos y rellena con pino frío, una aceituna, pasas y un trozo de huevo duro.', 'Cierra las empanadas doblando los bordes, pincela con huevo batido y hornea a 180°C por 30-35 minutos hasta dorar.'],
+      tips: ['El pino siempre rinde mejor si se prepara el día anterior y se rellena bien frío.', 'Si se abomban durante el horneado, pincha con un palito para que suelten el vapor.', 'Congela las empanadas crudas y hornéalas directo del congelador cuando las necesites.'] },
+    { slug: 'anticuchos', titulo: 'Anticuchos chilenos', corte: 'Asiento', categoria: 'vaca', destacada: true, tiempo: '1 h 5 min', dificultad: 'Media', porciones: '8-10 personas', desc: 'Brochetas a la parrilla con carne, longaniza, cebolla y pimentón, infaltables en las Fiestas Patrias.', img: 'Images/anticuchos.jpg',
+      ingredientes: ['1 kilo de Asiento cortado en cubos de 3-4 cm', '6 Longanizas cortadas en trozos', '2 cebollas cortadas en cuadros grandes', '3 pimentones cortados en cuadros grandes', 'Vinagre de vino tinto, ají de color, orégano, sal y pimienta', 'Palitos de anticucho o brochetas de madera remojadas'],
+      pasos: ['Corta la carne en trozos parejos de 3-4 cm y retira nervios o exceso de grasa.', 'Marina la carne con vinagre, sal, pimienta, orégano y ají de color; tapa y refrigera al menos 2 horas.', 'Remoja los palitos de madera 15 minutos antes de armar si vas a usarlos.', 'Arma los anticuchos alternando carne, longaniza, cebolla y pimentón.', 'Precalienta la parrilla a fuego fuerte y cocina los anticuchos unos 5 minutos por lado.', 'Sirve bien calientes, acompañados de pan para armar sándwich al gusto.'],
+      tips: ['Mientras más tiempo marine la carne, más sabor toman los anticuchos.', 'Alterna los ingredientes en la brocheta para que se cocinen parejo.', 'Si usas palitos de madera, remójalos siempre antes para que no se quemen en la parrilla.'] },
+    { slug: 'carne-al-jugo', titulo: 'Carne al jugo', corte: 'Huachalomo', categoria: 'vaca', destacada: true, tiempo: '3 h 30 min', dificultad: 'Media', porciones: '8 personas', desc: 'Carne al horno cocida lenta en su propio jugo, hasta quedar tan blanda que se deshace con el tenedor.', img: 'Images/carne-al-jugo.jpg',
+      ingredientes: ['2 kg de Huachalomo desgrasado', '1 cebolla mediana en pluma', '2 dientes de ajo picados', '2 zanahorias en trozos', '1 taza de caldo de verduras o agua', '1 hoja de laurel, comino y granos de pimienta', 'Sal, pimienta y aceite vegetal'],
+      pasos: ['Precalienta el horno a 150°C. Seca bien la carne y sazona generosamente con sal y pimienta.', 'Sella la carne en una olla con aceite caliente hasta dorar por todos lados, 4-5 minutos por lado, y retírala.', 'En la misma olla, sofríe la cebolla hasta que esté blanda, agrega el ajo y luego el caldo, la zanahoria, el laurel y el comino.', 'Deja hervir, devuelve la carne a la olla y cúbrela con la salsa. Tapa con papel aluminio.', 'Lleva al horno hasta que la carne esté blanda, entre 2 ½ y 3 horas.', 'Deja reposar la carne 20 minutos, córtala en láminas y devuélvela a la salsa antes de servir.'],
+      tips: ['No destapes la olla mientras cuece: el vapor es clave para que la carne quede blanda.', 'Deja reposar la carne antes de cortarla para que no pierda sus jugos.', 'Acompaña con puré o arroz blanco para aprovechar toda la salsa.'] },
+    { slug: 'cazuela-de-vacuno', titulo: 'Cazuela de vacuno', corte: 'Osobuco', categoria: 'vaca', tiempo: '45 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El caldo reconfortante de siempre, con carne, papa, zapallo y choclo en su punto.', img: 'Images/cazuela-de-vacuno.jpg',
+      ingredientes: ['1 kilo de Osobuco cortado en 4 trozos', '1 cebolla grande en pluma gruesa', '2 zanahorias ralladas', '4 papas medianas peladas', '4 trozos de zapallo amarillo', '4 trozos de choclo con coronta', '4 cucharadas de arroz o chuchoca', 'Comino, orégano, sal y aceite', 'Perejil o cilantro para servir'],
+      pasos: ['Dora el Osobuco por ambos lados en una olla grande con aceite caliente, salpimentando, 3 minutos por lado. Retira.', 'En la misma olla, sofríe la cebolla y la zanahoria con comino y orégano por 3 minutos.', 'Devuelve la carne a la olla y cubre con unos 2 litros de agua caliente.', 'Cocina tapado a fuego medio 30-40 minutos hasta que la carne esté blanda.', 'Agrega las papas, el zapallo, el choclo y el arroz, y cocina 15 minutos más.', 'Sirve bien caliente con cilantro o perejil picado por encima.'],
+      tips: ['El Osobuco aporta el tuétano que le da cuerpo y sabor al caldo.', 'Si prefieres versión de verano, cambia las papas por porotos verdes y arvejas.', 'La cazuela siempre sabe mejor recalentada al día siguiente.'] },
+    { slug: 'pollo-arvejado', titulo: 'Pollo arvejado', corte: 'Trutro Entero', categoria: 'pollo', tiempo: '1 h', dificultad: 'Fácil', porciones: '4 personas', desc: 'Guiso rápido y reconfortante de pollo con arvejas, zanahoria y pimentón en su propio jugo.', img: 'Images/pollo-arvejado.jpg',
+      ingredientes: ['4-5 Trutro Entero', '1 cebolla en pluma', '2 zanahorias en rodajas', '½ pimentón verde en cubos', '2 dientes de ajo machacados', '2 tazas de caldo de pollo', '1 hoja de laurel', '1 taza de arvejas congeladas', 'Aceite, sal y pimienta'],
+      pasos: ['Calienta aceite en un sartén y dora las presas de pollo 3 minutos por lado. Retira y reserva.', 'En el mismo sartén, dora la cebolla 5 minutos, agrega la zanahoria, el pimentón y el ajo, y cocina 1 minuto más.', 'Devuelve el pollo al sartén y agrega el caldo, el laurel y las arvejas congeladas.', 'Tapa y cocina a fuego medio 25-30 minutos, hasta que el pollo esté bien cocido.', 'Ajusta la sazón y sirve caliente con puré o arroz.'],
+      tips: ['Usa arvejas congeladas directo del paquete: se cocinan junto con el pollo sin perder color.', 'Si quieres una salsa más espesa, destapa los últimos minutos de cocción.', 'También queda muy bien preparado con presas de cerdo en vez de pollo.'] },
+    { slug: 'pastel-de-choclo', titulo: 'Pastel de choclo', corte: 'Molida Corriente', categoria: 'vaca', tiempo: '2 h', dificultad: 'Media', porciones: '6 personas', desc: 'El infaltable del verano: pino de carne bajo una capa dorada de choclo con un toque de albahaca.', img: 'Images/pastel-de-choclo.jpg',
+      ingredientes: ['1 kilo de Molida Corriente', '3 cebollas picadas en cubos finos', '1 taza de caldo de vacuno', '1 cucharada de merkén o ají de color', '½ cucharadita de comino', '4 bolsas de choclo congelado (o choclo fresco desgranado)', '½ taza de leche entera', '3 cucharadas de harina de maíz o chuchoca', 'Un manojo de albahaca fresca', 'Aceitunas, pasas y huevo duro para armar (opcional)', 'Sal, pimienta, mantequilla o aceite'],
+      pasos: ['Sofríe la carne molida hasta dorar, agrega el merkén, sal, pimienta y comino, y cocina 2 minutos más.', 'Incorpora el caldo y cocina 30 minutos a fuego bajo, luego agrega la cebolla y cocina otros 30 minutos. Reserva el pino.', 'Derrite mantequilla en una olla, agrega el choclo y cocina 8 minutos revolviendo.', 'Añade la leche y la albahaca, cocina 10 minutos más y procesa hasta la consistencia que prefieras.', 'Incorpora la harina de maíz y cocina 5 minutos más para espesar la pastelera de choclo.', 'En fuentes individuales o una grande, pon el pino con aceitunas, pasas y huevo duro, cubre con la pastelera y hornea a 200°C por 45-60 minutos hasta dorar.'],
+      tips: ['No uses choclo en conserva: tiene demasiada agua y afloja la pastelera.', 'Deja reposar el pastel 10 minutos fuera del horno antes de servir para que asiente.', 'La albahaca fresca es clave para el sabor: evita variedades muy intensas.'] },
+    { slug: 'carbonada', titulo: 'Carbonada', corte: 'Posta Rosada', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '6 personas', desc: 'Sopa espesa y reconfortante de carne picada con verduras y arroz, lista en menos de una hora.', img: 'Images/carbonada.jpg',
+      ingredientes: ['1 kilo de Posta Rosada picada en cubos', '1 cebolla en cubos pequeños', '3 zanahorias en cubos', '2 ramas de apio picadas', '½ pimentón picado', '3 papas medianas en cubos', '½ taza de arroz crudo', '1 taza de arvejitas o porotos verdes', 'Orégano, comino y paprika a gusto', '2 hojas de laurel', 'Sal, pimienta y aceite'],
+      pasos: ['Dora la carne en cubos en una olla con aceite, 2 minutos por lado, y sazona con sal, pimienta y especias.', 'Agrega la cebolla y sofríe 5 minutos, luego suma la zanahoria, el pimentón y el apio, y cocina 3 minutos más.', 'Incorpora las papas y el arroz, revuelve bien y ajusta la sazón.', 'Cubre con agua (1,5 a 2 litros) y agrega el laurel. Deja hervir.', 'Cocina tapado 20 minutos a fuego medio-bajo.', 'Agrega las arvejitas o porotos verdes y cocina 3 minutos más antes de servir bien caliente.'],
+      tips: ['Puedes dejarla más espesa con menos agua o más caldosa a tu gusto.', 'El arroz sigue absorbiendo líquido, así que sírvela recién hecha.', 'Ideal para aprovechar verduras que tengas a mano en el refrigerador.'] },
+    { slug: 'plateada-al-horno', titulo: 'Plateada al horno', corte: 'Plateada', categoria: 'vaca', destacada: true, tiempo: '4 h', dificultad: 'Media', porciones: '8 personas', desc: 'Cocción lenta y sin apuro hasta que la Plateada quede tan blanda que se deshace con el tenedor.', img: 'Images/plateada-al-horno.jpg',
+      ingredientes: ['2 kilos de Plateada', '2 dientes de ajo molidos', '½ taza de aceite de oliva', '3 cucharadas de vinagre', 'Tomillo u orégano fresco o seco', '1 cucharada de merkén o paprika ahumada', '1 cebolla en pluma', '1 vaso de agua', 'Sal y pimienta'],
+      pasos: ['Mezcla el ajo, el aceite, el vinagre, el merkén, sal y pimienta, y frota la Plateada con este adobo. Tapa y refrigera 3 horas.', 'Precalienta el horno a 150°C.', 'Retira la carne del adobo y dórala en una olla con aceite caliente, 5-8 minutos por lado.', 'Agrega la cebolla, los jugos del adobo y el vaso de agua, y cocina a fuego bajo 10 minutos.', 'Tapa y lleva al horno sin destapar entre 2 ½ y 3 horas, hasta que la carne se separe con el tenedor.', 'Deja reposar tapada 20 minutos antes de cortar en láminas y servir.'],
+      tips: ['No destapes la olla durante la cocción: el vapor es lo que ablanda la carne.', 'Marinar de un día para otro le da aún más sabor a la Plateada.', 'Acompaña con papas cocidas o puré picante, como se sirve tradicionalmente.'] },
+    { slug: 'asado-tradicional', titulo: 'Asado tradicional con chimichurri', corte: 'Asado de Tira', categoria: 'vaca', tiempo: '1 h', dificultad: 'Fácil', porciones: '6-8 personas', desc: 'El domingo en familia de siempre: Asado de Tira a las brasas con un chimichurri casero recién hecho.', img: 'Images/asado-tradicional-con-chimichurri.jpg',
+      ingredientes: ['1,5 kg de Asado de Tira', 'Sal gruesa y pimienta', '2 atados de cebollín', '2 atados de perejil', '2 cucharaditas de orégano', '1 diente de ajo picado', '1 cucharadita de ají seco', '½ taza de aceite', '⅛ taza de vinagre de vino', 'Jugo de 1 limón'],
+      pasos: ['Prepara el chimichurri: pica fino el cebollín y el perejil, mézclalos con el ajo, el orégano, el ají seco, la sal, el aceite, el vinagre, agua y el jugo de limón. Deja reposar al menos 2 horas.', 'Retira el Asado de Tira del refrigerador con anticipación para que llegue a temperatura ambiente.', 'Prepara brasas parejas de calor medio-alto.', 'Sella la carne a fuego fuerte por ambos lados, luego termina la cocción a fuego más suave hasta el punto que prefieras.', 'Sazona con sal gruesa y pimienta, y deja reposar unos minutos antes de cortar.', 'Sirve con el chimichurri casero y las ensaladas de siempre.'],
+      tips: ['El chimichurri mejora si se prepara el día anterior y se guarda refrigerado.', 'Sellar primero a fuego fuerte y terminar más suave ayuda a que la carne quede pareja por dentro.', 'Un buen asado se disfruta en familia, sin apuro y con buena compañía.'] },
   ];
+  var recetasBySlug = {};
+  recetas.forEach(function (r) { recetasBySlug[r.slug] = r; });
 
-  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto', 'tomahawk', 'flatiron'];
+  var validPages = ['inicio', 'vaca', 'cerdo', 'pollo', 'subproductos', 'recomendaciones', 'recetas', 'nosotros', 'contacto', 'tomahawk', 'flatiron', 'asado-parrilla', 'costillar-ahumado', 'pollo-horno', 'churrasco-plancha', 'chorrillana', 'empanadas-de-pino', 'anticuchos', 'carne-al-jugo', 'cazuela-de-vacuno', 'pollo-arvejado', 'pastel-de-choclo', 'carbonada', 'plateada-al-horno', 'asado-tradicional'];
   var state = { page: 'inicio' };
 
   var metodoInfo = {
@@ -339,7 +393,7 @@
       ? 'background-image:url(\'' + r.img + '\');background-size:cover;background-position:center'
       : 'background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)';
     return '' +
-      '<div class="receta-card hover-card" tabindex="0" style="position:relative;height:340px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
+      '<div onclick="navigate(\'' + r.slug + '\')" class="receta-card hover-card" tabindex="0" style="cursor:pointer;position:relative;height:340px;border-radius:4px;overflow:hidden;border:1px solid #4A3B33">' +
         '<div class="receta-card-bg" style="position:absolute;inset:0;' + bg + '"></div>' +
         '<div class="receta-card-mask"></div>' +
         '<div class="receta-card-panel">' +
@@ -356,6 +410,25 @@
       '</div>';
   }
 
+  function recetaSwirl() {
+    return '<svg width="64" height="13" viewBox="0 0 64 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block"><path d="M2 9c3.5-7 7-7 10.5 0S19.5 9 23 2s7-7 10.5 0S40 9 43.5 2s7-7 10.5 0S60.5 9 62 5" stroke="#D1A66A" stroke-width="1.6" stroke-linecap="round"/></svg>';
+  }
+
+  function recetaSectionHeading(text) {
+    return '' +
+      '<div style="display:flex;flex-direction:column;align-items:center;gap:6px">' +
+        '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:24px;margin:0;color:#450000;text-align:center">' + text + '</h3>' +
+        recetaSwirl() +
+      '</div>';
+  }
+
+  function recetaInfoPill(label, value) {
+    return '' +
+      '<span style="display:inline-flex;align-items:center;gap:6px;font-family:\'Inter\',sans-serif;font-size:12.5px;font-weight:600;color:#450000;background:#FAF7F4;border:1px solid rgba(69,0,0,0.22);border-radius:24px;padding:10px 20px;box-shadow:0 4px 10px rgba(69,0,0,0.08)">' +
+        '<span style="color:#855F4F;font-weight:600">' + label + '</span> ' + value +
+      '</span>';
+  }
+
   var googleIconSvg = '<svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true" style="flex-shrink:0"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.9 32.9 29.4 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 10-2 13.6-5.2l-6.3-5.3C29.3 35.2 26.8 36 24 36c-5.3 0-9.8-3.4-11.4-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.3 5.3C39.5 36.6 44 30.9 44 24c0-1.3-.1-2.7-.4-3.5z"></path></svg>';
 
   function resenaCard(r, hidden) {
@@ -368,7 +441,7 @@
   }
 
   function pageInicio() {
-    var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/charcuteria.jpeg' };
+    var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/cerdo.jpg' };
     var catNames = { vaca: 'Vacuno', pollo: 'Pollo', cerdo: 'Cerdo' };
     var catDesc = {
       vaca: 'Categoría V, cortes premium para la parrilla y la olla.',
@@ -401,7 +474,7 @@
       var media = r.img
         ? '<div style="height:160px;border-radius:5px;overflow:hidden"><img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>'
         : '<div style="height:160px;border-radius:5px;overflow:hidden;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 12px,#3B1F16 12px,#3B1F16 24px)"></div>';
-      return '<div style="display:flex;flex-direction:column;gap:10px">' + media +
+      return '<div onclick="navigate(\'' + r.slug + '\')" class="hover-card" style="cursor:pointer;display:flex;flex-direction:column;gap:10px">' + media +
         '<h4 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:17px;margin:0;color:#E2E8F0">' + r.titulo + '</h4>' +
         '<span style="font-family:\'Inter\',sans-serif;font-size:12.5px;color:#D1A66A">' + r.corte + ' · ' + r.tiempo + '</span></div>';
     }).join('');
@@ -417,7 +490,7 @@
           '<h1 class="hero-title" style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(38px,6vw,72px);line-height:1.08;color:#FAF7F4;margin:0">Para los que entienden de carne.</h1>' +
           '<p style="font-family:\'Inter\',sans-serif;font-size:17px;line-height:1.6;color:#E2E8F0;max-width:560px;margin:0">Carne nacional, fresca y de Categoría V. Cortes premium seleccionados uno por uno, con el oficio carnicero de siempre.</p>' +
           '<div class="hero-cta-group" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px">' +
-            '<span class="hero-btn" onclick="navigate(\'recomendaciones\')" style="cursor:pointer;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#450000;border:1px solid #450000">Ver cortes premium</span>' +
+            '<span class="hero-btn" onclick="scrollToSection(\'cortes-premium\')" style="cursor:pointer;color:#FAF7F4;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#450000;border:1px solid #450000">Ver cortes premium</span>' +
             '<a href="https://api.whatsapp.com/send?phone=56940691425&text=¡Hola, Carnes Marty! 👋🏼 Quiero realizar un pedido:%0A%0AProductos (indica gramos, kilos o unidades):%0A• Ej: 500g de pechuga de pollo fileteada%0A• Ej: 1kg de carne picada de ternera%0A• Ej: 4 hamburguesas de buey%0A%0AMi pedido:%0A•%0A•%0A•%0A%0AMis datos:%0A• Nombre:%0A• Día y hora de recogida: %0A%0AQuedo a la espera de que me confirméis disponibilidad y el total. ¡Gracias!" target="_blank" rel="noopener" class="hero-btn" style="text-decoration:none;cursor:pointer;border:1px solid #5E7619;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 28px;border-radius:3px;background-color:#28741A">Pedir por WhatsApp</a>' +
           '</div>' +
         '</div>' +
@@ -450,7 +523,7 @@
         '</div>' +
       '</div>' +
 
-      '<div style="padding:80px 32px;background-color:#101010">' +
+      '<div id="cortes-premium" style="padding:80px 32px;background-color:#101010">' +
         '<div style="max-width:1000px;margin:0 auto">' +
           '<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:36px">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Selección limitada</span>' +
@@ -559,6 +632,111 @@
         recetas.map(recetaCard).join('') +
       '</div>' +
     '</div>';
+  }
+
+  function pageRecetaDetail(slug) {
+    var r = recetasBySlug[slug];
+    var waText = encodeURIComponent('¡Hola! 👋  Quería consultar por el corte ' + r.corte + ' para preparar ' + r.titulo + ' que vi en su página.\n\n¿Me podrían contar el precio y si tienen disponibilidad?\n\n¡Muchas gracias! 😊');
+    var heroBg = r.img
+      ? 'background-image:url(\'' + r.img + '\');background-size:cover;background-position:center'
+      : 'background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#2E2E2E 14px,#2E2E2E 28px)';
+    var badges = [r.corte, r.tiempo, r.dificultad].map(function (b) {
+      return '<span style="display:inline-flex;align-items:center;font-family:\'Inter\',sans-serif;font-size:12.5px;color:#FAF7F4;background:rgba(0,0,0,0.4);border:1px solid rgba(209,166,106,0.45);padding:6px 14px;border-radius:20px">' + b + '</span>';
+    }).join('');
+    var infoPillsHtml = [
+      recetaInfoPill('Porciones', r.porciones),
+      recetaInfoPill('Tiempo', r.tiempo),
+      recetaInfoPill('Dificultad', r.dificultad)
+    ].join('');
+    var dishMedia = r.img
+      ? '<img src="' + r.img + '" alt="' + r.titulo + '" style="width:100%;height:100%;object-fit:cover;display:block">'
+      : '<div style="width:100%;height:100%;background:repeating-linear-gradient(135deg,#5E392C,#5E392C 14px,#3B1F16 14px,#3B1F16 28px)"></div>';
+    var ingredientesHtml = r.ingredientes.map(function (ing) {
+      return '<div style="display:flex;align-items:baseline;gap:8px"><span style="color:#D1A66A;font-weight:700;font-size:14px">✓</span><span style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.5;color:#2b1a10">' + ing + '</span></div>';
+    }).join('');
+    var pasosHtml = r.pasos.map(function (paso, i) {
+      return '<div style="display:flex;gap:14px;align-items:flex-start">' +
+        '<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1px solid #450000;color:#450000;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">' + (i + 1) + '</span>' +
+        '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#2b1a10;margin:4px 0 0;text-align:justify">' + paso + '</p>' +
+      '</div>';
+    }).join('');
+    var tipsHtml = (r.tips || []).map(function (tip) {
+      return '<div style="display:flex;gap:10px;align-items:flex-start"><span style="color:#D1A66A;font-size:12px;line-height:1.8">●</span><span style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.65;color:#2b1a10">' + tip + '</span></div>';
+    }).join('');
+    return '' +
+    '<div data-screen-label="' + r.titulo + '">' +
+      '<div class="page-banner cat-banner" style="position:relative;width:100%;min-height:420px;' + heroBg + ';overflow:hidden">' +
+        '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.88) 0%, rgba(10,9,8,0.55) 48%, rgba(10,9,8,0.25) 100%)"></div>' +
+        '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:420px;display:flex;align-items:center;padding:64px 32px">' +
+          '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px;max-width:560px">' +
+            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recetas</span>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Receta · ' + r.corte + '</span>' +
+            '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(30px,4.5vw,48px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + r.titulo + '</h1>' +
+            '<div style="display:flex;gap:10px;flex-wrap:wrap">' + badges + '</div>' +
+            '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + r.desc + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="background:#141414;padding:72px 32px">' +
+        '<div class="recipe-card" style="max-width:920px;margin:0 auto;background:#F3E9D2;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,0.45);padding:52px 44px;display:flex;flex-direction:column;gap:40px">' +
+
+          '<div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">' + infoPillsHtml + '</div>' +
+
+          '<div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#855F4F">Receta · ' + r.corte + '</span>' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(28px,4vw,40px);margin:0;color:#450000">' + r.titulo + '</h2>' +
+          '</div>' +
+
+          '<div style="display:flex;justify-content:center">' +
+            '<div class="recipe-dish-photo" style="width:100%;max-width:560px;height:300px;border-radius:6px;overflow:hidden;border:1px solid rgba(69,0,0,0.15);box-shadow:0 16px 32px rgba(69,0,0,0.22)">' + dishMedia + '</div>' +
+          '</div>' +
+
+          '<div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start">' +
+            '<div style="display:flex;flex-direction:column;gap:18px">' +
+              recetaSectionHeading('Ingredientes') +
+              '<div style="display:flex;flex-direction:column;gap:11px">' + ingredientesHtml + '</div>' +
+            '</div>' +
+            '<div style="display:flex;flex-direction:column;gap:18px">' +
+              recetaSectionHeading('Instrucciones') +
+              '<div style="display:flex;flex-direction:column;gap:16px">' + pasosHtml + '</div>' +
+            '</div>' +
+          '</div>' +
+
+          '<div style="border-top:1px dashed rgba(69,0,0,0.25);padding-top:32px;display:flex;flex-direction:column;gap:18px;align-items:center">' +
+            recetaSectionHeading('Tips') +
+            '<div style="display:flex;flex-direction:column;gap:10px;max-width:520px;width:100%">' + tipsHtml + '</div>' +
+          '</div>' +
+
+          '<a href="https://api.whatsapp.com/send?phone=56940691425&text=' + waText + '" target="_blank" rel="noopener" class="btn-cta" style="text-decoration:none;align-self:center;background:#28741A;color:#FFFFFF;font-weight:600;font-size:14px;padding:14px 30px;border-radius:3px">Consultar corte por WhatsApp</a>' +
+        '</div>' +
+      '</div>' +
+
+      recetasSimilaresSection(r.slug) +
+    '</div>';
+  }
+
+  function recetasSimilaresSection(currentSlug) {
+    var actual = recetasBySlug[currentSlug];
+    var otras = recetas.filter(function (r) { return r.slug !== currentSlug; })
+      .map(function (r, i) {
+        var score = (actual && r.categoria === actual.categoria ? 2 : 0) + (r.destacada ? 1 : 0);
+        return { r: r, score: score, i: i };
+      })
+      .sort(function (a, b) { return b.score - a.score || a.i - b.i; })
+      .slice(0, 3)
+      .map(function (x) { return x.r; });
+    if (!otras.length) return '';
+    return '' +
+      '<div style="padding:80px 32px;background-color:#101010">' +
+        '<div style="max-width:1280px;margin:0 auto">' +
+          '<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px">' +
+            '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FAF7F4">Otras recetas</h2>' +
+            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
+          '</div>' +
+          '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + otras.map(recetaCard).join('') + '</div>' +
+        '</div>' +
+      '</div>';
   }
 
   function timelineIcon(name) {
@@ -673,6 +851,7 @@
     if (state.page === 'inicio') return pageInicio();
     if (catalog[state.page]) return pageCategoria(state.page);
     if (premiumCuts[state.page]) return pagePremiumDetail(state.page);
+    if (recetasBySlug[state.page]) return pageRecetaDetail(state.page);
     if (state.page === 'recomendaciones') return pageRecomendaciones();
     if (state.page === 'recetas') return pageRecetas();
     if (state.page === 'nosotros') return pageNosotros();
@@ -752,6 +931,11 @@
       el.classList.toggle('active', !!active);
     });
   }
+
+  window.scrollToSection = function (id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   window.navigate = function (page) {
     if (validPages.indexOf(page) === -1) page = 'inicio';

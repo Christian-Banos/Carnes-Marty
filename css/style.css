@@ -280,6 +280,7 @@ button { font: inherit; }
   .cat-banner-inner { min-height: 320px !important; justify-content: center !important; }
   .cat-banner-text { align-items: center !important; text-align: center !important; max-width: 100% !important; }
   .premium-body { grid-template-columns: 1fr !important; }
+  .recipe-card { padding: 40px 30px !important; }
 }
 @media (max-width: 620px) {
   .grid-4 { grid-template-columns: 1fr !important; }
@@ -297,6 +298,8 @@ button { font: inherit; }
   .review-card { flex-basis: 260px; }
   .cat-banner { min-height: 260px !important; }
   .cat-banner-inner { min-height: 260px !important; }
+  .recipe-card { padding: 32px 20px !important; gap: 32px !important; }
+  .recipe-dish-photo { height: 200px !important; }
 }
 @media (max-height: 480px) and (orientation: landscape) {
   .hero-logo { width: 90px !important; height: 90px !important; margin-bottom: 0 !important; }
