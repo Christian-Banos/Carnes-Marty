@@ -11,6 +11,8 @@
   --body-light: #E2E8F0;
   --gold: #D1A66A;
   --brown: #855F4F;
+  --ease-out-strong: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out-strong: cubic-bezier(.65, 0, .35, 1);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: none; -ms-overflow-style: none; }
@@ -23,11 +25,40 @@ body::-webkit-scrollbar { display: none; width: 0; height: 0; }
 #page-content.page-fading { opacity: 0; transform: translateY(10px); }
 
 /* ---------- Scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1); }
-.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 0; transform: translateY(34px) scale(.97); transition: opacity .95s var(--ease-out-strong), transform .95s var(--ease-out-strong); }
+.reveal.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Card-grid cascade: individual cards stagger in on top of their section's reveal */
+.reveal-card { opacity: 0; transform: translateY(30px) scale(.93); transition: opacity .75s var(--ease-out-strong), transform .75s var(--ease-out-strong); transition-delay: var(--reveal-delay, 0ms); }
+.reveal-card.in-view { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Directional two-column reveal: left child slides from the left, right child from the right */
+.reveal-left { opacity: 0; transform: translateX(-64px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
+.reveal-left.in-view { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(64px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
+.reveal-right.in-view { opacity: 1; transform: translateX(0); }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-card, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
   #page-content { transition: none; }
+}
+
+/* ---------- Hero entrance choreography ---------- */
+@keyframes heroDropIn { 0% { opacity: 0; transform: translateY(-90px) scale(.9); } 60% { opacity: 1; } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes heroSlideLeft { from { opacity: 0; transform: translateX(-110px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes heroSlideRight { from { opacity: 0; transform: translateX(110px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes heroRiseIn { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: translateY(0); } }
+
+.hero-anim-logo { animation: heroDropIn 1.1s cubic-bezier(.22,1.1,.36,1) .1s both; }
+.hero-anim-eyebrow { animation: heroSlideRight 1s cubic-bezier(.16,.8,.24,1) .35s both; }
+.hero-anim-title { animation: heroSlideLeft 1.05s cubic-bezier(.16,.8,.24,1) .55s both; }
+.hero-anim-text { animation: heroSlideRight 1s cubic-bezier(.16,.8,.24,1) .8s both; }
+.hero-anim-buttons { animation: heroRiseIn 1s cubic-bezier(.22,1,.36,1) 1.05s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-logo, .hero-anim-eyebrow, .hero-anim-title, .hero-anim-text, .hero-anim-buttons {
+    animation: none; opacity: 1; transform: none;
+  }
 }
 
 .site-header {
@@ -184,6 +215,24 @@ button { font: inherit; }
 .receta-card:focus-within { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   .receta-card-bg, .receta-card-mask, .receta-card-glass, .receta-card-desc { transition: none; }
+}
+
+/* ---------- Cut cards (product catalog): bottom caption so the photo stays the hero ---------- */
+.cut-card .receta-card-mask { background: rgba(10,9,8,0.06); }
+.cut-card:hover .receta-card-mask, .cut-card:focus-within .receta-card-mask { background: rgba(10,9,8,0.28); }
+.cut-card .receta-card-panel { align-items: flex-end; padding: 0; }
+.cut-card .receta-card-glass {
+  width: 100%; max-width: 100%; border-radius: 0;
+  background: linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,0.58) 38%, rgba(10,9,8,0.94) 100%);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  border: none;
+  padding: 64px 20px 20px;
+  transition: padding-top .35s cubic-bezier(.16,.8,.24,1);
+}
+.cut-card:hover .receta-card-glass, .cut-card:focus-within .receta-card-glass {
+  background: linear-gradient(180deg, rgba(10,9,8,0) 0%, rgba(10,9,8,0.6) 30%, rgba(10,9,8,0.96) 100%);
+  border-color: transparent;
+  padding-top: 84px;
 }
 
 /* ---------- Footer nav links ---------- */
