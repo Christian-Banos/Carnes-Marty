@@ -2,3 +2,5 @@ Manual_de_Marca_Carnes_Marty.docx
 Manual_de_Marca_Carnes_Marty.pdf
 .claude
 .DS_Store
+__pycache__
+sync_chrome.py

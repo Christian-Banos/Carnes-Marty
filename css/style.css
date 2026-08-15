@@ -33,9 +33,9 @@ body::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .reveal-card.in-view { opacity: 1; transform: translateY(0) scale(1); }
 
 /* Directional two-column reveal: left child slides from the left, right child from the right */
-.reveal-left { opacity: 0; transform: translateX(-64px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
+.reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
 .reveal-left.in-view { opacity: 1; transform: translateX(0); }
-.reveal-right { opacity: 0; transform: translateX(64px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
+.reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 1s var(--ease-out-strong), transform 1s var(--ease-out-strong); }
 .reveal-right.in-view { opacity: 1; transform: translateX(0); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -100,8 +100,8 @@ button { font: inherit; }
 .nav-burger:hover span:nth-child(3) { transform: translateX(-3px); background: var(--gold); }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.two-col-rev { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; overflow-x: hidden; }
+.two-col-rev { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; overflow-x: hidden; }
 .rec-row { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; }
 
 .nav-bar { box-sizing: border-box; }
@@ -164,10 +164,11 @@ button { font: inherit; }
 .link-arrow:hover { color: var(--heading); gap: 9px; }
 
 /* ---------- Category / cut / recipe cards ---------- */
-.cat-card, .cut-card, .hover-card, .contact-card {
+.cat-card, .cut-card, .hover-card {
   transition: transform .35s cubic-bezier(.16,.8,.24,1), box-shadow .35s ease, border-color .3s ease;
 }
-.cat-card:hover, .cut-card:hover, .hover-card:hover, .contact-card:hover {
+.cat-card:hover, .cut-card:hover, .hover-card:hover,
+.cat-card:focus-within, .cut-card:focus-within, .hover-card:focus-within {
   transform: translateY(-6px);
   box-shadow: 0 18px 34px rgba(0,0,0,0.4);
   border-color: var(--gold);
@@ -213,6 +214,7 @@ button { font: inherit; }
   max-height: 200px; opacity: 1; transform: translateY(0); margin-top: 4px;
 }
 .receta-card:focus-within { outline: none; }
+.receta-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .receta-card-bg, .receta-card-mask, .receta-card-glass, .receta-card-desc { transition: none; }
 }
@@ -264,7 +266,7 @@ button { font: inherit; }
 }
 .timeline-item:hover .timeline-avatar { transform: scale(1.08); border-color: var(--gold); }
 .timeline-card {
-  flex: 1; min-width: 0; background: rgba(69,0,0,0.82); backdrop-filter: blur(4px);
+  flex: 1; min-width: 0; background: rgba(69,0,0,0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
   border: 1px solid var(--border-soft); border-radius: 6px; padding: 20px 22px;
   transition: transform .3s cubic-bezier(.16,.8,.24,1), box-shadow .3s ease, border-color .3s ease, background-color .3s ease;
 }

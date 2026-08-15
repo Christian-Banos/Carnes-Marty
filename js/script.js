@@ -61,7 +61,7 @@
         { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.', metodos: ['cacerola'], img: 'Images/plateada.png' },
         { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.', metodos: ['cacerola'], img: 'Images/palanca.webp' },
         { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.', metodos: ['parrilla', 'sarten'], img: 'Images/Abastero.webp' },
-        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.', metodos: ['parrilla'], img: 'Images/entraña.png' },
+        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.', metodos: ['parrilla'], img: 'Images/entrana.png' },
         { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.', metodos: ['cacerola', 'sarten'], img: 'Images/pollo_barriga.webp' },
         { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: 'Images/entrecot.jpg' },
         { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.', metodos: ['parrilla'], img: 'Images/Tomahawk.webp' },
@@ -178,7 +178,7 @@
 
   var recomendadoCuts = {
     'entrana': {
-      slug: 'entrana', nombre: 'Entraña', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/entraña.png',
+      slug: 'entrana', nombre: 'Entraña', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/entrana.png',
       tagline: 'Fina, fibrosa y directa a las brasas: el corte que nunca falta en la parrilla.',
       peso: '400 – 600 g', porciones: '2 – 3 personas', origen: 'Diafragma del vacuno, el corte más fino y fibroso de la parrilla', textura: 'Fibra larga y marcada, muy jugosa cuando se cocina rápido a fuego fuerte', termino: 'Término medio', metodos: ['parrilla'],
       descripcion: [
@@ -627,7 +627,7 @@
 
   function resenaCard(r, hidden) {
     return '' +
-      '<div class="review-card"' + (hidden ? ' aria-hidden="true"' : '') + ' style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
+      '<div class="review-card"' + (hidden ? ' aria-hidden="true"' : '') + ' style="display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.18);border-radius:6px;padding:20px;text-align:left">' +
         '<span style="color:#D1A66A;font-size:14px;letter-spacing:2px">★★★★★</span>' +
         '<p style="font-family:\'Inter\',sans-serif;font-size:14px;line-height:1.55;color:#FAF7F4;margin:0">"' + r.texto + '"</p>' +
         '<span style="font-family:\'Inter\',sans-serif;font-size:12px;color:#D1A66A;font-weight:600;margin-top:4px">' + r.autor + '</span>' +
@@ -676,10 +676,10 @@
     return '' +
     '<div data-screen-label="Inicio">' +
       '<div style="position:relative;width:100%;min-height:88vh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
-        '<video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><source src="video/ribeye_animated.mp4" type="video/mp4"></video>' +
+        '<video autoplay muted loop playsinline poster="Images/ribeye-strip-loin.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><source src="video/ribeye_animated.mp4" type="video/mp4"></video>' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%);z-index:1"></div>' +
         '<div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px;display:flex;flex-direction:column;align-items:center;gap:22px">' +
-          '<img src="Images/logoCarnesMarti_white.png" alt="Carnes Marty" class="hero-logo hero-anim-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
+          '<img src="Images/logoCarnesMarti_white.png" alt="Carnes Marty" width="1072" height="976" class="hero-logo hero-anim-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
           '<span class="hero-anim-eyebrow" style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#D1A66A;font-weight:600;background:rgba(28,28,28,0.6);padding:10px 18px;border-radius:10px">Desde 2020 · Linderos, Buin</span>' +
           '<h1 class="hero-title hero-anim-title" style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(38px,6vw,72px);line-height:1.08;color:#FAF7F4;margin:0">Para los que entienden de carne.</h1>' +
           '<p class="hero-anim-text" style="font-family:\'Inter\',sans-serif;font-size:17px;line-height:1.6;color:#E2E8F0;max-width:560px;margin:0">Carne nacional, fresca y de Categoría V. Cortes premium seleccionados uno por uno, con el oficio carnicero de siempre.</p>' +
@@ -692,7 +692,7 @@
 
       '<div style="background-color:#101010">' +
         '<div class="section-pad two-col-rev" style="max-width:1280px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
-          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/David_primerPlano.png" alt="Cortes frescos Carnes Marty" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px"></div>' +
+          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/David_primerPlano.png" alt="Cortes frescos Carnes Marty" width="1232" height="848" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px"></div>' +
           '<div style="display:flex;flex-direction:column;gap:18px">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#d1a66a;font-weight:600">Sobre Carnes Marty</span>' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:32px;margin:0;color:#FFFFFF">Cortes frescos y premium, todos los días</h2>' +
@@ -745,7 +745,7 @@
             '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">En Carnes Marty nos encargamos de encontrar el corte perfecto para ti.</p>' +
             '<a href="recomendaciones.html" class="link-arrow" style="text-decoration:none;cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</a>' +
           '</div>' +
-          '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" width="962" height="364" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
       '</div>' +
 
@@ -788,7 +788,10 @@
           '</div>' +
         '</div>' +
       '</div>' +
-      '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:#1C1C1C">' +
+      '<div style="max-width:1280px;margin:0 auto;padding:64px 32px 0;background:#1C1C1C">' +
+        '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(22px,2.6vw,28px);margin:0 0 32px;color:#FAF7F4">Todos los cortes de ' + c.title + '</h2>' +
+      '</div>' +
+      '<div class="grid-3" style="max-width:1280px;margin:0 auto;padding:0 32px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:#1C1C1C">' +
         c.cuts.map(cutCard).join('') +
       '</div>' +
     '</div>';
@@ -1000,7 +1003,7 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">En Carnes Marty no solo vendemos carne; compartimos la pasión por ofrecer el mejor producto para que cada comida en familia, cada asado y cada celebración tenga la calidad que se merece.</p>' +
           '</div>' +
         '<div style="background:#1C1C1C;border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:center">' +
-          '<img src="Images/Logo_merchan.png" alt="Carnes Marty" style="width:100%;max-width:340px;height:auto">' +
+          '<img src="Images/Logo_merchan.png" alt="Carnes Marty" width="1073" height="976" style="width:100%;max-width:340px;height:auto">' +
         '</div>' +
       '</div>' +
       timelineSection() +
@@ -1030,7 +1033,7 @@
             '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Abrir WhatsApp →</span>' +
             '<p class="receta-card-desc">Escríbenos para armar tu pedido, resolver dudas o consultar por cortes especiales. Te respondemos al toque.</p>' +
           '</a>' +
-          '<img src="Images/imagen_fondo_whatsapp.webp" alt="WhatsApp" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="Images/imagen_fondo_whatsapp.webp" alt="WhatsApp" width="52" height="52" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
         '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
           '<a href="https://www.instagram.com/carnes_marty/" target="_blank" rel="noopener" class="receta-card hover-card contact-glass-card" tabindex="0" style="text-decoration:none;cursor:pointer;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
@@ -1040,7 +1043,7 @@
             '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Ver Instagram →</span>' +
             '<p class="receta-card-desc">Síguenos para ver los cortes de la semana, promociones y el detrás de escena de la carnicería.</p>' +
           '</a>' +
-          '<img src="Images/fondo_instagram.webp" alt="Instagram" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="Images/fondo_instagram.webp" alt="Instagram" width="375" height="211" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
         '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
           '<div class="receta-card hover-card contact-glass-card" tabindex="0" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
@@ -1049,7 +1052,7 @@
             '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">Región Metropolitana</span>' +
             '<p class="receta-card-desc">Visítanos en nuestra tienda física: cortes frescos y atención de carnicero, de lunes a domingo.</p>' +
           '</div>' +
-          '<img src="Images/fondo_ubicacion.webp" alt="Ubicación" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="Images/fondo_ubicacion.webp" alt="Ubicación" width="1199" height="721" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -1068,9 +1071,54 @@
     return pageInicio();
   }
 
+  var staticPageMeta = {
+    inicio: { title: 'Carnes Marty · Carnicería', desc: 'Carnes Marty — Carnicería, pollería y charcutería en Linderos, Buin. Carne nacional Categoría V, fresca todos los días.' },
+    vaca: { title: 'Vacuno · Carnes Marty | Carnicería en Linderos, Buin', desc: 'Cortes de vacuno Categoría V: filete, lomo vetado, asado de tira, osobuco y más. Carne nacional fresca, cortada a mano en Carnes Marty, Linderos, Buin.' },
+    pollo: { title: 'Pollo · Carnes Marty | Carnicería en Linderos, Buin', desc: 'Pollo nacional fresco, nunca congelado: trutro, pechuga, alas y más, entero o por presas. Carnes Marty, Linderos, Buin.' },
+    cerdo: { title: 'Cerdo · Carnes Marty | Carnicería en Linderos, Buin', desc: 'Cortes de cerdo frescos: costillar, chuletas, pernil, panceta y embutidos caseros. Carnes Marty, Linderos, Buin.' },
+    subproductos: { title: 'Sub Productos · Carnes Marty | Menudencias y cortes tradicionales', desc: 'Menudencias y cortes tradicionales para las recetas de siempre: guatas, mollejas, lengua y más. Carnes Marty, Linderos, Buin.' },
+    recomendaciones: { title: 'Recomendaciones · Carnes Marty | Selección del carnicero', desc: 'Los cortes que recomienda el carnicero: estrellas de la parrilla, cortes premium y opciones para el día a día.' },
+    recetas: { title: 'Recetas · Carnes Marty | Ideas para cocinar tus cortes', desc: 'Recetas chilenas paso a paso para sacarle el máximo partido a cada corte: asado, cazuela, empanadas, pastel de choclo y más.' },
+    nosotros: { title: 'Nosotros · Carnes Marty | Carnicería artesanal desde 2020', desc: 'Conoce la historia de Carnes Marty, carnicería de barrio en Linderos, Buin, con oficio carnicero y carne nacional Categoría V desde 2020.' },
+    contacto: { title: 'Contacto · Carnes Marty | Pedidos y consultas', desc: 'Contáctanos por WhatsApp o Instagram, o visítanos en Linderos, Buin. Pedidos, consultas y cortes especiales.' }
+  };
+
+  function pageMeta() {
+    var p = state.page;
+    if (staticPageMeta[p]) return staticPageMeta[p];
+    if (premiumCuts[p]) return { title: premiumCuts[p].nombre + ' · Carnes Marty', desc: premiumCuts[p].tagline };
+    if (recomendadoCuts[p]) return { title: recomendadoCuts[p].nombre + ' · Carnes Marty', desc: recomendadoCuts[p].tagline };
+    if (recetasBySlug[p]) return { title: recetasBySlug[p].titulo + ' · Recetas · Carnes Marty', desc: recetasBySlug[p].desc };
+    return staticPageMeta.inicio;
+  }
+
+  var SITE_BASE = 'https://carnes-marty.vercel.app/';
+
+  function canonicalUrl() {
+    var p = state.page;
+    if (p === 'inicio') return SITE_BASE;
+    if (staticPageMeta[p]) return SITE_BASE + pageFileMap[p];
+    if (premiumCuts[p]) return SITE_BASE + pageFileMap[premiumCuts[p].categoriaPage] + '#' + p;
+    if (recomendadoCuts[p]) return SITE_BASE + pageFileMap[recomendadoCuts[p].categoriaPage] + '#' + p;
+    if (recetasBySlug[p]) return SITE_BASE + pageFileMap.recetas + '#' + p;
+    return SITE_BASE;
+  }
+
+  function updatePageMeta() {
+    var meta = pageMeta();
+    document.title = meta.title;
+    var descTag = document.querySelector('meta[name="description"]');
+    if (descTag) descTag.setAttribute('content', meta.desc);
+    var canonical = canonicalUrl();
+    var canonicalTag = document.querySelector('link[rel="canonical"]');
+    if (canonicalTag) canonicalTag.setAttribute('href', canonical);
+    var ogUrlTag = document.querySelector('meta[property="og:url"]');
+    if (ogUrlTag) ogUrlTag.setAttribute('content', canonical);
+  }
+
   function setupReveal() {
     var targets = document.querySelectorAll('#page-content [data-screen-label] > *');
-    var cardTargets = document.querySelectorAll('#page-content .cat-card, #page-content .receta-card, #page-content .cut-card, #page-content .contact-card');
+    var cardTargets = document.querySelectorAll('#page-content .cat-card, #page-content .receta-card, #page-content .cut-card');
     var colTargets = document.querySelectorAll('#page-content .two-col > *, #page-content .two-col-rev > *');
 
     if (!('IntersectionObserver' in window)) {
@@ -1145,6 +1193,7 @@
     var content = document.getElementById('page-content');
     function swap() {
       content.innerHTML = buildPageHtml();
+      updatePageMeta();
       updateNavActive();
       setupReveal();
       var heroVideo = content.querySelector('video');
@@ -1243,6 +1292,11 @@
   window.addEventListener('scroll', updateHeaderScrolled, { passive: true });
   updateHeaderScrolled();
 
-  state.page = fromHash() || fromPath() || 'inicio';
-  renderPage(false);
+  var isNotFoundPage = window.location.pathname.split('/').pop() === '404.html';
+  if (!isNotFoundPage) {
+    state.page = fromHash() || fromPath() || 'inicio';
+    renderPage(false);
+  } else {
+    updateNavActive();
+  }
 })();
