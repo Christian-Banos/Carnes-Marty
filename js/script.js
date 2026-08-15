@@ -1,4 +1,9 @@
 (function () {
+  var pageFileMap = {
+    inicio: 'index.html', vaca: 'vacuno.html', pollo: 'pollo.html', cerdo: 'cerdo.html', subproductos: 'subproductos.html',
+    recetas: 'recetas.html', recomendaciones: 'recomendaciones.html', nosotros: 'nosotros.html', contacto: 'contacto.html'
+  };
+
   var valores = [
     { titulo: 'Calidad ante todo', desc: 'Carne fresca y de primera, seleccionada con el mismo criterio desde el primer día.' },
     { titulo: 'Oficio y tradición', desc: 'El corte se hace a mano, con la técnica y el conocimiento de un carnicero de oficio.' },
@@ -417,7 +422,7 @@
         '<div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%, rgba(69,0,0,0.55), #141414 72%)"></div>' +
         '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:280px;display:flex;align-items:center;padding:64px 32px">' +
           '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:640px">' +
-            '<span onclick="navigate(\'' + p.categoriaPage + '\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</span>' +
+            '<a href="' + pageFileMap[p.categoriaPage] + '" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</a>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Corte premium · ' + p.categoriaLabel + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
@@ -544,7 +549,7 @@
         '<div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%, rgba(69,0,0,0.55), #141414 72%)"></div>' +
         '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:280px;display:flex;align-items:center;padding:64px 32px">' +
           '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px;max-width:640px">' +
-            '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recomendaciones</span>' +
+            '<a href="recomendaciones.html" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recomendaciones</a>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">' + label + ' · ' + p.categoriaLabel + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(30px,4.5vw,48px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
@@ -639,14 +644,14 @@
     };
     var catHtml = ['vaca', 'pollo', 'cerdo'].map(function (key) {
       return '' +
-        '<div onclick="navigate(\'' + key + '\')" class="cat-card" style="cursor:pointer;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
+        '<a href="' + pageFileMap[key] + '" class="cat-card" style="cursor:pointer;text-decoration:none;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
           '<div class="cat-card-img" style="height:200px;overflow:hidden"><img src="' + catImgs[key] + '" alt="' + catNames[key] + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
           '<div style="padding:22px;display:flex;flex-direction:column;gap:8px;background-color:#450000">' +
             '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FFFFFF">' + catNames[key] + '</h3>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:13.5px;line-height:1.55;color:#E2E8F0;margin:0">' + catDesc[key] + '</p>' +
             '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:4px">Ver cortes →</span>' +
           '</div>' +
-        '</div>';
+        '</a>';
     }).join('');
 
     var valoresChecks = valores.map(function (v) {
@@ -738,7 +743,7 @@
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:32px;margin:0;color:#FFFFFF">¿No sabes qué elegir?</h2>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">En Carnes Marty nos encargamos de encontrar el corte perfecto para ti.</p>' +
-            '<span onclick="navigate(\'recomendaciones\')" class="link-arrow" style="cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</span>' +
+            '<a href="recomendaciones.html" class="link-arrow" style="text-decoration:none;cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</a>' +
           '</div>' +
           '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
@@ -761,7 +766,7 @@
         '<div style="max-width:1280px;margin:0 auto">' +
           '<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px">' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FAF7F4">Recetas con nuestros cortes</h2>' +
-            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
+            '<a href="recetas.html" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</a>' +
           '</div>' +
           '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + recetasHome + '</div>' +
         '</div>' +
@@ -858,7 +863,7 @@
         '<div style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(10,9,8,0.88) 0%, rgba(10,9,8,0.55) 48%, rgba(10,9,8,0.25) 100%)"></div>' +
         '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:420px;display:flex;align-items:center;padding:64px 32px">' +
           '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:14px;max-width:560px">' +
-            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recetas</span>' +
+            '<a href="recetas.html" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a Recetas</a>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Receta · ' + r.corte + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(30px,4.5vw,48px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + r.titulo + '</h1>' +
             '<div style="display:flex;gap:10px;flex-wrap:wrap">' + badges + '</div>' +
@@ -921,7 +926,7 @@
         '<div style="max-width:1280px;margin:0 auto">' +
           '<div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:36px">' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:34px;margin:0;color:#FAF7F4">Otras recetas</h2>' +
-            '<span onclick="navigate(\'recetas\')" class="link-arrow" style="cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</span>' +
+            '<a href="recetas.html" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A">Ver todas →</a>' +
           '</div>' +
           '<div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">' + otras.map(recetaCard).join('') + '</div>' +
         '</div>' +
@@ -1209,11 +1214,21 @@
 
   function fromHash() {
     var p = (window.location.hash || '').replace('#', '');
-    return validPages.indexOf(p) !== -1 ? p : 'inicio';
+    return validPages.indexOf(p) !== -1 ? p : null;
+  }
+
+  var pathPageMap = {
+    '': 'inicio', 'index.html': 'inicio',
+    'vacuno.html': 'vaca', 'pollo.html': 'pollo', 'cerdo.html': 'cerdo', 'subproductos.html': 'subproductos',
+    'recetas.html': 'recetas', 'recomendaciones.html': 'recomendaciones', 'nosotros.html': 'nosotros', 'contacto.html': 'contacto'
+  };
+  function fromPath() {
+    var file = window.location.pathname.split('/').pop();
+    return pathPageMap.hasOwnProperty(file) ? pathPageMap[file] : null;
   }
 
   window.addEventListener('hashchange', function () {
-    var p = fromHash();
+    var p = fromHash() || fromPath() || 'inicio';
     if (p === state.page) return;
     state.page = p;
     renderPage(true);
@@ -1228,6 +1243,6 @@
   window.addEventListener('scroll', updateHeaderScrolled, { passive: true });
   updateHeaderScrolled();
 
-  state.page = fromHash();
+  state.page = fromHash() || fromPath() || 'inicio';
   renderPage(false);
 })();
