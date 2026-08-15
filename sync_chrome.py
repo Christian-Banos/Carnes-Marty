@@ -20,8 +20,8 @@ Usage:
 PROJECT = "."
 SOURCE = "index.html"
 TARGETS = [
-    "vacuno.html", "pollo.html", "cerdo.html", "subproductos.html",
-    "recetas.html", "recomendaciones.html", "nosotros.html", "contacto.html",
+    "pages/vacuno.html", "pages/pollo.html", "pages/cerdo.html", "pages/subproductos.html",
+    "pages/recetas.html", "pages/recomendaciones.html", "pages/nosotros.html", "pages/contacto.html",
 ]
 
 HEAD_SPLIT = "</head>\n<body>\n"

@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    { "source": "/vacuno.html", "destination": "/pages/vacuno.html", "permanent": true },
+    { "source": "/pollo.html", "destination": "/pages/pollo.html", "permanent": true },
+    { "source": "/cerdo.html", "destination": "/pages/cerdo.html", "permanent": true },
+    { "source": "/subproductos.html", "destination": "/pages/subproductos.html", "permanent": true },
+    { "source": "/recetas.html", "destination": "/pages/recetas.html", "permanent": true },
+    { "source": "/recomendaciones.html", "destination": "/pages/recomendaciones.html", "permanent": true },
+    { "source": "/nosotros.html", "destination": "/pages/nosotros.html", "permanent": true },
+    { "source": "/contacto.html", "destination": "/pages/contacto.html", "permanent": true }
+  ]
+}

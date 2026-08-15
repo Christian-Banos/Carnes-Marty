@@ -1,7 +1,7 @@
 (function () {
   var pageFileMap = {
-    inicio: 'index.html', vaca: 'vacuno.html', pollo: 'pollo.html', cerdo: 'cerdo.html', subproductos: 'subproductos.html',
-    recetas: 'recetas.html', recomendaciones: 'recomendaciones.html', nosotros: 'nosotros.html', contacto: 'contacto.html'
+    inicio: 'index.html', vaca: 'pages/vacuno.html', pollo: 'pages/pollo.html', cerdo: 'pages/cerdo.html', subproductos: 'pages/subproductos.html',
+    recetas: 'pages/recetas.html', recomendaciones: 'pages/recomendaciones.html', nosotros: 'pages/nosotros.html', contacto: 'pages/contacto.html'
   };
 
   var valores = [
@@ -38,99 +38,99 @@
       label: 'Vacuno',
       eyebrow: 'Categoría V · Carne nacional en vara',
       title: 'Vacuno',
-      bannerImg: 'Images/banner-seccion-vacuno.png',
+      bannerImg: '/Images/banner-seccion-vacuno.png',
       description: 'Carne vacuna nacional, clasificación Categoría V. Del asado familiar al corte fino, seleccionada pieza por pieza.',
       cuts: [
-        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios, ideal para ocasiones especiales.', metodos: ['parrilla', 'sarten'], img: 'Images/filete_vacuno.jpg' },
-        { nombre: 'Lomo Liso', desc: 'Corte magro y parejo, perfecto para bistecs y filetes a la plancha.', metodos: ['sarten', 'parrilla'], img: 'Images/lomo_liso.webp' },
-        { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true, metodos: ['parrilla', 'sarten'], img: 'Images/lomo_vetado.jpg' },
-        { nombre: 'Asiento', desc: 'Tierno y con buen sabor, ideal para bistecs y saltados.', metodos: ['sarten'], img: 'Images/asiento.webp' },
-        { nombre: 'Punta de Ganso', desc: 'Corte alargado y sabroso, excelente a la parrilla o al horno.', metodos: ['parrilla', 'cacerola'], img: 'Images/punta_de_ganso.webp' },
-        { nombre: 'Punta de Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.', metodos: ['parrilla'], img: 'Images/Punta_picana.png' },
-        { nombre: 'Punta de Paleta', desc: 'Corte rendidor y tierno, bueno para asar o estofar.', metodos: ['parrilla', 'cacerola'], img: 'Images/punta_de_paleta.png' },
-        { nombre: 'Pollo Ganso', desc: 'Corte magro de paleta, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'], img: 'Images/pollo_ganso.jpg' },
-        { nombre: 'Posta Negra', desc: 'Magra y compacta, perfecta para el horno o el cuchillo.', metodos: ['cacerola'], img: 'Images/posta_negra.png' },
-        { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.', metodos: ['cacerola'], img: 'Images/posta_rosada.webp' },
-        { nombre: 'Posta de Paleta', desc: 'Corte magro y económico, ideal para guisos y cazuelas.', metodos: ['cacerola'], img: 'Images/posta_de_paleta.webp' },
-        { nombre: 'Sobrecostilla', desc: 'Con hueso y buen marmoleo, ideal para cocciones lentas.', metodos: ['cacerola', 'parrilla'], img: 'Images/sobre_costilla.webp' },
-        { nombre: 'Huachalomo', desc: 'Corte jugoso y sabroso, clásico para el asado a la olla.', metodos: ['cacerola', 'parrilla'], img: 'Images/huachalomo.jpg' },
-        { nombre: 'Asado Carnicero', desc: 'Corte tradicional con hueso, sabroso para el asado a la olla.', metodos: ['cacerola'], img: 'Images/asado_carnicero.jpg' },
-        { nombre: 'Tapabarriga', desc: 'Corte fibroso y sabroso, ideal para moler o guisar.', metodos: ['cacerola', 'sarten'], img: 'Images/tapabarriga.jpg' },
-        { nombre: 'Choclillo', desc: 'Tierno y magro, perfecto para bistecs finos.', metodos: ['sarten', 'parrilla'], img: 'Images/choclillo.webp' },
-        { nombre: 'Tapapecho', desc: 'Corte con buen sabor, ideal para asados a la olla y caldos.', metodos: ['cacerola'], img: 'Images/tapapecho.jpg' },
-        { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.', metodos: ['cacerola'], img: 'Images/plateada.png' },
-        { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.', metodos: ['cacerola'], img: 'Images/palanca.webp' },
-        { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.', metodos: ['parrilla', 'sarten'], img: 'Images/Abastero.webp' },
-        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.', metodos: ['parrilla'], img: 'Images/entrana.png' },
-        { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.', metodos: ['cacerola', 'sarten'], img: 'Images/pollo_barriga.webp' },
-        { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: 'Images/entrecot.jpg' },
-        { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.', metodos: ['parrilla'], img: 'Images/Tomahawk.webp' },
-        { nombre: 'Arrachera', desc: 'Corte marinado clásico de la parrilla, sabroso y jugoso.', metodos: ['parrilla'], img: 'Images/arrachera.webp' },
-        { nombre: 'Flat Iron', desc: 'Corte tierno de paleta, ideal para la plancha o parrilla.', metodos: ['sarten', 'parrilla'], img: 'Images/Flat_Iron.jpg' },
-        { nombre: 'Molida Especial', desc: 'Carne molida magra y fresca, ideal para hamburguesas y salsas.', metodos: ['sarten', 'cacerola'], img: 'Images/molida_especial.jpeg' },
-        { nombre: 'Molida Corriente', desc: 'Carne molida rendidora para el día a día.', metodos: ['sarten', 'cacerola'], img: 'Images/molida_corriente.jpg' },
-        { nombre: 'Costilla Colada', desc: 'Costillar con buen marmoleo, ideal para asar a fuego lento.', metodos: ['parrilla', 'cacerola'], img: 'Images/costilla_colada.jpg' },
-        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.', metodos: ['parrilla'], img: 'Images/asado_de_tira.jpg' },
-        { nombre: 'Aletilla', desc: 'Corte económico y sabroso, ideal para moler o guisar.', metodos: ['cacerola'], img: 'Images/aletilla.webp' },
-        { nombre: 'Osobuco', desc: 'Con hueso y tuétano, perfecto para cazuelas y guisos de olla.', metodos: ['cacerola'], img: 'Images/osobuco.jpg' },
-        { nombre: 'Hueso Carnudo', desc: 'Hueso con carne, ideal para caldos y cazuelas con sabor.', metodos: ['cacerola'], img: 'Images/hueso_carnudo.jpg' },
+        { nombre: 'Filete', desc: 'El corte más tierno, sin grasa ni nervios, ideal para ocasiones especiales.', metodos: ['parrilla', 'sarten'], img: '/Images/filete_vacuno.jpg' },
+        { nombre: 'Lomo Liso', desc: 'Corte magro y parejo, perfecto para bistecs y filetes a la plancha.', metodos: ['sarten', 'parrilla'], img: '/Images/lomo_liso.webp' },
+        { nombre: 'Lomo Vetado', desc: 'Corte marmoleado y jugoso, el preferido para la parrilla.', destacado: true, metodos: ['parrilla', 'sarten'], img: '/Images/lomo_vetado.jpg' },
+        { nombre: 'Asiento', desc: 'Tierno y con buen sabor, ideal para bistecs y saltados.', metodos: ['sarten'], img: '/Images/asiento.webp' },
+        { nombre: 'Punta de Ganso', desc: 'Corte alargado y sabroso, excelente a la parrilla o al horno.', metodos: ['parrilla', 'cacerola'], img: '/Images/punta_de_ganso.webp' },
+        { nombre: 'Punta de Picana', desc: 'Jugosa y sabrosa, favorita en las juntas familiares.', metodos: ['parrilla'], img: '/Images/Punta_picana.png' },
+        { nombre: 'Punta de Paleta', desc: 'Corte rendidor y tierno, bueno para asar o estofar.', metodos: ['parrilla', 'cacerola'], img: '/Images/punta_de_paleta.png' },
+        { nombre: 'Pollo Ganso', desc: 'Corte magro de paleta, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'], img: '/Images/pollo_ganso.jpg' },
+        { nombre: 'Posta Negra', desc: 'Magra y compacta, perfecta para el horno o el cuchillo.', metodos: ['cacerola'], img: '/Images/posta_negra.png' },
+        { nombre: 'Posta Rosada', desc: 'Magra y versátil, perfecta para el horno.', metodos: ['cacerola'], img: '/Images/posta_rosada.webp' },
+        { nombre: 'Posta de Paleta', desc: 'Corte magro y económico, ideal para guisos y cazuelas.', metodos: ['cacerola'], img: '/Images/posta_de_paleta.webp' },
+        { nombre: 'Sobrecostilla', desc: 'Con hueso y buen marmoleo, ideal para cocciones lentas.', metodos: ['cacerola', 'parrilla'], img: '/Images/sobre_costilla.webp' },
+        { nombre: 'Huachalomo', desc: 'Corte jugoso y sabroso, clásico para el asado a la olla.', metodos: ['cacerola', 'parrilla'], img: '/Images/huachalomo.jpg' },
+        { nombre: 'Asado Carnicero', desc: 'Corte tradicional con hueso, sabroso para el asado a la olla.', metodos: ['cacerola'], img: '/Images/asado_carnicero.jpg' },
+        { nombre: 'Tapabarriga', desc: 'Corte fibroso y sabroso, ideal para moler o guisar.', metodos: ['cacerola', 'sarten'], img: '/Images/tapabarriga.jpg' },
+        { nombre: 'Choclillo', desc: 'Tierno y magro, perfecto para bistecs finos.', metodos: ['sarten', 'parrilla'], img: '/Images/choclillo.webp' },
+        { nombre: 'Tapapecho', desc: 'Corte con buen sabor, ideal para asados a la olla y caldos.', metodos: ['cacerola'], img: '/Images/tapapecho.jpg' },
+        { nombre: 'Plateada', desc: 'Ideal para cocciones lentas y guisos de olla.', metodos: ['cacerola'], img: '/Images/plateada.png' },
+        { nombre: 'Palanca', desc: 'Corte magro de segunda, bueno para moler o estofar.', metodos: ['cacerola'], img: '/Images/palanca.webp' },
+        { nombre: 'Abastero', desc: 'Rendidor y jugoso, ideal para churrasco.', metodos: ['parrilla', 'sarten'], img: '/Images/Abastero.webp' },
+        { nombre: 'Entraña', desc: 'Fina y sabrosa, un clásico de la parrilla.', metodos: ['parrilla'], img: '/Images/entrana.png' },
+        { nombre: 'Pollo Barriga', desc: 'Corte magro de la posta, ideal para el día a día.', metodos: ['cacerola', 'sarten'], img: '/Images/pollo_barriga.webp' },
+        { nombre: 'Entrecot', desc: 'Corte con hueso jugoso y marmoleado, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: '/Images/entrecot.jpg' },
+        { nombre: 'Tomahawk', desc: 'Costilla con hueso largo, la pieza estrella para compartir en la parrilla.', metodos: ['parrilla'], img: '/Images/Tomahawk.webp' },
+        { nombre: 'Arrachera', desc: 'Corte marinado clásico de la parrilla, sabroso y jugoso.', metodos: ['parrilla'], img: '/Images/arrachera.webp' },
+        { nombre: 'Flat Iron', desc: 'Corte tierno de paleta, ideal para la plancha o parrilla.', metodos: ['sarten', 'parrilla'], img: '/Images/Flat_Iron.jpg' },
+        { nombre: 'Molida Especial', desc: 'Carne molida magra y fresca, ideal para hamburguesas y salsas.', metodos: ['sarten', 'cacerola'], img: '/Images/molida_especial.jpeg' },
+        { nombre: 'Molida Corriente', desc: 'Carne molida rendidora para el día a día.', metodos: ['sarten', 'cacerola'], img: '/Images/molida_corriente.jpg' },
+        { nombre: 'Costilla Colada', desc: 'Costillar con buen marmoleo, ideal para asar a fuego lento.', metodos: ['parrilla', 'cacerola'], img: '/Images/costilla_colada.jpg' },
+        { nombre: 'Asado de Tira', desc: 'Costillar cortado transversalmente, clásico del asado chileno.', metodos: ['parrilla'], img: '/Images/asado_de_tira.jpg' },
+        { nombre: 'Aletilla', desc: 'Corte económico y sabroso, ideal para moler o guisar.', metodos: ['cacerola'], img: '/Images/aletilla.webp' },
+        { nombre: 'Osobuco', desc: 'Con hueso y tuétano, perfecto para cazuelas y guisos de olla.', metodos: ['cacerola'], img: '/Images/osobuco.jpg' },
+        { nombre: 'Hueso Carnudo', desc: 'Hueso con carne, ideal para caldos y cazuelas con sabor.', metodos: ['cacerola'], img: '/Images/hueso_carnudo.jpg' },
       ],
     },
     cerdo: {
       label: 'Cerdo',
       eyebrow: 'Carne nacional fresca',
       title: 'Cerdo',
-      bannerImg: 'Images/banner-seccion-cerdo.png',
+      bannerImg: '/Images/banner-seccion-cerdo.png',
       description: 'Cerdo nacional fresco, del costillar ahumado a los embutidos caseros.',
       cuts: [
-        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true, metodos: ['parrilla'], img: 'Images/costillar_de_cerdo.webp' },
-        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.', metodos: ['sarten', 'parrilla'], img: 'Images/chuleta_centro.avif' },
-        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.', metodos: ['parrilla'], img: 'Images/chuleta_parrillera.jpg' },
-        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.', metodos: ['parrilla', 'cacerola', 'sarten'], img: 'Images/pulpa_pierna_sin_hueso.webp' },
-        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.', metodos: ['cacerola'], img: 'Images/paleta_de_cerdo.png' },
-        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.', metodos: ['cacerola'], img: 'Images/pernil_mano.jpg' },
-        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.', metodos: ['cacerola'], img: 'Images/pernil_pierna.webp' },
-        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.', metodos: ['sarten', 'cacerola'], img: 'Images/tocino_de_cerdo.jpg' },
-        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.', metodos: ['parrilla'], img: 'Images/panceta.jpg' },
-        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.', metodos: ['cacerola'], img: 'Images/manitas_de_cerdo.jpg' },
-        { nombre: 'Arrollado Huaso', desc: 'Corte enrollado con hueso, ideal para el horno.', metodos: ['cacerola'], img: 'Images/arrollado_huaso.jpg' },
-        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.', metodos: ['parrilla', 'sarten'], img: 'Images/longanizas.jpg' },
-        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.', metodos: ['sarten', 'cacerola'], img: 'Images/prietas.jpg' },
-        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: 'Images/butifarra.png' },
+        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true, metodos: ['parrilla'], img: '/Images/costillar_de_cerdo.webp' },
+        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.', metodos: ['sarten', 'parrilla'], img: '/Images/chuleta_centro.avif' },
+        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.', metodos: ['parrilla'], img: '/Images/chuleta_parrillera.jpg' },
+        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.', metodos: ['parrilla', 'cacerola', 'sarten'], img: '/Images/pulpa_pierna_sin_hueso.webp' },
+        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.', metodos: ['cacerola'], img: '/Images/paleta_de_cerdo.png' },
+        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.', metodos: ['cacerola'], img: '/Images/pernil_mano.jpg' },
+        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.', metodos: ['cacerola'], img: '/Images/pernil_pierna.webp' },
+        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.', metodos: ['sarten', 'cacerola'], img: '/Images/tocino_de_cerdo.jpg' },
+        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.', metodos: ['parrilla'], img: '/Images/panceta.jpg' },
+        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.', metodos: ['cacerola'], img: '/Images/manitas_de_cerdo.jpg' },
+        { nombre: 'Arrollado Huaso', desc: 'Corte enrollado con hueso, ideal para el horno.', metodos: ['cacerola'], img: '/Images/arrollado_huaso.jpg' },
+        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.', metodos: ['parrilla', 'sarten'], img: '/Images/longanizas.jpg' },
+        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.', metodos: ['sarten', 'cacerola'], img: '/Images/prietas.jpg' },
+        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: '/Images/butifarra.png' },
       ],
     },
     pollo: {
       label: 'Pollo',
       eyebrow: 'Fresco, nunca congelado',
       title: 'Pollo',
-      bannerImg: 'Images/banner-seccion-pollo.png',
+      bannerImg: '/Images/banner-seccion-pollo.png',
       description: 'Pollo nacional fresco, entero o por presas, listo para el horno, la olla o la parrilla.',
       cuts: [
-        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.', destacado: true, metodos: ['parrilla', 'cacerola'], img: 'Images/trutro_entero.png' },
-        { nombre: 'Pechuga Entera', desc: 'Con hueso y piel, ideal para el horno.', metodos: ['cacerola'], img: 'Images/pechuga_entera.webp' },
-        { nombre: 'Pechuga Deshuesada', desc: 'Sin piel ni hueso, la opción más magra.', metodos: ['sarten', 'parrilla'], img: 'Images/pechuga_deshuesada.jpg' },
-        { nombre: 'Trutro Ala', desc: 'Tierno y jugoso, ideal para freír o guisar.', metodos: ['sarten', 'cacerola'], img: 'Images/trutro_ala.avif' },
-        { nombre: 'Ala Entera', desc: 'Ideales para freír, hornear o ahumar.', metodos: ['sarten', 'cacerola', 'parrilla'], img: 'Images/ala_entera.jpg' },
-        { nombre: 'Contre de Pollo', desc: 'Corte jugoso de la parte alta del muslo, ideal para guisos.', metodos: ['cacerola'], img: 'Images/contre_de_pollo.jpg' },
-        { nombre: 'Corazón de Pollo', desc: 'Sabroso y firme, clásico para anticuchos.', metodos: ['parrilla'], img: 'Images/corazon_de_pollo.jpg' },
-        { nombre: 'Panita de Pollo', desc: 'Tierna y suave, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'], img: 'Images/panita_de_pollo.jpg' },
-        { nombre: 'Patas de Pollo', desc: 'Clásicas para dar sabor y cuerpo a caldos.', metodos: ['cacerola'], img: 'Images/patas_de_pollo.jpg' },
+        { nombre: 'Trutro Entero', desc: 'Jugoso y sabroso, perfecto para la parrilla.', destacado: true, metodos: ['parrilla', 'cacerola'], img: '/Images/trutro_entero.png' },
+        { nombre: 'Pechuga Entera', desc: 'Con hueso y piel, ideal para el horno.', metodos: ['cacerola'], img: '/Images/pechuga_entera.webp' },
+        { nombre: 'Pechuga Deshuesada', desc: 'Sin piel ni hueso, la opción más magra.', metodos: ['sarten', 'parrilla'], img: '/Images/pechuga_deshuesada.jpg' },
+        { nombre: 'Trutro Ala', desc: 'Tierno y jugoso, ideal para freír o guisar.', metodos: ['sarten', 'cacerola'], img: '/Images/trutro_ala.avif' },
+        { nombre: 'Ala Entera', desc: 'Ideales para freír, hornear o ahumar.', metodos: ['sarten', 'cacerola', 'parrilla'], img: '/Images/ala_entera.jpg' },
+        { nombre: 'Contre de Pollo', desc: 'Corte jugoso de la parte alta del muslo, ideal para guisos.', metodos: ['cacerola'], img: '/Images/contre_de_pollo.jpg' },
+        { nombre: 'Corazón de Pollo', desc: 'Sabroso y firme, clásico para anticuchos.', metodos: ['parrilla'], img: '/Images/corazon_de_pollo.jpg' },
+        { nombre: 'Panita de Pollo', desc: 'Tierna y suave, ideal para saltados y guisos rápidos.', metodos: ['sarten', 'cacerola'], img: '/Images/panita_de_pollo.jpg' },
+        { nombre: 'Patas de Pollo', desc: 'Clásicas para dar sabor y cuerpo a caldos.', metodos: ['cacerola'], img: '/Images/patas_de_pollo.jpg' },
       ],
     },
     subproductos: {
       label: 'Sub Productos',
       eyebrow: 'Menudencias y cortes tradicionales',
       title: 'Sub Productos',
-      bannerImg: 'Images/banner-seccion-subproductos.png',
+      bannerImg: '/Images/banner-seccion-subproductos.png',
       description: 'Menudencias y cortes tradicionales para las recetas de siempre.',
       cuts: [
-        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.', metodos: ['cacerola'], img: 'Images/guata_callo.jpg' },
-        { nombre: 'Chunchules', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.', metodos: ['cacerola'], img: 'Images/chunchules.jpg' },
-        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.', metodos: ['sarten'], img: 'Images/pana_de_vacuno.jpg' },
-        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.', metodos: ['parrilla', 'cacerola'], img: 'Images/corazon_de_vacuno.jpg' },
-        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.', metodos: ['cacerola'], img: 'Images/patas_de_vacuno.jpg' },
-        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.', metodos: ['cacerola', 'sarten'], img: 'Images/lengua_de_vacuno.webp' },
-        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true, metodos: ['parrilla'], img: 'Images/mollejas.png' },
+        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.', metodos: ['cacerola'], img: '/Images/guata_callo.jpg' },
+        { nombre: 'Chunchules', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.', metodos: ['cacerola'], img: '/Images/chunchules.jpg' },
+        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.', metodos: ['sarten'], img: '/Images/pana_de_vacuno.jpg' },
+        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.', metodos: ['parrilla', 'cacerola'], img: '/Images/corazon_de_vacuno.jpg' },
+        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.', metodos: ['cacerola'], img: '/Images/patas_de_vacuno.jpg' },
+        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.', metodos: ['cacerola', 'sarten'], img: '/Images/lengua_de_vacuno.webp' },
+        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true, metodos: ['parrilla'], img: '/Images/mollejas.png' },
       ],
     },
   };
@@ -141,7 +141,7 @@
       nombre: 'Tomahawk',
       categoriaPage: 'vaca',
       categoriaLabel: 'Vacuno',
-      img: 'Images/Tomahawk_sin_texto.png',
+      img: '/Images/Tomahawk_sin_texto.png',
       tagline: 'Costillar con el hueso largo intacto: la pieza que se sirve para compartir en la mesa.',
       peso: '1,2 – 1,5 kg',
       porciones: '2 – 3 personas',
@@ -160,7 +160,7 @@
       nombre: 'Flat Iron Steak',
       categoriaPage: 'vaca',
       categoriaLabel: 'Vacuno',
-      img: 'Images/flat_iron_steak_sin_texto.png',
+      img: '/Images/flat_iron_steak_sin_texto.png',
       tagline: 'De la paleta del vacuno, pero con una ternura que sorprende.',
       peso: '250 – 350 g por porción',
       porciones: '1 persona',
@@ -178,7 +178,7 @@
 
   var recomendadoCuts = {
     'entrana': {
-      slug: 'entrana', nombre: 'Entraña', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/entrana.png',
+      slug: 'entrana', nombre: 'Entraña', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: '/Images/entrana.png',
       tagline: 'Fina, fibrosa y directa a las brasas: el corte que nunca falta en la parrilla.',
       peso: '400 – 600 g', porciones: '2 – 3 personas', origen: 'Diafragma del vacuno, el corte más fino y fibroso de la parrilla', textura: 'Fibra larga y marcada, muy jugosa cuando se cocina rápido a fuego fuerte', termino: 'Término medio', metodos: ['parrilla'],
       descripcion: [
@@ -188,7 +188,7 @@
       tip: 'Cocínala a fuego fuerte apenas 2-3 minutos por lado: su grosor fino hace que se pase de cocción muy rápido. Córtala siempre en contra de la fibra.',
     },
     'lomo-vetado': {
-      slug: 'lomo-vetado', nombre: 'Lomo Vetado', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/lomo_vetado.jpg',
+      slug: 'lomo-vetado', nombre: 'Lomo Vetado', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: '/Images/lomo_vetado.jpg',
       tagline: 'El corte más marmoleado de la casa, jugoso al punto en cada asado.',
       peso: '300 – 400 g por porción', porciones: '1 persona', origen: 'Zona dorsal del vacuno (ribeye), con buen marmoleo intramuscular', textura: 'Muy marmoleada y jugosa, con un anillo de grasa característico', termino: 'Término medio', metodos: ['parrilla', 'sarten'],
       descripcion: [
@@ -198,7 +198,7 @@
       tip: 'Sella a fuego fuerte 2-3 minutos por lado y termina a fuego medio hasta el punto deseado. Deja reposar 5 minutos antes de cortar.',
     },
     'arrachera': {
-      slug: 'arrachera', nombre: 'Arrachera', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/arrachera.webp',
+      slug: 'arrachera', nombre: 'Arrachera', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: '/Images/arrachera.webp',
       tagline: 'Marinada y de fibra larga, ideal para compartir en grupos grandes.',
       peso: '500 g – 1 kg', porciones: '3 – 4 personas', origen: 'Corte marinado de la parrilla, de fibra larga y sabor intenso', textura: 'Fibrosa y jugosa, potenciada por el marinado', termino: 'Término medio', metodos: ['parrilla'],
       descripcion: [
@@ -208,7 +208,7 @@
       tip: 'Corta siempre en diagonal y en contra de la fibra: es la diferencia entre una arrachera tierna y una dura de masticar.',
     },
     'asado-de-tira': {
-      slug: 'asado-de-tira', nombre: 'Asado de Tira', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: 'Images/asado_de_tira.jpg',
+      slug: 'asado-de-tira', nombre: 'Asado de Tira', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'parrilla', img: '/Images/asado_de_tira.jpg',
       tagline: 'El costillar cortado transversal, la imagen misma del asado chileno.',
       peso: '1 – 1,5 kg', porciones: '4 – 5 personas', origen: 'Costillar de vacuno cortado transversalmente, con hueso', textura: 'Con hueso y buen marmoleo, se ablanda con calor sostenido', termino: 'Término medio a bien cocido', metodos: ['parrilla'],
       descripcion: [
@@ -218,7 +218,7 @@
       tip: 'Dale más tiempo a fuego medio que a fuego fuerte: el hueso y la grasa necesitan calor sostenido para ablandarse bien.',
     },
     'filete': {
-      slug: 'filete', nombre: 'Filete', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: 'Images/filete_vacuno.jpg',
+      slug: 'filete', nombre: 'Filete', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: '/Images/filete_vacuno.jpg',
       tagline: 'El corte más tierno del vacuno, sin grasa ni nervios.',
       peso: '200 – 250 g por porción', porciones: '1 persona', origen: 'Lomo interno del vacuno, sin grasa ni nervios', textura: 'Extremadamente tierna, con sabor suave', termino: 'Término medio - medio rosado', metodos: ['parrilla', 'sarten'],
       descripcion: [
@@ -228,7 +228,7 @@
       tip: 'Al ser tan magro, cocínalo a fuego medio-alto y no lo dejes pasar de término medio para que no pierda jugosidad.',
     },
     'entrecot': {
-      slug: 'entrecot', nombre: 'Entrecot', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: 'Images/entrecot.jpg',
+      slug: 'entrecot', nombre: 'Entrecot', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'premium', img: '/Images/entrecot.jpg',
       tagline: 'Con hueso, jugoso y marmoleado: una experiencia más elaborada en la mesa.',
       peso: '350 – 450 g (con hueso)', porciones: '1 – 2 personas', origen: 'Costilla de vacuno con hueso, corte marmoleado', textura: 'Jugosa y marmoleada, con el sabor extra del hueso', termino: 'Término medio', metodos: ['parrilla', 'sarten'],
       descripcion: [
@@ -238,7 +238,7 @@
       tip: 'Sella primero los bordes apoyando el hueso sobre la parrilla o sartén, luego cocina de plano por ambos lados hasta el punto deseado.',
     },
     'molida-especial': {
-      slug: 'molida-especial', nombre: 'Molida Especial', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: 'Images/molida_especial.jpeg',
+      slug: 'molida-especial', nombre: 'Molida Especial', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: '/Images/molida_especial.jpeg',
       tagline: 'Molida fresca a diario, ideal para hamburguesas y salsas con cuerpo.',
       peso: '500 g / 1 kg', porciones: 'Rinde 4-6 hamburguesas de 125 g', origen: 'Molida magra y fresca, seleccionada especialmente para el día a día', textura: 'Fina y pareja, con el punto justo de grasa para no secarse', termino: 'Bien cocida', metodos: ['sarten', 'cacerola'],
       descripcion: [
@@ -248,7 +248,7 @@
       tip: 'No la manipules demasiado al formar las hamburguesas: mientras menos se trabaje, más jugosa queda la carne al cocinarla.',
     },
     'posta-rosada': {
-      slug: 'posta-rosada', nombre: 'Posta Rosada', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: 'Images/posta_rosada.webp',
+      slug: 'posta-rosada', nombre: 'Posta Rosada', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: '/Images/posta_rosada.webp',
       tagline: 'Magra y económica, perfecta para el horno de todos los días.',
       peso: '1 kg', porciones: '4 – 6 personas', origen: 'Corte magro de la posta, versátil para distintas preparaciones', textura: 'Magra y compacta, se ablanda bien con cocción lenta', termino: 'Bien cocida', metodos: ['cacerola'],
       descripcion: [
@@ -258,7 +258,7 @@
       tip: 'Por ser un corte magro, cocínala con algo de líquido (caldo, salsa o vino) para que no se seque durante la cocción.',
     },
     'osobuco': {
-      slug: 'osobuco', nombre: 'Osobuco', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: 'Images/osobuco.jpg',
+      slug: 'osobuco', nombre: 'Osobuco', categoriaPage: 'vaca', categoriaLabel: 'Vacuno', seccion: 'diaria', img: '/Images/osobuco.jpg',
       tagline: 'Con hueso y tuétano, la base ideal para cazuelas y guisos de olla.',
       peso: '4 trozos (aprox. 1,2 kg)', porciones: '4 personas', origen: 'Corte transversal de la pierna, con hueso y tuétano', textura: 'Firme en crudo, se vuelve muy tierna con cocción lenta', termino: 'Cocción lenta hasta que se separe del hueso', metodos: ['cacerola'],
       descripcion: [
@@ -278,59 +278,59 @@
   ];
 
   var recetas = [
-    { slug: 'asado-parrilla', titulo: 'Asado a la parrilla clásico', corte: 'Lomo Vetado', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4-6 personas', desc: 'El asado de siempre: sal gruesa, brasas parejas y el punto justo de cocción.', img: 'Images/asado-a-la-parrilla-clasico.jpg',
+    { slug: 'asado-parrilla', titulo: 'Asado a la parrilla clásico', corte: 'Lomo Vetado', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4-6 personas', desc: 'El asado de siempre: sal gruesa, brasas parejas y el punto justo de cocción.', img: '/Images/asado-a-la-parrilla-clasico.jpg',
       ingredientes: ['1 kg de Lomo Vetado', 'Sal gruesa a gusto', 'Pimienta negra recién molida', 'Carbón o leña para la parrilla'],
       pasos: ['Retira la carne del refrigerador 30 minutos antes de cocinar para que llegue a temperatura ambiente.', 'Prepara las brasas hasta que estén parejas, con un calor medio-alto.', 'Sazona el Lomo Vetado con sal gruesa por ambos lados.', 'Cocina sobre la parrilla 6-8 minutos por lado para un término medio, sin pinchar la carne.', 'Retira, sazona con pimienta y deja reposar 5 minutos antes de cortar.'],
       tips: ['Deja reposar la carne unos minutos antes de cortarla para conservar los jugos.', 'La sal gruesa se disuelve más lento y forma una costra pareja y sabrosa.', 'Evita pinchar la carne mientras se cocina, así no pierde jugosidad.'] },
-    { slug: 'costillar-ahumado', titulo: 'Costillar de cerdo ahumado', corte: 'Costillar de Cerdo', categoria: 'cerdo', destacada: true, tiempo: '3 h', dificultad: 'Media', porciones: '4-5 personas', desc: 'Cocción lenta y humo suave hasta que la carne se separa del hueso.', img: 'Images/costillar-cerdo.jpeg',
+    { slug: 'costillar-ahumado', titulo: 'Costillar de cerdo ahumado', corte: 'Costillar de Cerdo', categoria: 'cerdo', destacada: true, tiempo: '3 h', dificultad: 'Media', porciones: '4-5 personas', desc: 'Cocción lenta y humo suave hasta que la carne se separa del hueso.', img: '/Images/costillar-cerdo.jpeg',
       ingredientes: ['1,5 kg de Costillar de Cerdo', 'Sal, pimienta y ajo en polvo', 'Aserrín o astillas para ahumar (opcional)', 'Salsa barbecue a gusto'],
       pasos: ['Retira la membrana del reverso del costillar y sazona generosamente por ambos lados.', 'Prende el ahumador o la parrilla con calor indirecto a fuego bajo (110-120°C).', 'Cocina el costillar 2,5-3 horas a fuego indirecto, agregando humo los primeros 90 minutos.', 'En la última media hora, pincela con salsa barbecue cada 10 minutos.', 'Retira cuando la carne se separe fácilmente del hueso y deja reposar 10 minutos antes de cortar.'],
       tips: ['Retira siempre la membrana del reverso para que el humo penetre mejor.', 'Si notas que se seca antes de tiempo, envuélvelo en papel aluminio.', 'Acompaña con una ensalada fresca para equilibrar lo ahumado.'] },
-    { slug: 'pollo-horno', titulo: 'Pollo al horno con hierbas', corte: 'Pollo Entero', categoria: 'pollo', tiempo: '1 h 15 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'Piel dorada y crocante, carne jugosa por dentro.', img: 'Images/pollo-al-horno.jpeg',
+    { slug: 'pollo-horno', titulo: 'Pollo al horno con hierbas', corte: 'Pollo Entero', categoria: 'pollo', tiempo: '1 h 15 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'Piel dorada y crocante, carne jugosa por dentro.', img: '/Images/pollo-al-horno.jpeg',
       ingredientes: ['1 Pollo Entero', '3 dientes de ajo', 'Romero y tomillo fresco', 'Jugo de 1 limón', 'Aceite de oliva, sal y pimienta'],
       pasos: ['Precalienta el horno a 200°C.', 'Frota el pollo con aceite de oliva, ajo picado, hierbas, jugo de limón, sal y pimienta, por dentro y por fuera.', 'Coloca el pollo en una fuente para horno con la pechuga hacia arriba.', 'Hornea entre 1 hora y 1 hora 15 minutos, bañando con sus jugos cada 20 minutos, hasta que la piel esté dorada.', 'Deja reposar 10 minutos antes de trinchar.'],
       tips: ['Bañar el pollo con sus propios jugos cada 20 minutos asegura una piel dorada y pareja.', 'Si la piel se dora muy rápido, cúbrela con papel aluminio el resto de la cocción.', 'Verifica el punto pinchando el muslo: el jugo debe salir claro.'] },
-    { slug: 'churrasco-plancha', titulo: 'Churrasco italiano', corte: 'Lomo, Posta o Asiento', categoria: 'vaca', tiempo: '15 min', dificultad: 'Fácil', porciones: '2 personas', desc: 'El sándwich chileno de siempre: carne jugosa a la plancha con tomate, palta y una capa generosa de mayonesa.', img: 'Images/churrasco.jpg',
+    { slug: 'churrasco-plancha', titulo: 'Churrasco italiano', corte: 'Lomo, Posta o Asiento', categoria: 'vaca', tiempo: '15 min', dificultad: 'Fácil', porciones: '2 personas', desc: 'El sándwich chileno de siempre: carne jugosa a la plancha con tomate, palta y una capa generosa de mayonesa.', img: '/Images/churrasco.jpg',
       ingredientes: ['250 g de carne de res en láminas finas (Lomo, Posta o Asiento)', '2 panes frica o similares de miga blanda', '1 tomate grande y maduro', '1 palta mediana', '4 cucharadas de mayonesa', '1 cucharada de aceite vegetal', 'Sal y pimienta al gusto'],
       pasos: ['Lava el tomate y córtalo en rodajas de aproximadamente medio centímetro. Reserva.', 'Pela la palta, retira el hueso y aplasta la pulpa con un tenedor hasta obtener una pasta rústica. Añade sal a gusto y mezcla.', 'Calienta una sartén amplia o plancha a fuego medio-alto. Unta con el aceite y coloca las láminas de carne. Cocina 2-3 minutos por lado, o hasta que tengan bordes dorados y el centro aún jugoso. Salpimienta durante la cocción.', 'Abre los panes y, si lo prefieres, tuesta ligeramente la parte interna sobre la sartén para que absorban mejor los jugos.', 'Monta el sándwich colocando la carne recién hecha sobre la base del pan.', 'Encima de la carne, distribuye las rodajas de tomate y, sobre ellas, la palta triturada.', 'Finaliza con una capa generosa de mayonesa, dejándola caer ligeramente por los lados para lograr el aspecto tradicional.', 'Cierra con la tapa del pan y sirve de inmediato para que la carne conserve su jugosidad.'],
       tips: ['Corta la carne en láminas bien finas para que se cocine parejo y rápido.', 'Tostar el pan sobre la plancha ayuda a que absorba mejor los jugos de la carne.', 'Sírvelo de inmediato: recién armado es cuando el pan y la carne están en su punto.'] },
-    { slug: 'chorrillana', titulo: 'Chorrillana chilena', corte: 'Posta Negra', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El clásico de Valparaíso para compartir: carne, papas fritas, cebolla y huevo revuelto en una sola fuente.', img: 'Images/chorillana.jpg',
+    { slug: 'chorrillana', titulo: 'Chorrillana chilena', corte: 'Posta Negra', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El clásico de Valparaíso para compartir: carne, papas fritas, cebolla y huevo revuelto en una sola fuente.', img: '/Images/chorillana.jpg',
       ingredientes: ['300 g de Posta Negra cortada en tiras', '1 cebolla mediana en pluma', '½ kilo de papas cortadas en bastones', '3 huevos', '1 cucharada de salsa de tomates (opcional)', 'Sal, pimienta, merkén y aceite'],
       pasos: ['Calienta aceite a 180°C y fríe las papas en bastones hasta que doren, unos 10 minutos.', 'Corta la Posta Negra en tiras perpendiculares a la fibra y sazona con sal, pimienta y merkén.', 'En un sartén con aceite bien caliente, cocina las tiras de carne sin encimarlas, 3 minutos por lado, y resérvalas.', 'En el mismo sartén saltea la cebolla en pluma, agrega la salsa de tomates y cocina 5 minutos.', 'Baja el fuego, añade los huevos y revuelve hasta el punto que prefieras.', 'Sirve sobre una cama de papas fritas, corona con la cebolla y el huevo revuelto, y termina con la carne encima.'],
       tips: ['Escurre bien las papas sobre papel absorbente antes de armar para que no se humedezcan.', 'Corta la carne en contra de la fibra para que quede más tierna al freír.', 'Sírvela recién armada y bien caliente, directo al centro de la mesa para compartir.'] },
-    { slug: 'empanadas-de-pino', titulo: 'Empanadas de pino', corte: 'Molida Especial', categoria: 'vaca', destacada: true, tiempo: '2 h 15 min', dificultad: 'Media', porciones: '12 empanadas grandes', desc: 'La empanada de siempre, con pino jugoso de carne, cebolla, aceituna, pasas y huevo duro.', img: 'Images/empanada-de-pino.jpg',
+    { slug: 'empanadas-de-pino', titulo: 'Empanadas de pino', corte: 'Molida Especial', categoria: 'vaca', destacada: true, tiempo: '2 h 15 min', dificultad: 'Media', porciones: '12 empanadas grandes', desc: 'La empanada de siempre, con pino jugoso de carne, cebolla, aceituna, pasas y huevo duro.', img: '/Images/empanada-de-pino.jpg',
       ingredientes: ['1 kilo de Molida Especial', '3 cebollas grandes picadas en cubos chicos', '1 taza de caldo de vacuno', '2 cucharadas de ají de color o merkén', '½ cucharadita de comino', '2 cucharadas de harina', 'Sal y pimienta a gusto', 'Aceitunas negras, pasas y huevo duro para rellenar', 'Masa de empanadas (harina, manteca, huevo, leche y agua) o discos ya preparados'],
       pasos: ['Sofríe la carne molida en aceite caliente hasta dorar, unos 8 minutos, y agrega el ají, sal, pimienta y comino.', 'Incorpora el caldo y cocina 30 minutos a fuego bajo.', 'Agrega la cebolla picada y cocina 30 minutos más, hasta que esté blanda.', 'Añade la harina, revuelve, ajusta la sazón y deja enfriar el pino en el refrigerador, idealmente de un día para otro.', 'Estira la masa, corta los discos y rellena con pino frío, una aceituna, pasas y un trozo de huevo duro.', 'Cierra las empanadas doblando los bordes, pincela con huevo batido y hornea a 180°C por 30-35 minutos hasta dorar.'],
       tips: ['El pino siempre rinde mejor si se prepara el día anterior y se rellena bien frío.', 'Si se abomban durante el horneado, pincha con un palito para que suelten el vapor.', 'Congela las empanadas crudas y hornéalas directo del congelador cuando las necesites.'] },
-    { slug: 'anticuchos', titulo: 'Anticuchos chilenos', corte: 'Asiento', categoria: 'vaca', destacada: true, tiempo: '1 h 5 min', dificultad: 'Media', porciones: '8-10 personas', desc: 'Brochetas a la parrilla con carne, longaniza, cebolla y pimentón, infaltables en las Fiestas Patrias.', img: 'Images/anticuchos.jpg',
+    { slug: 'anticuchos', titulo: 'Anticuchos chilenos', corte: 'Asiento', categoria: 'vaca', destacada: true, tiempo: '1 h 5 min', dificultad: 'Media', porciones: '8-10 personas', desc: 'Brochetas a la parrilla con carne, longaniza, cebolla y pimentón, infaltables en las Fiestas Patrias.', img: '/Images/anticuchos.jpg',
       ingredientes: ['1 kilo de Asiento cortado en cubos de 3-4 cm', '6 Longanizas cortadas en trozos', '2 cebollas cortadas en cuadros grandes', '3 pimentones cortados en cuadros grandes', 'Vinagre de vino tinto, ají de color, orégano, sal y pimienta', 'Palitos de anticucho o brochetas de madera remojadas'],
       pasos: ['Corta la carne en trozos parejos de 3-4 cm y retira nervios o exceso de grasa.', 'Marina la carne con vinagre, sal, pimienta, orégano y ají de color; tapa y refrigera al menos 2 horas.', 'Remoja los palitos de madera 15 minutos antes de armar si vas a usarlos.', 'Arma los anticuchos alternando carne, longaniza, cebolla y pimentón.', 'Precalienta la parrilla a fuego fuerte y cocina los anticuchos unos 5 minutos por lado.', 'Sirve bien calientes, acompañados de pan para armar sándwich al gusto.'],
       tips: ['Mientras más tiempo marine la carne, más sabor toman los anticuchos.', 'Alterna los ingredientes en la brocheta para que se cocinen parejo.', 'Si usas palitos de madera, remójalos siempre antes para que no se quemen en la parrilla.'] },
-    { slug: 'carne-al-jugo', titulo: 'Carne al jugo', corte: 'Huachalomo', categoria: 'vaca', destacada: true, tiempo: '3 h 30 min', dificultad: 'Media', porciones: '8 personas', desc: 'Carne al horno cocida lenta en su propio jugo, hasta quedar tan blanda que se deshace con el tenedor.', img: 'Images/carne-al-jugo.jpg',
+    { slug: 'carne-al-jugo', titulo: 'Carne al jugo', corte: 'Huachalomo', categoria: 'vaca', destacada: true, tiempo: '3 h 30 min', dificultad: 'Media', porciones: '8 personas', desc: 'Carne al horno cocida lenta en su propio jugo, hasta quedar tan blanda que se deshace con el tenedor.', img: '/Images/carne-al-jugo.jpg',
       ingredientes: ['2 kg de Huachalomo desgrasado', '1 cebolla mediana en pluma', '2 dientes de ajo picados', '2 zanahorias en trozos', '1 taza de caldo de verduras o agua', '1 hoja de laurel, comino y granos de pimienta', 'Sal, pimienta y aceite vegetal'],
       pasos: ['Precalienta el horno a 150°C. Seca bien la carne y sazona generosamente con sal y pimienta.', 'Sella la carne en una olla con aceite caliente hasta dorar por todos lados, 4-5 minutos por lado, y retírala.', 'En la misma olla, sofríe la cebolla hasta que esté blanda, agrega el ajo y luego el caldo, la zanahoria, el laurel y el comino.', 'Deja hervir, devuelve la carne a la olla y cúbrela con la salsa. Tapa con papel aluminio.', 'Lleva al horno hasta que la carne esté blanda, entre 2 ½ y 3 horas.', 'Deja reposar la carne 20 minutos, córtala en láminas y devuélvela a la salsa antes de servir.'],
       tips: ['No destapes la olla mientras cuece: el vapor es clave para que la carne quede blanda.', 'Deja reposar la carne antes de cortarla para que no pierda sus jugos.', 'Acompaña con puré o arroz blanco para aprovechar toda la salsa.'] },
-    { slug: 'cazuela-de-vacuno', titulo: 'Cazuela de vacuno', corte: 'Osobuco', categoria: 'vaca', tiempo: '45 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El caldo reconfortante de siempre, con carne, papa, zapallo y choclo en su punto.', img: 'Images/cazuela-de-vacuno.jpg',
+    { slug: 'cazuela-de-vacuno', titulo: 'Cazuela de vacuno', corte: 'Osobuco', categoria: 'vaca', tiempo: '45 min', dificultad: 'Fácil', porciones: '4 personas', desc: 'El caldo reconfortante de siempre, con carne, papa, zapallo y choclo en su punto.', img: '/Images/cazuela-de-vacuno.jpg',
       ingredientes: ['1 kilo de Osobuco cortado en 4 trozos', '1 cebolla grande en pluma gruesa', '2 zanahorias ralladas', '4 papas medianas peladas', '4 trozos de zapallo amarillo', '4 trozos de choclo con coronta', '4 cucharadas de arroz o chuchoca', 'Comino, orégano, sal y aceite', 'Perejil o cilantro para servir'],
       pasos: ['Dora el Osobuco por ambos lados en una olla grande con aceite caliente, salpimentando, 3 minutos por lado. Retira.', 'En la misma olla, sofríe la cebolla y la zanahoria con comino y orégano por 3 minutos.', 'Devuelve la carne a la olla y cubre con unos 2 litros de agua caliente.', 'Cocina tapado a fuego medio 30-40 minutos hasta que la carne esté blanda.', 'Agrega las papas, el zapallo, el choclo y el arroz, y cocina 15 minutos más.', 'Sirve bien caliente con cilantro o perejil picado por encima.'],
       tips: ['El Osobuco aporta el tuétano que le da cuerpo y sabor al caldo.', 'Si prefieres versión de verano, cambia las papas por porotos verdes y arvejas.', 'La cazuela siempre sabe mejor recalentada al día siguiente.'] },
-    { slug: 'pollo-arvejado', titulo: 'Pollo arvejado', corte: 'Trutro Entero', categoria: 'pollo', tiempo: '1 h', dificultad: 'Fácil', porciones: '4 personas', desc: 'Guiso rápido y reconfortante de pollo con arvejas, zanahoria y pimentón en su propio jugo.', img: 'Images/pollo-arvejado.jpg',
+    { slug: 'pollo-arvejado', titulo: 'Pollo arvejado', corte: 'Trutro Entero', categoria: 'pollo', tiempo: '1 h', dificultad: 'Fácil', porciones: '4 personas', desc: 'Guiso rápido y reconfortante de pollo con arvejas, zanahoria y pimentón en su propio jugo.', img: '/Images/pollo-arvejado.jpg',
       ingredientes: ['4-5 Trutro Entero', '1 cebolla en pluma', '2 zanahorias en rodajas', '½ pimentón verde en cubos', '2 dientes de ajo machacados', '2 tazas de caldo de pollo', '1 hoja de laurel', '1 taza de arvejas congeladas', 'Aceite, sal y pimienta'],
       pasos: ['Calienta aceite en un sartén y dora las presas de pollo 3 minutos por lado. Retira y reserva.', 'En el mismo sartén, dora la cebolla 5 minutos, agrega la zanahoria, el pimentón y el ajo, y cocina 1 minuto más.', 'Devuelve el pollo al sartén y agrega el caldo, el laurel y las arvejas congeladas.', 'Tapa y cocina a fuego medio 25-30 minutos, hasta que el pollo esté bien cocido.', 'Ajusta la sazón y sirve caliente con puré o arroz.'],
       tips: ['Usa arvejas congeladas directo del paquete: se cocinan junto con el pollo sin perder color.', 'Si quieres una salsa más espesa, destapa los últimos minutos de cocción.', 'También queda muy bien preparado con presas de cerdo en vez de pollo.'] },
-    { slug: 'pastel-de-choclo', titulo: 'Pastel de choclo', corte: 'Molida Corriente', categoria: 'vaca', tiempo: '2 h', dificultad: 'Media', porciones: '6 personas', desc: 'El infaltable del verano: pino de carne bajo una capa dorada de choclo con un toque de albahaca.', img: 'Images/pastel-de-choclo.jpg',
+    { slug: 'pastel-de-choclo', titulo: 'Pastel de choclo', corte: 'Molida Corriente', categoria: 'vaca', tiempo: '2 h', dificultad: 'Media', porciones: '6 personas', desc: 'El infaltable del verano: pino de carne bajo una capa dorada de choclo con un toque de albahaca.', img: '/Images/pastel-de-choclo.jpg',
       ingredientes: ['1 kilo de Molida Corriente', '3 cebollas picadas en cubos finos', '1 taza de caldo de vacuno', '1 cucharada de merkén o ají de color', '½ cucharadita de comino', '4 bolsas de choclo congelado (o choclo fresco desgranado)', '½ taza de leche entera', '3 cucharadas de harina de maíz o chuchoca', 'Un manojo de albahaca fresca', 'Aceitunas, pasas y huevo duro para armar (opcional)', 'Sal, pimienta, mantequilla o aceite'],
       pasos: ['Sofríe la carne molida hasta dorar, agrega el merkén, sal, pimienta y comino, y cocina 2 minutos más.', 'Incorpora el caldo y cocina 30 minutos a fuego bajo, luego agrega la cebolla y cocina otros 30 minutos. Reserva el pino.', 'Derrite mantequilla en una olla, agrega el choclo y cocina 8 minutos revolviendo.', 'Añade la leche y la albahaca, cocina 10 minutos más y procesa hasta la consistencia que prefieras.', 'Incorpora la harina de maíz y cocina 5 minutos más para espesar la pastelera de choclo.', 'En fuentes individuales o una grande, pon el pino con aceitunas, pasas y huevo duro, cubre con la pastelera y hornea a 200°C por 45-60 minutos hasta dorar.'],
       tips: ['No uses choclo en conserva: tiene demasiada agua y afloja la pastelera.', 'Deja reposar el pastel 10 minutos fuera del horno antes de servir para que asiente.', 'La albahaca fresca es clave para el sabor: evita variedades muy intensas.'] },
-    { slug: 'carbonada', titulo: 'Carbonada', corte: 'Posta Rosada', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '6 personas', desc: 'Sopa espesa y reconfortante de carne picada con verduras y arroz, lista en menos de una hora.', img: 'Images/carbonada.jpg',
+    { slug: 'carbonada', titulo: 'Carbonada', corte: 'Posta Rosada', categoria: 'vaca', tiempo: '40 min', dificultad: 'Fácil', porciones: '6 personas', desc: 'Sopa espesa y reconfortante de carne picada con verduras y arroz, lista en menos de una hora.', img: '/Images/carbonada.jpg',
       ingredientes: ['1 kilo de Posta Rosada picada en cubos', '1 cebolla en cubos pequeños', '3 zanahorias en cubos', '2 ramas de apio picadas', '½ pimentón picado', '3 papas medianas en cubos', '½ taza de arroz crudo', '1 taza de arvejitas o porotos verdes', 'Orégano, comino y paprika a gusto', '2 hojas de laurel', 'Sal, pimienta y aceite'],
       pasos: ['Dora la carne en cubos en una olla con aceite, 2 minutos por lado, y sazona con sal, pimienta y especias.', 'Agrega la cebolla y sofríe 5 minutos, luego suma la zanahoria, el pimentón y el apio, y cocina 3 minutos más.', 'Incorpora las papas y el arroz, revuelve bien y ajusta la sazón.', 'Cubre con agua (1,5 a 2 litros) y agrega el laurel. Deja hervir.', 'Cocina tapado 20 minutos a fuego medio-bajo.', 'Agrega las arvejitas o porotos verdes y cocina 3 minutos más antes de servir bien caliente.'],
       tips: ['Puedes dejarla más espesa con menos agua o más caldosa a tu gusto.', 'El arroz sigue absorbiendo líquido, así que sírvela recién hecha.', 'Ideal para aprovechar verduras que tengas a mano en el refrigerador.'] },
-    { slug: 'plateada-al-horno', titulo: 'Plateada al horno', corte: 'Plateada', categoria: 'vaca', destacada: true, tiempo: '4 h', dificultad: 'Media', porciones: '8 personas', desc: 'Cocción lenta y sin apuro hasta que la Plateada quede tan blanda que se deshace con el tenedor.', img: 'Images/plateada-al-horno.jpg',
+    { slug: 'plateada-al-horno', titulo: 'Plateada al horno', corte: 'Plateada', categoria: 'vaca', destacada: true, tiempo: '4 h', dificultad: 'Media', porciones: '8 personas', desc: 'Cocción lenta y sin apuro hasta que la Plateada quede tan blanda que se deshace con el tenedor.', img: '/Images/plateada-al-horno.jpg',
       ingredientes: ['2 kilos de Plateada', '2 dientes de ajo molidos', '½ taza de aceite de oliva', '3 cucharadas de vinagre', 'Tomillo u orégano fresco o seco', '1 cucharada de merkén o paprika ahumada', '1 cebolla en pluma', '1 vaso de agua', 'Sal y pimienta'],
       pasos: ['Mezcla el ajo, el aceite, el vinagre, el merkén, sal y pimienta, y frota la Plateada con este adobo. Tapa y refrigera 3 horas.', 'Precalienta el horno a 150°C.', 'Retira la carne del adobo y dórala en una olla con aceite caliente, 5-8 minutos por lado.', 'Agrega la cebolla, los jugos del adobo y el vaso de agua, y cocina a fuego bajo 10 minutos.', 'Tapa y lleva al horno sin destapar entre 2 ½ y 3 horas, hasta que la carne se separe con el tenedor.', 'Deja reposar tapada 20 minutos antes de cortar en láminas y servir.'],
       tips: ['No destapes la olla durante la cocción: el vapor es lo que ablanda la carne.', 'Marinar de un día para otro le da aún más sabor a la Plateada.', 'Acompaña con papas cocidas o puré picante, como se sirve tradicionalmente.'] },
-    { slug: 'asado-tradicional', titulo: 'Asado tradicional con chimichurri', corte: 'Asado de Tira', categoria: 'vaca', tiempo: '1 h', dificultad: 'Fácil', porciones: '6-8 personas', desc: 'El domingo en familia de siempre: Asado de Tira a las brasas con un chimichurri casero recién hecho.', img: 'Images/asado-tradicional-con-chimichurri.jpg',
+    { slug: 'asado-tradicional', titulo: 'Asado tradicional con chimichurri', corte: 'Asado de Tira', categoria: 'vaca', tiempo: '1 h', dificultad: 'Fácil', porciones: '6-8 personas', desc: 'El domingo en familia de siempre: Asado de Tira a las brasas con un chimichurri casero recién hecho.', img: '/Images/asado-tradicional-con-chimichurri.jpg',
       ingredientes: ['1,5 kg de Asado de Tira', 'Sal gruesa y pimienta', '2 atados de cebollín', '2 atados de perejil', '2 cucharaditas de orégano', '1 diente de ajo picado', '1 cucharadita de ají seco', '½ taza de aceite', '⅛ taza de vinagre de vino', 'Jugo de 1 limón'],
       pasos: ['Prepara el chimichurri: pica fino el cebollín y el perejil, mézclalos con el ajo, el orégano, el ají seco, la sal, el aceite, el vinagre, agua y el jugo de limón. Deja reposar al menos 2 horas.', 'Retira el Asado de Tira del refrigerador con anticipación para que llegue a temperatura ambiente.', 'Prepara brasas parejas de calor medio-alto.', 'Sella la carne a fuego fuerte por ambos lados, luego termina la cocción a fuego más suave hasta el punto que prefieras.', 'Sazona con sal gruesa y pimienta, y deja reposar unos minutos antes de cortar.', 'Sirve con el chimichurri casero y las ensaladas de siempre.'],
       tips: ['El chimichurri mejora si se prepara el día anterior y se guarda refrigerado.', 'Sellar primero a fuego fuerte y terminar más suave ayuda a que la carne quede pareja por dentro.', 'Un buen asado se disfruta en familia, sin apuro y con buena compañía.'] },
@@ -422,7 +422,7 @@
         '<div style="position:absolute;inset:0;background:radial-gradient(circle at 25% 30%, rgba(69,0,0,0.55), #141414 72%)"></div>' +
         '<div class="cat-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;min-height:280px;display:flex;align-items:center;padding:64px 32px">' +
           '<div class="cat-banner-text" style="display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:12px;max-width:640px">' +
-            '<a href="' + pageFileMap[p.categoriaPage] + '" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</a>' +
+            '<a href="/' + pageFileMap[p.categoriaPage] + '" class="link-arrow" style="text-decoration:none;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;color:#D1A66A;text-transform:uppercase">← Volver a ' + p.categoriaLabel + '</a>' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Corte premium · ' + p.categoriaLabel + '</span>' +
             '<h1 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(34px,5vw,54px);margin:0;color:#FAF7F4;text-shadow:0 4px 18px rgba(0,0,0,0.5)">' + p.nombre + '</h1>' +
             '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;margin:0">' + p.tagline + '</p>' +
@@ -635,7 +635,7 @@
   }
 
   function pageInicio() {
-    var catImgs = { vaca: 'Images/ribeye-strip-loin.jpeg', pollo: 'Images/polleria.jpeg', cerdo: 'Images/cerdo.jpg' };
+    var catImgs = { vaca: '/Images/ribeye-strip-loin.jpeg', pollo: '/Images/polleria.jpeg', cerdo: '/Images/cerdo.jpg' };
     var catNames = { vaca: 'Vacuno', pollo: 'Pollo', cerdo: 'Cerdo' };
     var catDesc = {
       vaca: 'Categoría V, cortes premium para la parrilla y la olla.',
@@ -644,7 +644,7 @@
     };
     var catHtml = ['vaca', 'pollo', 'cerdo'].map(function (key) {
       return '' +
-        '<a href="' + pageFileMap[key] + '" class="cat-card" style="cursor:pointer;text-decoration:none;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
+        '<a href="/' + pageFileMap[key] + '" class="cat-card" style="cursor:pointer;text-decoration:none;border:1px solid #4A3B33;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;background-color:#450000">' +
           '<div class="cat-card-img" style="height:200px;overflow:hidden"><img src="' + catImgs[key] + '" alt="' + catNames[key] + '" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
           '<div style="padding:22px;display:flex;flex-direction:column;gap:8px;background-color:#450000">' +
             '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FFFFFF">' + catNames[key] + '</h3>' +
@@ -676,10 +676,10 @@
     return '' +
     '<div data-screen-label="Inicio">' +
       '<div style="position:relative;width:100%;min-height:88vh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:70px 0">' +
-        '<video autoplay muted loop playsinline poster="Images/ribeye-strip-loin.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><source src="video/ribeye_animated.mp4" type="video/mp4"></video>' +
+        '<video autoplay muted loop playsinline poster="/Images/ribeye-strip-loin.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><source src="/video/ribeye_animated.mp4" type="video/mp4"></video>' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, #101010EB, rgba(10,9,8,0.35) 40%, #1C1C1C 100%);z-index:1"></div>' +
         '<div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:860px;display:flex;flex-direction:column;align-items:center;gap:22px">' +
-          '<img src="Images/logoCarnesMarti_white.png" alt="Carnes Marty" width="1072" height="976" class="hero-logo hero-anim-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
+          '<img src="/Images/logoCarnesMarti_white.png" alt="Carnes Marty" width="1072" height="976" class="hero-logo hero-anim-logo" style="width:240px;height:240px;border-radius:50%;object-fit:contain;background:#FAF7F4;padding:14px;box-sizing:border-box;border:4px solid #D1A66A;box-shadow:0px 20px 40px 0px rgba(0,0,0,0.55);margin-bottom:6px">' +
           '<span class="hero-anim-eyebrow" style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#D1A66A;font-weight:600;background:rgba(28,28,28,0.6);padding:10px 18px;border-radius:10px">Desde 2020 · Linderos, Buin</span>' +
           '<h1 class="hero-title hero-anim-title" style="font-family:\'Playfair Display\',serif;font-weight:600;font-style:italic;font-size:clamp(38px,6vw,72px);line-height:1.08;color:#FAF7F4;margin:0">Carnicería en Linderos, Buin</h1>' +
           '<p class="hero-slogan hero-anim-text" style="font-family:\'Playfair Display\',serif;font-weight:500;font-style:italic;font-size:clamp(18px,2.4vw,26px);color:#D1A66A;margin:0">Para los que entienden de carne.</p>' +
@@ -693,7 +693,7 @@
 
       '<div style="background-color:#101010">' +
         '<div class="section-pad two-col-rev" style="max-width:1280px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">' +
-          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="Images/David_primerPlano.png" alt="Cortes frescos Carnes Marty" width="1232" height="848" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px"></div>' +
+          '<div style="height:380px;border-radius:4px;overflow:hidden"><img src="/Images/David_primerPlano.png" alt="Cortes frescos Carnes Marty" width="1232" height="848" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:12px"></div>' +
           '<div style="display:flex;flex-direction:column;gap:18px">' +
             '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#d1a66a;font-weight:600">Sobre Carnes Marty</span>' +
             '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:32px;margin:0;color:#FFFFFF">Cortes frescos y premium, todos los días</h2>' +
@@ -729,7 +729,7 @@
         '</div>' +
       '</div>' +
 
-      '<div style="position:relative;padding:100px 32px;background-image:url(\'Images/cortes_frescos.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div style="position:relative;padding:100px 32px;background-image:url(\'/Images/cortes_frescos.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.65)"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:640px">' +
           '<h2 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:clamp(26px,4vw,38px);margin:0;color:#FAF7F4">Carne fresca, todos los días</h2>' +
@@ -746,11 +746,11 @@
             '<p style="font-family:\'Inter\',sans-serif;font-size:14.5px;line-height:1.65;color:#E2E8F0;margin:0;max-width:440px">En Carnes Marty nos encargamos de encontrar el corte perfecto para ti.</p>' +
             '<a href="recomendaciones.html" class="link-arrow" style="text-decoration:none;cursor:pointer;align-self:flex-start;margin-top:6px;border-bottom:1px solid #855F4F;color:#D1A66A;font-size:14px;font-weight:600;padding-bottom:2px">Ver recomendaciones →</a>' +
           '</div>' +
-          '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" width="962" height="364" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
+          '<div class="carnicero-photo" style="height:260px;border-radius:5px;overflow:hidden"><img src="/Images/cortes-mas-pedidos.jpeg" alt="¿No sabes qué elegir?" width="962" height="364" style="width:100%;height:100%;object-fit:cover;display:block"></div>' +
         '</div>' +
       '</div>' +
 
-      '<div style="position:relative;width:100%;min-height:420px;background-image:url(\'Images/resenas-bg.jpeg\');background-size:cover;background-position:left center">' +
+      '<div style="position:relative;width:100%;min-height:420px;background-image:url(\'/Images/resenas-bg.jpeg\');background-size:cover;background-position:left center">' +
         '<div style="position:absolute;inset:0;background:rgba(10,9,8,0.72)"></div>' +
         '<div style="position:relative;z-index:2;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:24px;padding:56px 0">' +
           '<span style="display:inline-flex;align-items:center;gap:10px;font-family:\'Inter\',sans-serif;font-size:14px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A;margin-bottom:10px;padding:0 32px">'+ 'Lo que dicen nuestros clientes en Google ' + googleIconSvg + '</span>' +
@@ -801,7 +801,7 @@
   function pageRecomendaciones() {
     return '' +
     '<div data-screen-label="Recomendaciones">' +
-      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_recomendaciones.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'/Images/banner_recomendaciones.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:64px 32px;max-width:720px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Selección del carnicero</span>' +
@@ -818,7 +818,7 @@
   function pageRecetas() {
     return '' +
     '<div data-screen-label="Recetas">' +
-      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_recetas.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'/Images/banner_recetas.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:64px 32px;max-width:720px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">De nuestra cocina a la tuya</span>' +
@@ -989,7 +989,7 @@
     }).join('');
     return '' +
     '<div data-screen-label="Nosotros">' +
-      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_nosotros.png\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'/Images/banner_nosotros.png\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:64px 32px;max-width:720px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:20px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Nuestra historia</span>' +
@@ -1004,7 +1004,7 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.75;color:#E2E8F0;margin:0">En Carnes Marty no solo vendemos carne; compartimos la pasión por ofrecer el mejor producto para que cada comida en familia, cada asado y cada celebración tenga la calidad que se merece.</p>' +
           '</div>' +
         '<div style="background:#1C1C1C;border-radius:4px;padding:48px;display:flex;align-items:center;justify-content:center">' +
-          '<img src="Images/Logo_merchan.png" alt="Carnes Marty" width="1073" height="976" style="width:100%;max-width:340px;height:auto">' +
+          '<img src="/Images/Logo_merchan.png" alt="Carnes Marty" width="1073" height="976" style="width:100%;max-width:340px;height:auto">' +
         '</div>' +
       '</div>' +
       timelineSection() +
@@ -1017,7 +1017,7 @@
   function pageContacto() {
     return '' +
     '<div data-screen-label="Contacto">' +
-      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'Images/banner_contacto.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
+      '<div class="page-banner" style="position:relative;width:100%;min-height:380px;background-image:url(\'/Images/banner_contacto.jpeg\');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden">' +
         '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,9,8,0.78), rgba(10,9,8,0.5) 45%, rgba(10,9,8,0.85))"></div>' +
         '<div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;padding:64px 32px;max-width:720px">' +
           '<span style="font-family:\'Inter\',sans-serif;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#D1A66A">Hablemos</span>' +
@@ -1034,7 +1034,7 @@
             '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Abrir WhatsApp →</span>' +
             '<p class="receta-card-desc">Escríbenos para armar tu pedido, resolver dudas o consultar por cortes especiales. Te respondemos al toque.</p>' +
           '</a>' +
-          '<img src="Images/imagen_fondo_whatsapp.webp" alt="WhatsApp" width="52" height="52" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="/Images/imagen_fondo_whatsapp.webp" alt="WhatsApp" width="52" height="52" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
         '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
           '<a href="https://www.instagram.com/carnes_marty/" target="_blank" rel="noopener" class="receta-card hover-card contact-glass-card" tabindex="0" style="text-decoration:none;cursor:pointer;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
@@ -1044,7 +1044,7 @@
             '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Ver Instagram →</span>' +
             '<p class="receta-card-desc">Síguenos para ver los cortes de la semana, promociones y el detrás de escena de la carnicería.</p>' +
           '</a>' +
-          '<img src="Images/fondo_instagram.webp" alt="Instagram" width="375" height="211" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="/Images/fondo_instagram.webp" alt="Instagram" width="375" height="211" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
         '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
           '<div class="receta-card hover-card contact-glass-card" tabindex="0" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
@@ -1053,7 +1053,7 @@
             '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">Región Metropolitana</span>' +
             '<p class="receta-card-desc">Visítanos en nuestra tienda física: cortes frescos y atención de carnicero, de lunes a domingo.</p>' +
           '</div>' +
-          '<img src="Images/fondo_ubicacion.webp" alt="Ubicación" width="1199" height="721" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+          '<img src="/Images/fondo_ubicacion.webp" alt="Ubicación" width="1199" height="721" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
       '</div>' +
     '</div>';
