@@ -78,21 +78,20 @@
       bannerImg: 'Images/banner-seccion-cerdo.png',
       description: 'Cerdo nacional fresco, del costillar ahumado a los embutidos caseros.',
       cuts: [
-        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true, metodos: ['parrilla'] },
-        { nombre: 'Costillar a la Chilena', desc: 'Costillar cortado al estilo tradicional, listo para la olla o el horno.', metodos: ['cacerola'] },
-        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.', metodos: ['sarten', 'parrilla'] },
-        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.', metodos: ['parrilla'] },
-        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.', metodos: ['parrilla', 'cacerola', 'sarten'] },
-        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.', metodos: ['cacerola'] },
-        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.', metodos: ['cacerola'] },
-        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.', metodos: ['cacerola'] },
-        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.', metodos: ['sarten', 'cacerola'] },
-        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.', metodos: ['parrilla'] },
-        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.', metodos: ['cacerola'] },
-        { nombre: 'Arrollado Hueso', desc: 'Corte enrollado con hueso, ideal para el horno.', metodos: ['cacerola'] },
-        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.', metodos: ['parrilla', 'sarten'] },
-        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.', metodos: ['sarten', 'cacerola'] },
-        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.', metodos: ['parrilla', 'sarten'] },
+        { nombre: 'Costillar', desc: 'El favorito para ahumar o asar a fuego lento.', destacado: true, metodos: ['parrilla'], img: 'Images/costillar_de_cerdo.webp' },
+        { nombre: 'Chuleta Centro', desc: 'Corte clásico, tierno y con hueso.', metodos: ['sarten', 'parrilla'], img: 'Images/chuleta_centro.avif' },
+        { nombre: 'Chuleta Parrillera', desc: 'Con hueso y buen grosor, ideal para la parrilla.', metodos: ['parrilla'], img: 'Images/chuleta_parrillera.jpg' },
+        { nombre: 'Pulpa Pierna sin Hueso', desc: 'Magra y versátil, para asar, guisar o moler.', metodos: ['parrilla', 'cacerola', 'sarten'], img: 'Images/pulpa_pierna_sin_hueso.webp' },
+        { nombre: 'Paleta de Cerdo', desc: 'Corte jugoso y rendidor, ideal para el horno o la olla.', metodos: ['cacerola'], img: 'Images/paleta_de_cerdo.png' },
+        { nombre: 'Pernil Mano', desc: 'Corte tradicional para el horno, jugoso y con cuero crocante.', metodos: ['cacerola'], img: 'Images/pernil_mano.jpg' },
+        { nombre: 'Pernil Pierna', desc: 'Pieza grande ideal para el horno en ocasiones especiales.', metodos: ['cacerola'], img: 'Images/pernil_pierna.webp' },
+        { nombre: 'Tocino', desc: 'Con veta de grasa, ideal para dar sabor a guisos y frituras.', metodos: ['sarten', 'cacerola'], img: 'Images/tocino_de_cerdo.jpg' },
+        { nombre: 'Panceta', desc: 'Ideal para la parrilla o el ahumador.', metodos: ['parrilla'], img: 'Images/panceta.jpg' },
+        { nombre: 'Patitas de Cerdo', desc: 'Clásicas para caldos y preparaciones tradicionales.', metodos: ['cacerola'], img: 'Images/manitas_de_cerdo.jpg' },
+        { nombre: 'Arrollado Huaso', desc: 'Corte enrollado con hueso, ideal para el horno.', metodos: ['cacerola'], img: 'Images/arrollado_huaso.jpg' },
+        { nombre: 'Longanizas', desc: 'Elaboradas con receta de la casa, para la parrilla o la sartén.', metodos: ['parrilla', 'sarten'], img: 'Images/longanizas.jpg' },
+        { nombre: 'Prietas', desc: 'Tradicionales y caseras, para acompañar con ensalada a la chilena.', metodos: ['sarten', 'cacerola'], img: 'Images/prietas.jpg' },
+        { nombre: 'Butifarra', desc: 'Embutido fresco y sabroso, ideal para la parrilla.', metodos: ['parrilla', 'sarten'], img: 'Images/butifarra.png' },
       ],
     },
     pollo: {
@@ -120,15 +119,13 @@
       bannerImg: 'Images/banner-seccion-subproductos.png',
       description: 'Menudencias y cortes tradicionales para las recetas de siempre.',
       cuts: [
-        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.', metodos: ['cacerola'] },
-        { nombre: 'Guata Surtida', desc: 'Selección de guatas variadas, ideal para preparaciones tradicionales.', metodos: ['cacerola'] },
-        { nombre: 'Chanchullo', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.', metodos: ['cacerola'] },
-        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.', metodos: ['sarten'] },
-        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.', metodos: ['parrilla', 'cacerola'] },
-        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.', metodos: ['cacerola'] },
-        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.', metodos: ['cacerola', 'sarten'] },
-        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true, metodos: ['parrilla'] },
-        { nombre: 'Chanchas', desc: 'Menudencia tradicional, ideal para preparaciones caseras a la olla.', metodos: ['cacerola'] },
+        { nombre: 'Guata Callo', desc: 'Tripa de vacuno de textura firme, tradicional para guisos y caldillos.', metodos: ['cacerola'], img: 'Images/guata_callo.jpg' },
+        { nombre: 'Chunchules', desc: 'Corte de menudencia con buen sabor, clásico de la cocina criolla.', metodos: ['cacerola'], img: 'Images/chunchules.jpg' },
+        { nombre: 'Pana de Vacuno', desc: 'El hígado de vacuno, suave y sabroso, ideal frito con cebolla.', metodos: ['sarten'], img: 'Images/pana_de_vacuno.jpg' },
+        { nombre: 'Corazón de Vacuno', desc: 'Firme y sabroso, ideal para anticuchos y guisos.', metodos: ['parrilla', 'cacerola'], img: 'Images/corazon_de_vacuno.jpg' },
+        { nombre: 'Patas de Vacuno', desc: 'Clásicas para caldos y preparaciones gelatinosas.', metodos: ['cacerola'], img: 'Images/patas_de_vacuno.jpg' },
+        { nombre: 'Lengua de Vacuno', desc: 'Tierna tras cocción lenta, ideal para guisos y sándwiches.', metodos: ['cacerola', 'sarten'], img: 'Images/lengua_de_vacuno.webp' },
+        { nombre: 'Mollejas', desc: 'Textura suave y sabor delicado, un clásico de la parrilla.', destacado: true, metodos: ['parrilla'], img: 'Images/mollejas.png' },
       ],
     },
   };
@@ -1019,21 +1016,35 @@
           '<p style="font-family:\'Inter\',sans-serif;font-size:15px;line-height:1.65;color:#E2E8F0;max-width:560px;margin:0">Pedidos, consultas y cortes especiales. Cuéntanos qué necesitas y nos encargamos del resto.</p>' +
         '</div>' +
       '</div>' +
-      '<div class="grid-3" style="max-width:1000px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:#1C1C1C">' +
-        '<a href="https://api.whatsapp.com/send?phone=56940691425" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">WhatsApp</span>' +
-          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Pedidos y consultas</span>' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">+56 9 4069 1425</span>' +
-        '</a>' +
-        '<a href="https://www.instagram.com/carnes_marty/" target="_blank" rel="noopener" class="contact-card" style="text-decoration:none;border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Instagram</span>' +
-          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">@carnes_marty</span>' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Novedades y promociones</span>' +
-        '</a>' +
-        '<div class="contact-card" style="border:1px solid #4A3B33;border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px;background:#2E2E2E">' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Ubicación</span>' +
-          '<span style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:20px;color:#FAF7F4">Linderos, Buin</span>' +
-          '<span style="font-family:\'Inter\',sans-serif;font-size:13.5px;color:#E2E8F0">Región Metropolitana, Chile</span>' +
+      '<div class="grid-3" style="max-width:1080px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;background:#1C1C1C">' +
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
+          '<a href="https://api.whatsapp.com/send?phone=56940691425" target="_blank" rel="noopener" class="receta-card hover-card contact-glass-card" tabindex="0" style="text-decoration:none;cursor:pointer;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">WhatsApp</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FAF7F4">Pedidos y consultas</h3>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">+56 9 4069 1425</span>' +
+            '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Abrir WhatsApp →</span>' +
+            '<p class="receta-card-desc">Escríbenos para armar tu pedido, resolver dudas o consultar por cortes especiales. Te respondemos al toque.</p>' +
+          '</a>' +
+          '<img src="Images/imagen_fondo_whatsapp.webp" alt="WhatsApp" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
+          '<a href="https://www.instagram.com/carnes_marty/" target="_blank" rel="noopener" class="receta-card hover-card contact-glass-card" tabindex="0" style="text-decoration:none;cursor:pointer;width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Instagram</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FAF7F4">@carnes_marty</h3>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">Novedades y promociones</span>' +
+            '<span class="link-arrow" style="font-family:\'Inter\',sans-serif;font-size:13px;font-weight:600;color:#D1A66A;margin-top:2px">Ver Instagram →</span>' +
+            '<p class="receta-card-desc">Síguenos para ver los cortes de la semana, promociones y el detrás de escena de la carnicería.</p>' +
+          '</a>' +
+          '<img src="Images/fondo_instagram.webp" alt="Instagram" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
+        '</div>' +
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:18px">' +
+          '<div class="receta-card hover-card contact-glass-card" tabindex="0" style="width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;flex:1">' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#D1A66A">Ubicación</span>' +
+            '<h3 style="font-family:\'Playfair Display\',serif;font-weight:600;font-size:22px;margin:0;color:#FAF7F4">Linderos, Buin</h3>' +
+            '<span style="font-family:\'Inter\',sans-serif;font-size:11px;font-weight:600;color:#FAF7F4;background:rgba(0,0,0,0.35);padding:5px 10px;border-radius:2px">Región Metropolitana</span>' +
+            '<p class="receta-card-desc">Visítanos en nuestra tienda física: cortes frescos y atención de carnicero, de lunes a domingo.</p>' +
+          '</div>' +
+          '<img src="Images/fondo_ubicacion.webp" alt="Ubicación" style="width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.4)">' +
         '</div>' +
       '</div>' +
     '</div>';
