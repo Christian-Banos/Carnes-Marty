@@ -1093,7 +1093,7 @@
     return staticPageMeta.inicio;
   }
 
-  var SITE_BASE = 'https://carnes-marty.vercel.app/';
+  var SITE_BASE = 'https://carnesmarty.com/';
 
   function canonicalUrl() {
     var p = state.page;
